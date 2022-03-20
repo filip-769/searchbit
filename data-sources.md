@@ -2,9 +2,20 @@
 
 ## Search engines
 
-
-
-
+Name | Website
+ --- | ---
+Baidu | https://baidu.com
+Bing | https://bing.com
+Brave | https://search.brave.com
+Gigablast | https://gigablast.com
+Google | https://google.com
+Mojeek | https://mojeek.com
+Naver | https://naver.com
+Qwant | https://qwant.com
+Seznam | https://search.seznam.cz
+Usearch | https://usearch.com
+Yacy | https://yacy.searchlab.eu
+Yandex | https://yandex.com
 
 ## Instant answers
 
