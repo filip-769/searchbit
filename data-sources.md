@@ -2,35 +2,35 @@
 
 ## Search engines
 
-Name | Website
- --- | ---
-Alexandria | https://alexandria.org
-Baidu | https://baidu.com
-Bing | https://bing.com
-Brave | https://search.brave.com
-Crawlson | https://crawlson.com
-Entfer | https://entfer.com
-Exactseek | https://exactseek.com
-Exalead | https://exalead.com/search/
-Fairsearch | https://fairsearch.com
-Gigablast | https://gigablast.com
-Google | https://google.com
-Infotiger | https://infotiger.com
-Mojeek | https://mojeek.com
-Naver | https://naver.com
-Neeva | https://neeva.com
-Petal | https://petalsearch.com
-Qwant | https://qwant.com
-Right Dao | https://rightdao.com
-Seekport | http://seekport.com
-Seznam | https://search.seznam.cz
-Teclis | https://teclis.com
-Usearch | https://usearch.com
-Wiby | https://wiby.org
-Yacy | https://yacy.searchlab.eu
-Yandex | https://yandex.com
-Yessle | https://yessle.com
-Yioop | https://yioop.com
+Name | Website | Web
+ --- | --- | ---
+Alexandria | https://alexandria.org | yes
+Baidu | https://baidu.com | yes
+Bing | https://bing.com | yes
+Brave | https://search.brave.com | yes
+Crawlson | https://crawlson.com | yes
+Entfer | https://entfer.com | yes
+Exactseek | https://exactseek.com | yes
+Exalead | https://exalead.com/search/ | yes
+Fairsearch | https://fairsearch.com | yes
+Gigablast | https://gigablast.com | yes
+Google | https://google.com | yes
+Infotiger | https://infotiger.com | yes
+Mojeek | https://mojeek.com | yes
+Naver | https://naver.com | yes
+Neeva | https://neeva.com | yes
+Petal | https://petalsearch.com | yes
+Qwant | https://qwant.com | yes
+Right Dao | https://rightdao.com | yes
+Seekport | http://seekport.com | yes
+Seznam | https://search.seznam.cz | yes
+Teclis | https://teclis.com | yes
+Usearch | https://usearch.com | yes
+Wiby | https://wiby.org | yes
+Yacy | https://yacy.searchlab.eu | yes
+Yandex | https://yandex.com | yes
+Yessle | https://yessle.com | yes
+Yioop | https://yioop.com | yes
 
 ## Instant answers
 
