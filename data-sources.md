@@ -11,10 +11,10 @@ Exactseek | https://exactseek.com
 Petal | https://petalsearch.com
 Teclis | https://teclis.com
 Yessle | https://yessle.com
+Fairsearch | https:/fairsearch.com
 Exalead | https://exalead.com/search/
 Infotiger | https://infotiger.com
 Yioop | https://yioop.com
-Fairsearch | https:/fairsearch.com
 Right Dao | https://rightdao.com
 Wiby | https://wiby.org
 Crawlson | https://crawlson.com
