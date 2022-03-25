@@ -4,6 +4,21 @@
 
 Name | Website
  --- | ---
+Alexandria | https://alexandria.org
+Entfer | https://
+Neeva | https://neeva.com
+Exactseek | https://
+Petal | https://petalsearch.com
+Teclis | https://teclis.com
+Yessle | https://
+Exalead | https://
+Infotiger | https://
+Yioop | https://
+Fairsearch | https:/fairsearch.com
+Right Dao | https://
+Wiby | https://
+Crawlson | https://
+Seekport | https://
 Baidu | https://baidu.com
 Bing | https://bing.com
 Brave | https://search.brave.com
