@@ -2,35 +2,35 @@
 
 ## Search engines
 
-Name         | Website
- ---         | ---
-Alexandria   | https://alexandria.org
-Entfer       | https://entfer.com
-Neeva        | https://neeva.com
-Exactseek    | https://exactseek.com
-Petal        | https://petalsearch.com
-Teclis       | https://teclis.com
-Yessle       | https://yessle.com
-Fairsearch   | https://fairsearch.com
-Exalead      | https://exalead.com/search/
-Infotiger    | https://infotiger.com
-Yioop        | https://yioop.com
-Right Dao    | https://rightdao.com
-Wiby         | https://wiby.org
-Crawlson     | https://crawlson.com
-Seekport     | http://seekport.com
-Baidu        | https://baidu.com
-Bing         | https://bing.com
-Brave        | https://search.brave.com
-Gigablast    | https://gigablast.com
-Google       | https://google.com
-Mojeek       | https://mojeek.com
-Naver        | https://naver.com
-Qwant        | https://qwant.com
-Seznam       | https://search.seznam.cz
-Usearch      | https://usearch.com
-Yacy         | https://yacy.searchlab.eu
-Yandex       | https://yandex.com
+Name | Website
+ --- | ---
+Alexandria | https://alexandria.org
+Baidu | https://baidu.com
+Bing | https://bing.com
+Brave | https://search.brave.com
+Crawlson | https://crawlson.com
+Entfer | https://entfer.com
+Exactseek | https://exactseek.com
+Exalead | https://exalead.com/search/
+Fairsearch | https://fairsearch.com
+Gigablast | https://gigablast.com
+Google | https://google.com
+Infotiger | https://infotiger.com
+Mojeek | https://mojeek.com
+Naver | https://naver.com
+Neeva | https://neeva.com
+Petal | https://petalsearch.com
+Qwant | https://qwant.com
+Right Dao | https://rightdao.com
+Seekport | http://seekport.com
+Seznam | https://search.seznam.cz
+Teclis | https://teclis.com
+Usearch | https://usearch.com
+Wiby | https://wiby.org
+Yacy | https://yacy.searchlab.eu
+Yandex | https://yandex.com
+Yessle | https://yessle.com
+Yioop | https://yioop.com
 
 ## Instant answers
 
