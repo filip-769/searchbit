@@ -11,7 +11,7 @@ Exactseek | https://exactseek.com
 Petal | https://petalsearch.com
 Teclis | https://teclis.com
 Yessle | https://yessle.com
-Fairsearch | https:/fairsearch.com
+Fairsearch | https://fairsearch.com
 Exalead | https://exalead.com/search/
 Infotiger | https://infotiger.com
 Yioop | https://yioop.com
