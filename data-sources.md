@@ -2,8 +2,8 @@
 
 ## Search engines
 
-Name | Website
- --- | ---
+Name         | Website
+ ---         | ---
 Alexandria   | https://alexandria.org
 Entfer       | https://entfer.com
 Neeva        | https://neeva.com
