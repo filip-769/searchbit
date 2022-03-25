@@ -5,20 +5,20 @@
 Name | Website
  --- | ---
 Alexandria | https://alexandria.org
-Entfer | https://
+Entfer | https://entfer.com
 Neeva | https://neeva.com
-Exactseek | https://
+Exactseek | https://exactseek.com
 Petal | https://petalsearch.com
 Teclis | https://teclis.com
-Yessle | https://
-Exalead | https://
-Infotiger | https://
-Yioop | https://
+Yessle | https://yessle.com
+Exalead | https://exalead.com/search/
+Infotiger | https://infotiger.com
+Yioop | https://yioop.com
 Fairsearch | https:/fairsearch.com
-Right Dao | https://
-Wiby | https://
-Crawlson | https://
-Seekport | https://
+Right Dao | https://rightdao.com
+Wiby | https://wiby.org
+Crawlson | https://crawlson.com
+Seekport | http://seekport.com
 Baidu | https://baidu.com
 Bing | https://bing.com
 Brave | https://search.brave.com
