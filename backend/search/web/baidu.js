@@ -26,6 +26,7 @@ export default async (q, p) => {
         const title = el.querySelector("h3")?.textContent;
         const url = el.querySelector("a")?.href;
         const desc = el.querySelector(".c-abstract")?.textContent;
+        // we need to fetch the url from the results page to get the actual url
         const completeUrl = (await fetch(url, {redirect:"manual"}))?.headers?.get("Location");
         json.results.push({
             title: title,

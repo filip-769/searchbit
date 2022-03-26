@@ -27,5 +27,6 @@
         "naver": 1,
         "seekport": 1,
         "yacy": 1
-    }
+    },
+    "defaultAutocomplete": "qwant"
 }

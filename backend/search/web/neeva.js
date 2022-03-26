@@ -4,6 +4,7 @@ import randomUserAgent from "user-agents";
 
 
 export default async (q, p) => {
+    // we need to get the verification cookie to access the search results
     const cookie = 
         (
             await fetch(
@@ -14,7 +15,7 @@ export default async (q, p) => {
             )
         ).headers.get("set-cookie").split("httpd~preview=")[1].split(";")[0]
 
-        const response = await fetch(`https://neeva.com/search?q=${encodeURIComponent(q)}`, {
+    const response = await fetch(`https://neeva.com/search?q=${encodeURIComponent(q)}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
             "Accept-Language": "en, *;q=0.5",

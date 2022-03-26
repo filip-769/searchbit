@@ -84,9 +84,9 @@ export default async (engine, q, p) => {
             case "yacy":
                 return await yacy(q, p);
             default:
-                return { results: [] };
+                return;
         }
     } catch (error) {
-        return { results: [] };
+        return;
     }
 }
