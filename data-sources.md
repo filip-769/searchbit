@@ -4,33 +4,33 @@
 
 Name | Website | Pagination | Web | Autocomplete
 -----|---------|------------|-----|-------------
-Alexandria | https://alexandria.org | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Baidu | https://baidu.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Bing | https://bing.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Brave | https://search.brave.com | :white_large_square: Not supported | :white_large_square: Not supported | :white_large_square: Not supported
-Crawlson | https://crawlson.com | :white_large_square: Not supported | :white_large_square: Not supported | :white_large_square: Not supported
-Entfer | https://entfer.com | :white_large_square: Not supported | :white_large_square: Not supported | :white_large_square: Not supported
-Exactseek | https://exactseek.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Exalead | https://exalead.com/search/ | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Fairsearch | https://fairsearch.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Gigablast | https://gigablast.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Google | https://google.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Infotiger | https://infotiger.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Mojeek | https://mojeek.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Naver | https://naver.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Neeva | https://neeva.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Petal | https://petalsearch.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Qwant | https://qwant.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Right Dao | https://rightdao.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Seekport | http://seekport.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Seznam | https://search.seznam.cz | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Teclis | https://teclis.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Usearch | https://usearch.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Wiby | https://wiby.org | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Yacy | https://yacy.searchlab.eu | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Yandex | https://yandex.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
-Yessle | https://yessle.com | :white_large_square: Not supported | :white_large_square: Not supported | :white_large_square: Not supported
-Yioop | https://yioop.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Alexandria | https://alexandria.org | &check; Supported | &cross; Not supported | &cross; Not supported
+Baidu | https://baidu.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Bing | https://bing.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Brave | https://search.brave.com | &cross; Not supported | &cross; Not supported | &cross; Not supported
+Crawlson | https://crawlson.com | &cross; Not supported | &cross; Not supported | &cross; Not supported
+Entfer | https://entfer.com | &cross; Not supported | &cross; Not supported | &cross; Not supported
+Exactseek | https://exactseek.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Exalead | https://exalead.com/search/ | &check; Supported | &cross; Not supported | &cross; Not supported
+Fairsearch | https://fairsearch.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Gigablast | https://gigablast.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Google | https://google.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Infotiger | https://infotiger.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Mojeek | https://mojeek.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Naver | https://naver.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Neeva | https://neeva.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Petal | https://petalsearch.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Qwant | https://qwant.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Right Dao | https://rightdao.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Seekport | http://seekport.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Seznam | https://search.seznam.cz | &check; Supported | &cross; Not supported | &cross; Not supported
+Teclis | https://teclis.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Usearch | https://usearch.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Wiby | https://wiby.org | &check; Supported | &cross; Not supported | &cross; Not supported
+Yacy | https://yacy.searchlab.eu | &check; Supported | &cross; Not supported | &cross; Not supported
+Yandex | https://yandex.com | &check; Supported | &cross; Not supported | &cross; Not supported
+Yessle | https://yessle.com | &cross; Not supported | &cross; Not supported | &cross; Not supported
+Yioop | https://yioop.com | &check; Supported | &cross; Not supported | &cross; Not supported
 
 ## Instant answers
 
