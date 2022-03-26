@@ -32,6 +32,9 @@ Yandex | https://yandex.com | &check; | &check; | &check; | &cross;
 Yessle | https://yessle.com | &cross; | &check; | &cross; | &cross;
 Yioop | https://yioop.com | &check; | &check; | &cross; | &cross;
 
+Notes:
+- Google image search pagination is not working correctly
+
 ## Instant answers
 
 Used for | Website | Rate limiting
