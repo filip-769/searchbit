@@ -2,35 +2,35 @@
 
 ## Search engines
 
-Name | Website | Web
+Name | Website | Pagination | Web | Autocomplete
  --- | --- | ---
-Alexandria | https://alexandria.org | yes
-Baidu | https://baidu.com | yes
-Bing | https://bing.com | yes
-Brave | https://search.brave.com | yes
-Crawlson | https://crawlson.com | yes
-Entfer | https://entfer.com | yes
-Exactseek | https://exactseek.com | yes
-Exalead | https://exalead.com/search/ | yes
-Fairsearch | https://fairsearch.com | yes
-Gigablast | https://gigablast.com | yes
-Google | https://google.com | yes
-Infotiger | https://infotiger.com | yes
-Mojeek | https://mojeek.com | yes
-Naver | https://naver.com | yes
-Neeva | https://neeva.com | yes
-Petal | https://petalsearch.com | yes
-Qwant | https://qwant.com | yes
-Right Dao | https://rightdao.com | yes
-Seekport | http://seekport.com | yes
-Seznam | https://search.seznam.cz | yes
-Teclis | https://teclis.com | yes
-Usearch | https://usearch.com | yes
-Wiby | https://wiby.org | yes
-Yacy | https://yacy.searchlab.eu | yes
-Yandex | https://yandex.com | yes
-Yessle | https://yessle.com | yes
-Yioop | https://yioop.com | yes
+Alexandria | https://alexandria.org | [x] | [] | []
+Baidu | https://baidu.com | [x] | [] | []
+Bing | https://bing.com | [x] | [] | []
+Brave | https://search.brave.com | [] | [] | []
+Crawlson | https://crawlson.com | [] | [] | []
+Entfer | https://entfer.com | [] | [] | []
+Exactseek | https://exactseek.com | [x] | [] | []
+Exalead | https://exalead.com/search/ | [x] | [] | []
+Fairsearch | https://fairsearch.com | [x] | [] | []
+Gigablast | https://gigablast.com | [x] | [] | []
+Google | https://google.com | [x] | [] | []
+Infotiger | https://infotiger.com | [x] | [] | []
+Mojeek | https://mojeek.com | [x] | [] | []
+Naver | https://naver.com | [x] | [] | []
+Neeva | https://neeva.com | [x] | [] | []
+Petal | https://petalsearch.com | [x] | [] | []
+Qwant | https://qwant.com | [x] | [] | []
+Right Dao | https://rightdao.com | [x] | [] | []
+Seekport | http://seekport.com | [x] | [] | []
+Seznam | https://search.seznam.cz | [x] | [] | []
+Teclis | https://teclis.com | [x] | [] | []
+Usearch | https://usearch.com | [x] | [] | []
+Wiby | https://wiby.org | [x] | [] | []
+Yacy | https://yacy.searchlab.eu | [x] | [] | []
+Yandex | https://yandex.com | [x] | [] | []
+Yessle | https://yessle.com | [] | [] | []
+Yioop | https://yioop.com | [x] | [] | []
 
 ## Instant answers
 
