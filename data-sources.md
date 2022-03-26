@@ -3,7 +3,7 @@
 ## Search engines
 
 Name | Website | Pagination | Web | Autocomplete
- --- | --- | ---
+ --- | --- | --- | --- | ---
 Alexandria | https://alexandria.org | yes | no | no
 Baidu | https://baidu.com | yes | no | no
 Bing | https://bing.com | yes | no | no
