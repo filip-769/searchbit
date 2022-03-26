@@ -3,7 +3,7 @@
 ## Search engines
 
 Name | Website | Pagination | Web | Autocomplete
------|---------|:----------:|:---:|:-----------:
+-----|---------|------------|-----|-------------
 Alexandria | https://alexandria.org | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
 Baidu | https://baidu.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
 Bing | https://bing.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
