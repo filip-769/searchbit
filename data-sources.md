@@ -4,33 +4,33 @@
 
 Name | Website | Pagination | Web | Autocomplete
 -----|---------|:----------:|:---:|:-----------:
-Alexandria | https://alexandria.org | yes | no | no
-Baidu | https://baidu.com | yes | no | no
-Bing | https://bing.com | yes | no | no
-Brave | https://search.brave.com | no | no | no
-Crawlson | https://crawlson.com | no | no | no
-Entfer | https://entfer.com | no | no | no
-Exactseek | https://exactseek.com | yes | no | no
-Exalead | https://exalead.com/search/ | yes | no | no
-Fairsearch | https://fairsearch.com | yes | no | no
-Gigablast | https://gigablast.com | yes | no | no
-Google | https://google.com | yes | no | no
-Infotiger | https://infotiger.com | yes | no | no
-Mojeek | https://mojeek.com | yes | no | no
-Naver | https://naver.com | yes | no | no
-Neeva | https://neeva.com | yes | no | no
-Petal | https://petalsearch.com | yes | no | no
-Qwant | https://qwant.com | yes | no | no
-Right Dao | https://rightdao.com | yes | no | no
-Seekport | http://seekport.com | yes | no | no
-Seznam | https://search.seznam.cz | yes | no | no
-Teclis | https://teclis.com | yes | no | no
-Usearch | https://usearch.com | yes | no | no
-Wiby | https://wiby.org | yes | no | no
-Yacy | https://yacy.searchlab.eu | yes | no | no
-Yandex | https://yandex.com | yes | no | no
-Yessle | https://yessle.com | no | no | no
-Yioop | https://yioop.com | yes | no | no
+Alexandria | https://alexandria.org | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Baidu | https://baidu.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Bing | https://bing.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Brave | https://search.brave.com | :white_large_square: Not supported | :white_large_square: Not supported | :white_large_square: Not supported
+Crawlson | https://crawlson.com | :white_large_square: Not supported | :white_large_square: Not supported | :white_large_square: Not supported
+Entfer | https://entfer.com | :white_large_square: Not supported | :white_large_square: Not supported | :white_large_square: Not supported
+Exactseek | https://exactseek.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Exalead | https://exalead.com/search/ | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Fairsearch | https://fairsearch.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Gigablast | https://gigablast.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Google | https://google.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Infotiger | https://infotiger.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Mojeek | https://mojeek.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Naver | https://naver.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Neeva | https://neeva.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Petal | https://petalsearch.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Qwant | https://qwant.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Right Dao | https://rightdao.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Seekport | http://seekport.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Seznam | https://search.seznam.cz | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Teclis | https://teclis.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Usearch | https://usearch.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Wiby | https://wiby.org | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Yacy | https://yacy.searchlab.eu | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Yandex | https://yandex.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
+Yessle | https://yessle.com | :white_large_square: Not supported | :white_large_square: Not supported | :white_large_square: Not supported
+Yioop | https://yioop.com | :white_check_mark: Supported | :white_large_square: Not supported | :white_large_square: Not supported
 
 ## Instant answers
 
