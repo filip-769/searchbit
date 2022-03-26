@@ -4,33 +4,33 @@
 
 Name | Website | Pagination | Web | Autocomplete
 -----|---------|------------|-----|-------------
-Alexandria | https://alexandria.org | yes | no | no
-Baidu | https://baidu.com | yes | no | no
-Bing | https://bing.com | yes | no | no
-Brave | https://search.brave.com | no | no | no
-Crawlson | https://crawlson.com | no | no | no
-Entfer | https://entfer.com | no | no | no
-Exactseek | https://exactseek.com | yes | no | no
-Exalead | https://exalead.com/search/ | yes | no | no
-Fairsearch | https://fairsearch.com | yes | no | no
-Gigablast | https://gigablast.com | yes | no | no
-Google | https://google.com | yes | no | no
-Infotiger | https://infotiger.com | yes | no | no
-Mojeek | https://mojeek.com | yes | no | no
-Naver | https://naver.com | yes | no | no
-Neeva | https://neeva.com | yes | no | no
-Petal | https://petalsearch.com | yes | no | no
-Qwant | https://qwant.com | yes | no | no
-Right Dao | https://rightdao.com | yes | no | no
-Seekport | http://seekport.com | yes | no | no
-Seznam | https://search.seznam.cz | yes | no | no
-Teclis | https://teclis.com | yes | no | no
-Usearch | https://usearch.com | yes | no | no
-Wiby | https://wiby.org | yes | no | no
-Yacy | https://yacy.searchlab.eu | yes | no | no
-Yandex | https://yandex.com | yes | no | no
-Yessle | https://yessle.com | no | no | no
-Yioop | https://yioop.com | yes | no | no
+Alexandria | https://alexandria.org | [x] | [] | []
+Baidu | https://baidu.com | [x] | [] | []
+Bing | https://bing.com | [x] | [] | []
+Brave | https://search.brave.com | [] | [] | []
+Crawlson | https://crawlson.com | [] | [] | []
+Entfer | https://entfer.com | [] | [] | []
+Exactseek | https://exactseek.com | [x] | [] | []
+Exalead | https://exalead.com/search/ | [x] | [] | []
+Fairsearch | https://fairsearch.com | [x] | [] | []
+Gigablast | https://gigablast.com | [x] | [] | []
+Google | https://google.com | [x] | [] | []
+Infotiger | https://infotiger.com | [x] | [] | []
+Mojeek | https://mojeek.com | [x] | [] | []
+Naver | https://naver.com | [x] | [] | []
+Neeva | https://neeva.com | [x] | [] | []
+Petal | https://petalsearch.com | [x] | [] | []
+Qwant | https://qwant.com | [x] | [] | []
+Right Dao | https://rightdao.com | [x] | [] | []
+Seekport | http://seekport.com | [x] | [] | []
+Seznam | https://search.seznam.cz | [x] | [] | []
+Teclis | https://teclis.com | [x] | [] | []
+Usearch | https://usearch.com | [x] | [] | []
+Wiby | https://wiby.org | [x] | [] | []
+Yacy | https://yacy.searchlab.eu | [x] | [] | []
+Yandex | https://yandex.com | [x] | [] | []
+[x]sle | https://[x]sle.com | [] | [] | []
+Yioop | https://yioop.com | [x] | [] | []
 
 ## Instant answers
 
