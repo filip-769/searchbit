@@ -4,33 +4,33 @@
 
 Name | Website | Pagination | Web | Autocomplete
 -----|---------|:----------:|:---:|:-----------:
-Alexandria | https://alexandria.org | &check; | &cross; | &cross;
-Baidu | https://baidu.com | &check; | &cross; | &cross;
-Bing | https://bing.com | &check; | &cross; | &cross;
-Brave | https://search.brave.com | &cross; | &cross; | &cross;
-Crawlson | https://crawlson.com | &cross; | &cross; | &cross;
-Entfer | https://entfer.com | &cross; | &cross; | &cross;
-Exactseek | https://exactseek.com | &check; | &cross; | &cross;
-Exalead | https://exalead.com/search/ | &check; | &cross; | &cross;
-Fairsearch | https://fairsearch.com | &check; | &cross; | &cross;
-Gigablast | https://gigablast.com | &check; | &cross; | &cross;
-Google | https://google.com | &check; | &cross; | &cross;
-Infotiger | https://infotiger.com | &check; | &cross; | &cross;
-Mojeek | https://mojeek.com | &check; | &cross; | &cross;
-Naver | https://naver.com | &check; | &cross; | &cross;
-Neeva | https://neeva.com | &check; | &cross; | &cross;
-Petal | https://petalsearch.com | &check; | &cross; | &cross;
-Qwant | https://qwant.com | &check; | &cross; | &cross;
-Right Dao | https://rightdao.com | &check; | &cross; | &cross;
-Seekport | http://seekport.com | &check; | &cross; | &cross;
-Seznam | https://search.seznam.cz | &check; | &cross; | &cross;
-Teclis | https://teclis.com | &check; | &cross; | &cross;
-Usearch | https://usearch.com | &check; | &cross; | &cross;
-Wiby | https://wiby.org | &check; | &cross; | &cross;
-Yacy | https://yacy.searchlab.eu | &check; | &cross; | &cross;
-Yandex | https://yandex.com | &check; | &cross; | &cross;
-Yessle | https://yessle.com | &cross; | &cross; | &cross;
-Yioop | https://yioop.com | &check; | &cross; | &cross;
+Alexandria | https://alexandria.org | &check; | &check; | &cross;
+Baidu | https://baidu.com | &check; | &check; | &cross;
+Bing | https://bing.com | &check; | &check; | &cross;
+Brave | https://search.brave.com | &cross; | &check; | &cross;
+Crawlson | https://crawlson.com | &cross; | &check; | &cross;
+Entfer | https://entfer.com | &cross; | &check; | &cross;
+Exactseek | https://exactseek.com | &check; | &check; | &cross;
+Exalead | https://exalead.com/search/ | &check; | &check; | &cross;
+Fairsearch | https://fairsearch.com | &check; | &check; | &cross;
+Gigablast | https://gigablast.com | &check; | &check; | &cross;
+Google | https://google.com | &check; | &check; | &cross;
+Infotiger | https://infotiger.com | &check; | &check; | &cross;
+Mojeek | https://mojeek.com | &check; | &check; | &cross;
+Naver | https://naver.com | &check; | &check; | &cross;
+Neeva | https://neeva.com | &check; | &check; | &cross;
+Petal | https://petalsearch.com | &check; | &check; | &cross;
+Qwant | https://qwant.com | &check; | &check; | &cross;
+Right Dao | https://rightdao.com | &check; | &check; | &cross;
+Seekport | http://seekport.com | &check; | &check; | &cross;
+Seznam | https://search.seznam.cz | &check; | &check; | &cross;
+Teclis | https://teclis.com | &check; | &check; | &cross;
+Usearch | https://usearch.com | &check; | &check; | &cross;
+Wiby | https://wiby.org | &check; | &check; | &cross;
+Yacy | https://yacy.searchlab.eu | &check; | &check; | &cross;
+Yandex | https://yandex.com | &check; | &check; | &cross;
+Yessle | https://yessle.com | &cross; | &check; | &cross;
+Yioop | https://yioop.com | &check; | &check; | &cross;
 
 ## Instant answers
 
