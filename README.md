@@ -16,7 +16,8 @@ You need nodejs to run Searchbit.
 To solve this, you can do 2 things:
 1) Decrease the default wait delay in config.json
 2) Turn off slow engines (usually baidu and yacy) in config.json
-This can also be because of slow internet.
+
+This can also be caused by slow internet connection.
 
 ## Captcha
 This can be solved by using proxies.
