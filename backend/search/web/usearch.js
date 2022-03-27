@@ -3,7 +3,7 @@ import randomUserAgent from "user-agents";
 
 
 export default async (q, p) => {
-    const response = await fetch(`https://usearch.com/api/Search/GetWebSearch?q=${encodeURIComponent(q)}&pageSize=10`, {
+    const response = await fetch(`https://usearch.com/api/Search/GetWebSearch?q=${encodeURIComponent(q)}&pageSize=10&pageNumber=${p}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
             "Accept-Language": "en, *;q=0.5"

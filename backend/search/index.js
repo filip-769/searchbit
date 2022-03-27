@@ -1,13 +1,14 @@
 import { readFileSync } from "fs";
 import { cwd } from "process";
 import searchWeb from "./web/index.js";
+import searchImage from "./image/index.js";
 
 // read the config file
 const config = JSON.parse(readFileSync(cwd()+"/config.json"));
 
 export default async (e, q, p, t) => {
-    const engineWeight = config.engineWeight;
-    const engines = Object.keys(config.engineWeight);
+    const engines = config.supported[t??"web"];
+    const engineWeight = config.weight[t??"web"];
     // only keep engines that exist
     const requestEngines = (e || engines).filter(x => engines.includes(x));
     const engineData = {};
@@ -17,23 +18,28 @@ export default async (e, q, p, t) => {
 
     requestEngines.forEach(async engine => {
         // query each engine and store the results
-        const data = await searchWeb(engine, q, p);
+        let data;
+        if(t === "image") {
+            data = await searchImage(engine, q, (p || 1));
+        } else {
+            data = await searchWeb(engine, q, (p || 1));
+        }
         engineData[engine] = data;
     })
 
     // Wait for all engines to finish
-    await delay(1.5);
+    await delay(50);
 
     for(const engine in engineData) {
-        engineErrors[engine] = engineData[engine].error;
+        engineErrors[engine] = engineData[engine]?.error;
         engineData[engine]?.results?.forEach(result => {
             try {
                 // change http protocol to https
                 result.url = result.url.replace("http://", "https://");
                 // remove whitespaces from title
-                result.title = result.title.trim().replace(/\s\s+/g, " ");
+                result.title = result.title?.trim()?.replace(/\s\s+/g, " ");
                 // remove whitespaces from description and replace three dots with three dots character
-                result.desc = result.desc.trim().replaceAll("...","…").replace(/\s\s+/g, " ");
+                result.desc = result.desc?.trim()?.replaceAll("...","…")?.replace(/\s\s+/g, " ");
                 // remove www from url
                 result.xurl = new URL(result.url.replace("://www.", "://")).href;
             } catch (error) {
@@ -45,9 +51,9 @@ export default async (e, q, p, t) => {
                 allResults[result.xurl] = result;
             } else {
                 // if this is the longest description, set it as description
-                if(result.desc.length > allResults[result.xurl].desc.length) allResults[result.xurl].desc = result.desc;
+                if(result.desc?.length > allResults[result.xurl].desc?.length) allResults[result.xurl].desc = result.desc;
                 // if this is the longest title, set it as title
-                if(result.title.length > allResults[result.xurl].title.length) allResults[result.xurl].title = result.title;
+                if(result.title?.length > allResults[result.xurl].title?.length) allResults[result.xurl].title = result.title;
                 // add this engine to the list of engines
                 allResults[result.xurl].engines.push(engine);
             }

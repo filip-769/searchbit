@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 import randomUserAgent from "user-agents";
 
 
-export default async (q, p) => {
+export default async (q) => {
     const response = await fetch(`https://entfer.com/search?q=${encodeURIComponent(q)}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),

@@ -4,7 +4,7 @@ import randomUserAgent from "user-agents";
 
 
 export default async (q, p) => {
-    const response = await fetch(`https://yandex.com/search/?text=${encodeURIComponent(q)}&p=${p-1}`, {
+    const response = await fetch(`https://yandex.com/images/search?text=${encodeURIComponent(q)}&p=${p-1}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
             "Accept-Language": "en, *;q=0.5"
@@ -19,14 +19,14 @@ export default async (q, p) => {
         )
     };
 
-    dom.window.document.querySelectorAll(".serp-item:not([data-fast-name])").forEach(el => {
-        const title = el.querySelector("a h2")?.textContent;
-        const url = el.querySelector("a")?.href;
-        const desc = el.querySelector(".OrganicTextContentSpan")?.textContent;
+    dom.window.document.querySelectorAll(".serp-item[data-bem]").forEach(el => {
+        const desc = JSON.parse(el.getAttribute("data-bem"))["serp-item"].snippet.title;
+        const url = JSON.parse(el.getAttribute("data-bem"))["serp-item"].snippet.url;
+        const img = "https://" + JSON.parse(el.getAttribute("data-bem"))["serp-item"].thumb.url.slice(2);
         json.results.push({
-            title: title,
             url: url,
-            desc: desc
+            desc: desc,
+            img: img
         });
     });
 

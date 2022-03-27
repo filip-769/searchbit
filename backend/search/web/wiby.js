@@ -3,7 +3,7 @@ import randomUserAgent from "user-agents";
 
 
 export default async (q, p) => {
-    const response = await fetch(`https://wiby.org/json/?q=${encodeURIComponent(q)}`, {
+    const response = await fetch(`https://wiby.org/json/?q=${encodeURIComponent(q)}&o=${(p-1)*12}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
             "Accept-Language": "en, *;q=0.5"

@@ -3,7 +3,7 @@ import randomUserAgent from "user-agents";
 
 
 export default async (q, p) => {
-    const response = await fetch(`https://api.qwant.com/v3/search/web?q=${encodeURIComponent(q)}&locale=en_GB`, {
+    const response = await fetch(`https://api.qwant.com/v3/search/web?q=${encodeURIComponent(q)}&locale=en_GB&offset=${(p-1)*10}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
             "Accept-Language": "en, *;q=0.5"

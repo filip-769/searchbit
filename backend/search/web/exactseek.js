@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 import randomUserAgent from "user-agents";
 
 export default async (q, p) => {
-    const response = await fetch(`https://www.exactseek.com/cgi-bin/search.cgi?q=${encodeURIComponent(q)}`, {
+    const response = await fetch(`https://www.exactseek.com/cgi-bin/search.cgi?q=${encodeURIComponent(q)}&s=${(p - 1) * 10 + 1}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
             "Accept-Language": "en, *;q=0.5"

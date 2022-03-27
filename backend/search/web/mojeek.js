@@ -4,7 +4,7 @@ import randomUserAgent from "user-agents";
 
 
 export default async (q, p) => {
-    const response = await fetch(`https://www.mojeek.com/search?q=${encodeURIComponent(q)}`, {
+    const response = await fetch(`https://www.mojeek.com/search?q=${encodeURIComponent(q)}&s=${p === 1 ? 0 : ((p-1)*40+1)}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
             "Accept-Language": "en, *;q=0.5"

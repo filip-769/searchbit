@@ -9,7 +9,7 @@ async function asyncForEach(array, callback) {
 }
 
 export default async (q, p) => {
-    const response = await fetch(`http://www.baidu.com/s?wd=${encodeURIComponent(q)}`, {
+    const response = await fetch(`http://www.baidu.com/s?wd=${encodeURIComponent(q)}&pn=${10*(p-1)}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
             "Accept-Language": "en, *;q=0.5"

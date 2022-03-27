@@ -4,7 +4,7 @@ import randomUserAgent from "user-agents";
 
 
 export default async (q, p) => {
-    const response = await fetch(`https://gigablast.com/search?q=${encodeURIComponent(q)}&format=json&fromjs=1&s=${(p-1)*25}`, {
+    const response = await fetch(`https://gigablast.com/search?q=${encodeURIComponent(q)}&searchtype=images&format=json&fromjs=1&s=${(p-1)*30}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
             "Accept-Language": "en, *;q=0.5"
@@ -30,9 +30,9 @@ export default async (q, p) => {
 
     data2?.results?.forEach(result => {
         json.results.push({
-            title: result?.title,
+            desc: result?.title,
             url: result?.url,
-            desc: result?.sum
+            img: result?.imageUrl
         })
     })
     return json;

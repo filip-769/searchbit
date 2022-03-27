@@ -4,7 +4,7 @@ import randomUserAgent from "user-agents";
 
 
 export default async (q, p) => {
-    const response = await fetch(`https://search.naver.com/search.naver?query=${encodeURIComponent(q)}&where=web`, {
+    const response = await fetch(`https://search.naver.com/search.naver?query=${encodeURIComponent(q)}&start=${(p-1)*15+1}&where=web`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
             "Accept-Language": "en, *;q=0.5"

@@ -3,7 +3,7 @@ import randomUserAgent from "user-agents";
 
 
 export default async (q, p) => {
-    const response = await fetch(`https://api.alexandria.org/?q=${encodeURIComponent(q)}`, {
+    const response = await fetch(`https://api.alexandria.org/?q=${encodeURIComponent(q)}&p=${p}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
             "Accept-Language": "en, *;q=0.5"

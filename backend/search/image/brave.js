@@ -1,12 +1,12 @@
 import fetch from "node-fetch";
 import randomUserAgent from "user-agents";
 
-
 export default async (q) => {
-    const response = await fetch(`https://s1.crawlson.com/worker_search.php?q=${encodeURIComponent(q)}`, {
+    const response = await fetch(`https://search.brave.com/api/images?q=${encodeURIComponent(q)}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
-            "Accept-Language": "en, *;q=0.5"
+            "Accept-Language": "en, *;q=0.5",
+            "Accept": "*/*"
         }
     })
     const data = await response.json();
@@ -16,12 +16,12 @@ export default async (q) => {
         error: null
     };
 
-    data?.forEach(result => {
+    data.results.forEach(result => {
         json.results.push({
-            title: result?.title,
-            url: "https://" + result?.url,
-            desc: result?.description
-        })
-    })
+            url: result.url,
+            desc: result.title,
+            img: result.thumbnail.src
+        });
+    });
     return json;
 }

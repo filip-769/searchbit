@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 import randomUserAgent from "user-agents";
 
 
-export default async q => {
+export default async (q) => {
     const response = await fetch(`https://search.brave.com/search?q=${encodeURIComponent(q)}`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
