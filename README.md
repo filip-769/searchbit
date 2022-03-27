@@ -15,7 +15,7 @@ You need nodejs to run Searchbit.
 ## Search takes too long to complete
 To solve this, you can do 2 things:
 1) Decrease the default wait delay in config.json
-2) Turn off slow engines (usually baidu and yacy) in config.json
+2) Turn off slow engines (usually Baidu and Yacy) in config.json
 
 This can also be caused by slow internet connection.
 
