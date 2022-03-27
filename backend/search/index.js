@@ -28,7 +28,15 @@ export default async (e, q, p, t) => {
     })
 
     // Wait for all engines to finish
-    await delay(50);
+    const delay = config.defaultDelay;
+    await new Promise(resolve => {
+        setTimeout(resolve, delay);
+        setInterval(() => {
+            if(Object.keys(engineData).length === requestEngines.length) {
+                resolve();
+            }
+        }, 50)
+    })
 
     for(const engine in engineData) {
         engineErrors[engine] = engineData[engine]?.error;
@@ -91,10 +99,4 @@ export default async (e, q, p, t) => {
         errors: engineErrors,
         results: allResultsArray
     }
-}
-
-function delay(x) {
-    return new Promise(resolve => {
-      setTimeout(() => resolve(2), x*1000);
-    })
 }

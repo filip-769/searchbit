@@ -102,5 +102,6 @@
             "yandex": 1
         }
     },
-    "defaultAutocomplete": "qwant"
+    "defaultAutocomplete": "qwant",
+    "defaultDelay": 15000
 }

@@ -11,9 +11,15 @@ export default async (e, q, p, t) => {
     if(t === "autocomplete") {
         return await searchAutocomplete((e[0]??config.defaultAutocomplete), q);
     }
-    return {
-        instantAnswers: await instantAnswers(q),
-        searchResults: await search(e, q, p, t)
+    if(t === "web" || !t) {
+        return {
+            instantAnswers: await instantAnswers(q),
+            searchResults: await search(e, q, p, t)
+        }
+    } else {
+        return {
+            searchResults: await search(e, q, p, t)
+        }
     }
 }
 
