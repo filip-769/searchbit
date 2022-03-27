@@ -33,7 +33,7 @@ Yessle | https://yessle.com | &cross; | &check; | &cross; | &cross;
 Yioop | https://yioop.com | &check; | &check; | &cross; | &cross;
 
 Notes:
-- Neeva, Qwant and Mojeek image search was excluding, because it looks like they only get them from Bing.
+- Neeva, Qwant and Mojeek image search was excluded, because it looks like they only get images from Bing.
 
 ## Instant answers
 
