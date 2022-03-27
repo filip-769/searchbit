@@ -33,7 +33,7 @@ Yessle | https://yessle.com | &cross; | &check; | &cross; | &cross;
 Yioop | https://yioop.com | &check; | &check; | &cross; | &cross;
 
 Notes:
-- Google image search pagination is not working correctly
+- Neeva, Qwant and Mojeek image search was excluding, because it looks like they only get them from Bing.
 
 ## Instant answers
 
