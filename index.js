@@ -1,6 +1,11 @@
+import { readFileSync } from "fs";
+import { cwd } from "process";
 import express from "express";
 import search from "./backend/index.js";
 const app = express();
+
+// read the config file
+const config = JSON.parse(readFileSync(cwd()+"/config.json"));
 
 app.set("view engine", "ejs");
 app.use(express.static("./static/"));
@@ -27,6 +32,6 @@ app.get("/search", async (req, res) => {
     }
 });
 
-app.listen(8080, () => {
-    console.log("Server is listening on port 8080");
+app.listen(config.port, () => {
+    console.log(`Server is listening on port ${config.port}`);
 });
