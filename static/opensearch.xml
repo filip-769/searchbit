@@ -1,0 +1,9 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <Image>/favicon.ico</Image>
+    <InputEncoding>UTF-8</InputEncoding>
+    <ShortName>Searchbit</ShortName>
+    <LongName>Searchbit</LongName>
+    <Description>Searchbit opensearch.xml with Google autocomplete</Description>
+    <Url rel="results" type="text/html" method="get" template="/search?q={searchTerms}"/>
+    <Url rel="suggestions" type="application/x-suggestions+json" template="/search?q={searchTerms}&amp;f=json&amp;t=autocomplete&amp;e=google"/>
+</OpenSearchDescription>

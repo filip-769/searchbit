@@ -12,8 +12,7 @@ export default async (q, p) => {
     const data = await response.json();
 
     let json = {
-        results: [],
-        error: null
+        results: []
     };
 
     data.images.forEach(result => {

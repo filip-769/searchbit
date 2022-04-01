@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+    color: #f5f5f5;
+}
+
+body {
+    background-color: #181a1b;
+    padding: 3rem;
+}
+
+main {
+    display: flex;
+    padding-top: 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: initial;
+}
+
+#searchBar > * {
+    all: unset;
+}
+
+#searchBar {
+    border-radius: 0.25rem;
+    border: 1px solid #252627;
+    display: flex;
+    width: max-content;
+}
+
+#searchBar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchBar svg {
+    width: 2.25rem;
+    height: 2.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+#searchBar input {
+    width: 500px;
+    padding: 0.15rem;
+}
+
+.webResults {
+    max-width: 50vw;
+}
+
+.webResult {
+    margin-bottom: 2rem;
+}
+
+.ResultEngines span {
+    background-color: #252627;
+    padding: 0.1rem;
+    border-radius: 0.25rem;
+    text-transform: capitalize;
+}
+
+.ResultEngines {
+    margin-bottom: 0.15rem;
+    font-size: 0.65rem;
+}
+
+.webResultFormattedUrl {
+    color: #999;
+    font-size: 0.75rem;
+}
+
+.webResultTitle {
+    color: #0087b4;
+}
+
+.webResultTitle:hover {
+    text-decoration: underline;
+}
+
+aside {
+    margin-right: 1.75rem;
+    margin-left: auto;
+    max-width: 35vw;
+}
+
+aside > div {
+    border: 1px solid #252627;
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-top: 1rem;
+}
+
+nav ul li {
+    margin-right: 1rem;
+}
+
+nav ul li[data-current] {
+    border-bottom: 0.2rem solid #0046af;
+}
+
+.imageResults {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.imageResult {
+    width: 16vw;
+    margin: 0.25rem;
+}
+
+.imageResult img {
+    width: 16vw;
+    height: 9vw;
+    border-radius: 0.25rem;
+}
+
+.imageResult h2 {
+    font-size: 0.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.2rem;
+}
+
+
+.infoboxIa img {
+    border-radius: 0.25rem;
+    width: 100%;
+}
+
+.infoboxIaSourceUrl {
+    color: #0087b4;
+}
+
+
+.weatherIa h2 {
+    margin-bottom: 0.3rem;
+}
+
+
+.weatherIaDay {
+    display: flex;
+    margin-bottom: 0.125rem;
+}
+
+.weatherIaIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+}

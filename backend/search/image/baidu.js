@@ -12,8 +12,7 @@ export default async (q, p) => {
     const data = JSON.parse((await response.text()).replaceAll("\\'", "'"));
 
     let json = {
-        results: [],
-        error: null
+        results: []
     };
 
     data.data.forEach(result => {

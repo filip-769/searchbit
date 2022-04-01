@@ -40,6 +40,9 @@ export default async q => {
         return false;
     }
 
+    const toAmout = Math.round((+json?.data?.rates[to] * amout) * 100) / 100;
+    if(isNaN(toAmout)) return;
+
     return {
         from: {
             currency: from,
@@ -47,7 +50,7 @@ export default async q => {
         },
         to: {
             currency: to,
-            amout: +json?.data?.rates[to] * amout
+            amout: toAmout
         }
     }
 }

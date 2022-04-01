@@ -24,8 +24,7 @@ export default async (q, p) => {
     });
     const data2 = await response2.json();
     let json = {
-        results: [],
-        error: null
+        results: []
     };
 
     data2?.results?.forEach(result => {

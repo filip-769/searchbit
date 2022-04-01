@@ -14,8 +14,7 @@ export default async (q, p) => {
     const dom = new jsdom.JSDOM(data);
 
     let json = {
-        results: [],
-        error: null
+        results: []
     };
 
     dom.window.document.querySelectorAll(".Images-grid-image").forEach(el => {

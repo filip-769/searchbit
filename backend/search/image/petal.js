@@ -14,8 +14,7 @@ export default async (q, p) => {
     const dom = new jsdom.JSDOM(data);
 
     let json = {
-        results: [],
-        error: null
+        results: []
     };
     const petalJson = JSON.parse(dom.window.document.querySelector("script#common").textContent.replace("<div></div>", ""));
 

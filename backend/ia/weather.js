@@ -1,37 +1,42 @@
 import fetch from "node-fetch";
+import { readFileSync } from "fs";
+import { cwd } from "process";
+
+const config = JSON.parse(readFileSync(cwd()+"/config.json"));
 
 export default async q => {
     let json;
     try {
-        const response = await fetch(`https://weatherdbi.herokuapp.com/data/weather/${encodeURIComponent(q.replace("weather",""))}`);
-        json = await response.json();
+        const goeResponse = await fetch(`https://www.metaweather.com/api/location/search/?query=${encodeURIComponent(q.replace("weather", "").replace(" in ", "").trim())}`);
+        const geoJson = await goeResponse.json();
+
+        const weatherResponse = await fetch(`https://www.metaweather.com/api/location/${geoJson[0].woeid}/`);
+        json = await weatherResponse.json();
     } catch (error) {
         return false;
     }
 
-    if(json?.status === "fail") return false;
-
     let data = {
-        region: json?.region,
-        current: {
-            temp: json?.currentConditions?.temp?.c,
-            precipitation: parseInt(json?.currentConditions?.precip),
-            humidity: parseInt(json?.currentConditions?.humidity),
-            description: json?.currentConditions?.comment,
-            icon: json?.currentConditions?.iconURL.replace("/64/", "/128/")
-        },
-        next: [ ]
+        region: json.title,
+        days: []
     };
 
-    json?.next_days?.forEach(day => {
-        data.next.push({
-            day: day?.day,
-            description: day?.comment,
-            icon: day?.iconURL.replace("/48/", "/96/"),
+    json.consolidated_weather.forEach(day => {
+        data.days.push({
+            day: new Intl.DateTimeFormat("en", { weekday: "long" }).format(new Date(day.applicable_date)),
+            desc: day.weather_state_name,
+            icon: config.imageProxyUrl + encodeURIComponent(`https://www.metaweather.com/static/img/weather/${day.weather_state_abbr}.svg`),
             temp: {
-                min: day?.min_temp?.c,
-                max: day?.max_temp?.c
-            }
+                min: Math.round(day.min_temp*100)/100,
+                max: Math.round(day.max_temp*100)/100
+            },
+            wind: {
+                speed: Math.round(day.wind_speed*100)/100,
+                direction: day.wind_direction_compass
+            },
+            humidity: Math.round(day.humidity*100)/100,
+            airPressure: Math.round(day.air_pressure*100)/100,
+            visibility: Math.round(day.visibility*100)/100
         })
     });
 

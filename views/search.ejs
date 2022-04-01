@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./search.css">
+    <title><% if(req.query.q) { %>Search results for <%= req.query.q %><% } %></title>
+</head>
+<body>
+    <header>
+        <form method="get">
+             <div id="searchBar">
+                <input type="search" name="q" value="<%= req.query.q %>">
+                <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="10" cy="10" r="7" />
+                        <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                </button>
+             </div>
+        </form>
+        <nav>
+            <% if (req.query.q) { %>
+            <ul>
+                <li <%- req.query.t !== "image" ? "data-current" : "" %>><a href="/search?q=<%= encodeURIComponent(req.query.q) %>&t=web">Web</a></li>
+                <li <%- req.query.t === "image" ? "data-current" : "" %>><a href="/search?q=<%= encodeURIComponent(req.query.q) %>&t=image">Image</a></li>
+            </ul>
+            <% } %>
+        </nav>
+    </header>
+    <main>
+        <%- 
+            req.query.q ? 
+                req.query.t === "image" ?
+                    include("imageSearch.ejs", {json}) :
+                    include("webSearch.ejs", {json})
+                :
+                ""
+        %>
+    </main>
+</body>
+</html>

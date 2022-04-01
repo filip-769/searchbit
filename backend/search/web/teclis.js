@@ -13,8 +13,7 @@ export default async (q, p) => {
     const data = await response.text();
     const dom = new jsdom.JSDOM(data);
     let json = {
-        results: [],
-        error: null
+        results: []
     };
 
     dom.window.document.querySelectorAll(".result-items > li").forEach(el => {

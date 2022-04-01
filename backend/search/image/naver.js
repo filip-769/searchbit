@@ -12,8 +12,7 @@ export default async (q, p) => {
     const data = JSON.parse((await response.text()).trim().slice(1, -1));
 
     let json = {
-        results: [],
-        error: null
+        results: []
     };
 
     data.items.forEach(result => {

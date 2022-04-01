@@ -12,11 +12,11 @@ export default async (q) => {
     const data = await response.json();
 
     let json = {
-        results: [],
-        error: null
+        results: []
     };
 
     data?.forEach(result => {
+        if(result.server === "s1.crawlson.com") return;
         json.results.push({
             title: result?.title,
             url: "https://" + result?.url,

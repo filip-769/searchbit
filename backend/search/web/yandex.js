@@ -13,10 +13,7 @@ export default async (q, p) => {
     const data = await response.text();
     const dom = new jsdom.JSDOM(data);
     let json = {
-        results: [],
-        error: (
-            new URL(response.url).pathname === "/showcaptcha" ? "captcha" : null
-        )
+        results: []
     };
 
     dom.window.document.querySelectorAll(".serp-item:not([data-fast-name])").forEach(el => {

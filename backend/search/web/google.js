@@ -14,10 +14,7 @@ export default async (q, p) => {
     const data = await response.text();
     const dom = new jsdom.JSDOM(data);
     let json = {
-        results: [],
-        error: (
-            new URL(response.url).pathname === "/sorry/index" ? "captcha" : null
-        )
+        results: []
     };
 
     dom.window.document.querySelectorAll("div.g").forEach(el => {

@@ -12,7 +12,6 @@ export default async (e, q, p, t) => {
     // only keep engines that exist
     const requestEngines = (e || engines).filter(x => engines.includes(x));
     const engineData = {};
-    const engineErrors = {};
     const allResults = {};
     const allResultsArray = [];
 
@@ -39,17 +38,19 @@ export default async (e, q, p, t) => {
     })
 
     for(const engine in engineData) {
-        engineErrors[engine] = engineData[engine]?.error;
         engineData[engine]?.results?.forEach(result => {
             try {
                 // change http protocol to https
                 result.url = result.url.replace("http://", "https://");
                 // remove whitespaces from title
-                result.title = result.title?.trim()?.replace(/\s\s+/g, " ");
+                result.title = result.title?.trim()?.replaceAll(/\.{3,}/g,"…")?.replace(/\s\s+/g, " ");
                 // remove whitespaces from description and replace three dots with three dots character
-                result.desc = result.desc?.trim()?.replaceAll("...","…")?.replace(/\s\s+/g, " ");
+                result.desc = result.desc?.trim()?.replaceAll(/\.{3,}/g,"…")?.replace(/\s\s+/g, " ");
                 // remove www from url
                 result.xurl = new URL(result.url.replace("://www.", "://")).href;
+                // create formatted url
+                result.formattedUrl = (new URL(result.url).hostname + new URL(result.url).pathname).slice(0, 75);
+                if(result.img) result.img = config.imageProxyUrl + encodeURIComponent(result.img);
             } catch (error) {
                 return;
             }
@@ -59,9 +60,9 @@ export default async (e, q, p, t) => {
                 allResults[result.xurl] = result;
             } else {
                 // if this is the longest description, set it as description
-                if(result.desc?.length > allResults[result.xurl].desc?.length) allResults[result.xurl].desc = result.desc;
+                if((result.desc?.length??0) > allResults[result.xurl].desc?.length) allResults[result.xurl].desc = result.desc;
                 // if this is the longest title, set it as title
-                if(result.title?.length > allResults[result.xurl].title?.length) allResults[result.xurl].title = result.title;
+                if((result.title?.length??0) > allResults[result.xurl].title?.length) allResults[result.xurl].title = result.title;
                 // add this engine to the list of engines
                 allResults[result.xurl].engines.push(engine);
             }
@@ -88,15 +89,7 @@ export default async (e, q, p, t) => {
     // Sort by weight
     allResultsArray.sort((a, b) => b.weight - a.weight)
 
-    // If the search engine did not respond, set the error to timeOut
-    requestEngines.forEach(engine => {
-        if(engineErrors[engine] === undefined) {
-            engineErrors[engine] = "timedOut";
-        }
-    })
-
     return {
-        errors: engineErrors,
         results: allResultsArray
     }
 }

@@ -13,10 +13,7 @@ export default async (q) => {
     const data = await response.text();
     const dom = new jsdom.JSDOM(data);
     let json = {
-        results: [],
-        error: (
-            !!dom.window.document.querySelector("script#js-captcha-challenge") ? "captcha" : null
-        )
+        results: []
     };
 
     dom.window.document.querySelectorAll("#results > .snippet.fdb").forEach(el => {
