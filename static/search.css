@@ -23,6 +23,8 @@ a {
 
 #searchBar > * {
     all: unset;
+    position: absolute;
+    right: 500px;
 }
 
 #searchBar {
@@ -38,6 +40,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 500px;
 }
 
 #searchBar svg {
@@ -45,11 +49,17 @@ a {
     height: 2.25rem;
     cursor: pointer;
     padding: 0.5rem;
+    position: absolute;
+    right: 400px;
+    top: 399px
 }
 
 #searchBar input {
     width: 500px;
     padding: 0.15rem;
+    position: absolute;
+    right: 414px;
+    top: 400px;
 }
 
 .webResults {
@@ -162,4 +172,11 @@ nav ul li[data-current] {
     width: 2.5rem;
     height: 2.5rem;
     margin-right: 0.5rem;
+}
+
+.heexytext {
+    position: absolute;
+    color: #B6B8B7;
+    top: 800px;
+    right: 893px;
 }
