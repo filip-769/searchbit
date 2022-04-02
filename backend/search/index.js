@@ -1,37 +1,30 @@
-import { readFileSync } from "fs";
-import { cwd } from "process";
 import searchWeb from "./web/index.js";
 import searchImage from "./image/index.js";
 
-// read the config file
-const config = JSON.parse(readFileSync(cwd()+"/config.json"));
-
-export default async (e, q, p, t, d) => {
-    const engines = config.supported[t??"web"];
-    const engineWeight = config.weight[t??"web"];
-    // only keep engines that exist
-    const requestEngines = (e || engines).filter(x => engines.includes(x));
+export default async (e, q, p, t, c) => {
     const engineData = {};
     const allResults = {};
     const allResultsArray = [];
 
-    requestEngines.forEach(async engine => {
+    e = e.filter(x => c.engines[t][x] && c.engines[t][x] > 0);
+
+    e.forEach(async engine => {
         // query each engine and store the results
         let data;
         if(t === "image") {
-            data = await searchImage(engine, q, (p || 1));
+            data = await searchImage(engine, q, p);
         } else {
-            data = await searchWeb(engine, q, (p || 1));
+            data = await searchWeb(engine, q, p);
         }
         engineData[engine] = data;
     })
 
     // Wait for all engines to finish
-    const delay = (d <= 60000 && d >= 1) ? d : config.defaultDelay;
+
     await new Promise(resolve => {
-        setTimeout(resolve, delay);
+        setTimeout(resolve, c.delay);
         setInterval(() => {
-            if(Object.keys(engineData).length === requestEngines.length) {
+            if(Object.keys(engineData).length === e.length) {
                 resolve();
             }
         }, 50)
@@ -71,7 +64,7 @@ export default async (e, q, p, t, d) => {
             let weight = 0;
             // add weight for each result
             allResults[result.xurl].engines.forEach(x => {
-                weight += engineWeight[x];
+                weight += c.engines[t][x];
             })
             // set weight
             allResults[result.xurl].weight = weight;

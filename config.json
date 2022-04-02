@@ -1,63 +1,5 @@
 {
-    "supported": {
-        "web": [
-            "alexandria",
-            "baidu",
-            "bing",
-            "brave",
-            "crawlson",
-            "entfer",
-            "exactseek",
-            "exalead",
-            "fairsearch",
-            "gigablast",
-            "google",
-            "infotiger",
-            "mojeek",
-            "naver",
-            "neeva",
-            "petal",
-            "qwant",
-            "rightdao",
-            "seekport",
-            "seznam",
-            "teclis",
-            "usearch",
-            "wiby",
-            "yacy",
-            "yandex",
-            "yessle",
-            "yioop"
-        ],
-        "autocomplete": [
-            "bing",
-            "brave",
-            "exalead",
-            "fairsearch",
-            "google",
-            "naver",
-            "neeva",
-            "qwant",
-            "seznam",
-            "usearch",
-            "yacy",
-            "yandex"
-        ],
-        "image": [
-            "baidu",
-            "bing",
-            "brave",
-            "gigablast",
-            "google",
-            "naver",
-            "petal",
-            "seznam",
-            "usearch",
-            "yacy",
-            "yandex"
-        ]
-    },
-    "weight": {
+    "engines": {
         "web": {
             "alexandria": 1,
             "entfer": 1,
@@ -102,8 +44,8 @@
             "yandex": 1
         }
     },
-    "defaultAutocomplete": "qwant",
-    "defaultDelay": 1500,
+    "autocomplete": "google",
+    "delay": 1500,
     "imageProxyUrl": "https://external-content.duckduckgo.com/iu/?u=",
     "port": 14734
 }

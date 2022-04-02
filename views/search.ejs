@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./search.css">
-    <title><% if(req.query.q) { %>Search results for <%= req.query.q %><% } %></title>
+    <link rel="stylesheet" href="./global.css">
+    <title><% if(req.query.q) { %>Search results for <%= req.query.q %><% } else { %> Searchbit <% } %></title>
 </head>
 <body>
     <header>
@@ -26,6 +27,7 @@
             <ul>
                 <li <%- req.query.t !== "image" ? "data-current" : "" %>><a href="/search?q=<%= encodeURIComponent(req.query.q) %>&t=web">Web</a></li>
                 <li <%- req.query.t === "image" ? "data-current" : "" %>><a href="/search?q=<%= encodeURIComponent(req.query.q) %>&t=image">Image</a></li>
+                <li class="settingsTab"><a href="/settings">Settings</a></li>
             </ul>
             <% } %>
         </nav>

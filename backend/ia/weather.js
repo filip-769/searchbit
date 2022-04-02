@@ -1,8 +1,4 @@
 import fetch from "node-fetch";
-import { readFileSync } from "fs";
-import { cwd } from "process";
-
-const config = JSON.parse(readFileSync(cwd()+"/config.json"));
 
 export default async q => {
     let json;
@@ -25,7 +21,7 @@ export default async q => {
         data.days.push({
             day: new Intl.DateTimeFormat("en", { weekday: "long" }).format(new Date(day.applicable_date)),
             desc: day.weather_state_name,
-            icon: config.imageProxyUrl + encodeURIComponent(`https://www.metaweather.com/static/img/weather/${day.weather_state_abbr}.svg`),
+            icon: `https://www.metaweather.com/static/img/weather/${day.weather_state_abbr}.svg`,
             temp: {
                 min: Math.round(day.min_temp*100)/100,
                 max: Math.round(day.max_temp*100)/100
