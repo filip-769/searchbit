@@ -45,10 +45,10 @@
         }
     },
     "autocomplete": "google",
-    "delay": 1500,
+    "delay": 2000,
     "minimumWeight": {
-        "web": 0,
-        "image": 0
+        "web": 3,
+        "image": 1
     },
     "imageProxyUrl": "https://external-content.duckduckgo.com/iu/?u=",
     "port": 14734
