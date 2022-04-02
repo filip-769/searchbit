@@ -16,8 +16,6 @@ export default async (engine, q, p) => {
         switch (engine) {
             case "google":
                 return await google(q, p);
-            case "neeva":
-                return await neeva(q, p);
             case "seznam":
                 return await seznam(q, p);
             case "yandex":
@@ -28,8 +26,6 @@ export default async (engine, q, p) => {
                 return await petal(q, p);
             case "bing":
                 return await bing(q, p);
-            case "qwant":
-                return await qwant(q, p);
             case "usearch":
                 return await usearch(q, p);
             case "brave":
