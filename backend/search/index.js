@@ -4,7 +4,7 @@ import searchImage from "./image/index.js";
 export default async (e, q, p, t, c) => {
     const engineData = {};
     const allResults = {};
-    const allResultsArray = [];
+    let allResultsArray = [];
 
     e = e.filter(x => c.engines[t][x] && c.engines[t][x] > 0);
 
@@ -43,7 +43,7 @@ export default async (e, q, p, t, c) => {
                 result.xurl = new URL(result.url.replace("://www.", "://")).href;
                 // create formatted url
                 result.formattedUrl = (new URL(result.url).hostname + new URL(result.url).pathname).slice(0, 75);
-                if(result.img) result.img = config.imageProxyUrl + encodeURIComponent(result.img);
+                if(result.img) result.img = c.imageProxyUrl + encodeURIComponent(result.img);
             } catch (error) {
                 return;
             }
@@ -81,8 +81,9 @@ export default async (e, q, p, t, c) => {
 
     // Sort by weight
     allResultsArray.sort((a, b) => b.weight - a.weight)
+    allResultsArray = allResultsArray.filter(x => x.weight >= c.minimumWeight[t]);
 
     return {
-        results: allResultsArray.filter(x => x.weight >= c.minimumWeight[t])
+        results: allResultsArray
     }
 }
