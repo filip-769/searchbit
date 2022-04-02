@@ -27,6 +27,8 @@ a {
 
 #searchBar {
     border-radius: 0.25rem;
+    position: absolute;
+    right: 500px;
     border: 1px solid #252627;
     display: flex;
     width: max-content;
