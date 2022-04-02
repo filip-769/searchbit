@@ -38,7 +38,7 @@ a {
 }
 
 .webResults {
-    max-width: 50vw;
+    width: 50vw;
 }
 
 .webResult {
@@ -125,6 +125,30 @@ nav ul li[data-current] {
 
 .settingsTab {
     margin-left: auto;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+}
+
+.paginationButton {
+    background-color: #252627;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease;
+}
+
+.paginationButton:hover, .paginationButton:focus {
+    background-color: #2a2d2e;
+}
+
+.paginationPageText {
+    font-size: 0.75rem;
+    color: #999;
+    margin: 0 1rem;
 }
 
 

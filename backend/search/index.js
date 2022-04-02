@@ -83,6 +83,6 @@ export default async (e, q, p, t, c) => {
     allResultsArray.sort((a, b) => b.weight - a.weight)
 
     return {
-        results: allResultsArray
+        results: allResultsArray.filter(x => x.weight >= c.minimumWeight)
     }
 }
