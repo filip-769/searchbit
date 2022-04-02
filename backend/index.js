@@ -7,18 +7,18 @@ import { cwd } from "process";
 // read the config file
 const config = JSON.parse(readFileSync(cwd()+"/config.json"));
 
-export default async (e, q, p, t) => {
+export default async (e, q, p, t, d) => {
     if(t === "autocomplete") {
         return await searchAutocomplete((e??[config.defaultAutocomplete])[0], q);
     }
     if(t === "web" || !t) {
         return {
             instantAnswers: await instantAnswers(q),
-            searchResults: await search(e, q, p, t)
+            searchResults: await search(e, q, p, t, d)
         }
     } else {
         return {
-            searchResults: await search(e, q, p, t)
+            searchResults: await search(e, q, p, t, d)
         }
     }
 }

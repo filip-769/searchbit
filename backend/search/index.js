@@ -6,7 +6,7 @@ import searchImage from "./image/index.js";
 // read the config file
 const config = JSON.parse(readFileSync(cwd()+"/config.json"));
 
-export default async (e, q, p, t) => {
+export default async (e, q, p, t, d) => {
     const engines = config.supported[t??"web"];
     const engineWeight = config.weight[t??"web"];
     // only keep engines that exist
@@ -27,7 +27,7 @@ export default async (e, q, p, t) => {
     })
 
     // Wait for all engines to finish
-    const delay = config.defaultDelay;
+    const delay = (d <= 60000 && d >= 1) ? d : config.defaultDelay;
     await new Promise(resolve => {
         setTimeout(resolve, delay);
         setInterval(() => {

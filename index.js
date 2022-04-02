@@ -18,9 +18,10 @@ app.get("/search", async (req, res) => {
         (req.query.e ? req.query.e.toLowerCase().split(",") : null), //search engines
         req.query.q, //search query
         parseInt(req.query.p), //search page
-        req.query.t //search type
+        req.query.t, //search type
+        parseInt(req.query.d) //search delay
     );
-    if(req.query.f === "json") {
+    if(req.query.f === "json" || req.query.t === "autocomplete") {
         res.json(json);
     } else {
         try {
