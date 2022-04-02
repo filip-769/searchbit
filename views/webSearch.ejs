@@ -3,7 +3,7 @@
         <div class="webResult">
             <div class="ResultEngines"><span><%= result.weight %></span> <span><%- result.engines.join("</span> <span>") %></span></div>
             <div class="webResultFormattedUrl"><%= result.formattedUrl %></div>
-            <a class="webResultTitle" href="<%= result.url %>"><%= result.title %></a>
+            <a class="webResultTitle" target="_blank" href="<%= result.url %>"><%= result.title %></a>
             <div class="webResultDescription"><%= result.desc %></div>
         </div>
     <% }); %>
@@ -14,7 +14,7 @@
                 %>
                     <div class="infoboxIa">
                         <img src="<%= ia.response.image %>" alt="">
-                        <h2><a href="<%= ia.response.url %>"><%= ia.response.title %></a></h2>
+                        <h2><a target="_blank" href="<%= ia.response.url %>"><%= ia.response.title %></a></h2>
                         <p><%= ia.response.text %></p>
                     </div>
                 <%

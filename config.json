@@ -105,5 +105,5 @@
     "defaultAutocomplete": "qwant",
     "defaultDelay": 5000,
     "imageProxyUrl": "https://external-content.duckduckgo.com/iu/?u=",
-    "port": 2021
+    "port": 14734
 }

@@ -9,7 +9,7 @@ const config = JSON.parse(readFileSync(cwd()+"/config.json"));
 
 export default async (e, q, p, t) => {
     if(t === "autocomplete") {
-        return await searchAutocomplete((e[0]??config.defaultAutocomplete), q);
+        return await searchAutocomplete((e??[config.defaultAutocomplete])[0], q);
     }
     if(t === "web" || !t) {
         return {
