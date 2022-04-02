@@ -46,6 +46,7 @@
     },
     "autocomplete": "google",
     "delay": 1500,
+    "minimumWeight": 2,
     "imageProxyUrl": "https://external-content.duckduckgo.com/iu/?u=",
     "port": 14734
 }

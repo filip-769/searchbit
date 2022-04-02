@@ -42,5 +42,14 @@
                 ""
         %>
     </main>
+    <footer>
+        <% if (req.query.q) { %>
+            <div>
+                <a class="paginationButton" href="/search?q=<%= encodeURIComponent(req.query.q) %>&t=<%= req.query.t??"web" %>&p=<%= (+req.query.p||1) === 1 ? 1 : (+req.query.p||1) - 1 %>">← Previous</a>
+                <span class="paginationPageText">PAGE <%= (req.query.p||1) %></span>
+                <a class="paginationButton" href="/search?q=<%= encodeURIComponent(req.query.q) %>&t=<%= req.query.t??"web" %>&p=<%= (+req.query.p||1) + 1 %>">Next →</a>
+            </div>
+        <% } %>
+    </footer>
 </body>
 </html>
