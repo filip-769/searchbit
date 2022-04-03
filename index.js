@@ -16,6 +16,11 @@ app.get("/settings", (req, res) => {
     res.render("settings.ejs", { config: getUserConfig(req) } );
 })
 
+app.get("/opensearch.xml", (req, res) => {
+    res.header("Content-Type", "application/opensearchdescription+xml");
+    res.render("opensearch.ejs", { autocomplete: req.query.ac ?? getUserConfig(req).autocomplete, origin: "http://" + req.get("host") } );
+})
+
 app.post("/settings", (req, res) => {
     let x;
     try {
@@ -29,7 +34,7 @@ app.post("/settings", (req, res) => {
 
 app.get("/search", async (req, res) => {
     try {
-        if(!req.query.q) return res.render("search.ejs", { req });
+        if(!req.query.q) return res.render("search.ejs", { req, autocomplete: getUserConfig(req)?.autocomplete });
 
         const json = await search (
             req.query.e?.toLowerCase()?.split(",") || req.query.t === "autocomplete" ? [ getUserConfig(req).autocomplete ] : getEnginesFromConfig(getUserConfig(req), req.query.t ?? "web"), //search engines
@@ -42,7 +47,7 @@ app.get("/search", async (req, res) => {
         if(req.query.f === "json" || req.query.t === "autocomplete") {
             res.json(json);
         } else {
-            res.render("search.ejs", { json, req });
+            res.render("search.ejs", { json, req, autocomplete: getUserConfig(req)?.autocomplete });
         }
     } catch (error) {
         console.error(error);

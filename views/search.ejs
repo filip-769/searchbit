@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./search.css">
     <link rel="stylesheet" href="./global.css">
+    <link rel="search" type="application/opensearchdescription+xml" title="Searchbit" href="/opensearch.xml?ac=<%= autocomplete %>">
     <title><% if(req.query.q) { %>Search results for <%= req.query.q %><% } else { %> Searchbit <% } %></title>
 </head>
 <body>
