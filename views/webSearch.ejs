@@ -67,6 +67,35 @@
                     </div>
                 <%
             }
+            if(ia.type === "programming") {
+                %>
+                    <div class="programmingIa">
+                        <%
+                            ia.response.answers.forEach(answer => {
+                                %>
+                                    <pre><%= answer.code %></pre>
+                                <%
+                            })
+                        %>
+                    </div>
+                <%
+            }
+            if(ia.type === "questions") {
+                %>
+                    <div class="questionsIa">
+                        <%
+                            ia.response.answers.forEach(answer => {
+                                %>
+                                    <div>
+                                        <b><%= answer.question %></b>
+                                        <p><%= answer.answer %></p>
+                                    </div>
+                                <%
+                            })
+                        %>
+                    </div>
+                <%
+            }
         })
     %>
 </aside>

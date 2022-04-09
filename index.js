@@ -37,7 +37,7 @@ app.get("/search", async (req, res) => {
         if(!req.query.q) return res.render("search.ejs", { req, autocomplete: getUserConfig(req)?.autocomplete });
 
         const json = await search (
-            req.query.e?.toLowerCase()?.split(",") || req.query.t === "autocomplete" ? [ getUserConfig(req).autocomplete ] : getEnginesFromConfig(getUserConfig(req), req.query.t ?? "web"), //search engines
+            req.query.e?.toLowerCase()?.split(",") || ( req.query.t === "autocomplete" ? [ getUserConfig(req).autocomplete ] : getEnginesFromConfig(getUserConfig(req), req.query.t ?? "web") ), //search engines
             req.query.q, //search query
             parseInt(req.query.p) || 1, //search page
             req.query.t ?? "web", //search type

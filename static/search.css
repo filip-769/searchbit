@@ -177,3 +177,17 @@ footer {
     height: 2.5rem;
     margin-right: 0.5rem;
 }
+
+.questionsIa > div:not(:last-of-type) {
+    margin-bottom: 0.75rem;
+}
+
+.programmingIa pre {
+    max-width: 100%;
+    overflow: scroll;
+    padding: 0.25rem;
+}
+
+.programmingIa > pre:not(:last-of-type) {
+    margin-bottom: 0.75rem;
+}
