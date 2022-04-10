@@ -7,9 +7,22 @@ export default async (e, q, p, t, c) => {
         return await searchAutocomplete(e[0], q);
     }
     if(t === "web" || !t) {
+        let searchData;
+        let iaData;
+
+        instantAnswers(q).then(data => iaData = data);
+        search(e, q, p, t, c).then(data => searchData = data);
+
+        await new Promise(resolve => {
+            setInterval(() => {
+                if(typeof searchData === "object" && typeof iaData === "object") {
+                    resolve();
+                }
+            }, 10)
+        })
         return {
-            instantAnswers: await instantAnswers(q),
-            searchResults: await search(e, q, p, t, c)
+            instantAnswers: iaData,
+            searchResults: searchData
         }
     } else {
         return {
