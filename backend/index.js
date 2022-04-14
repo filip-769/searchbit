@@ -19,12 +19,12 @@ export default async (e, q, p, t, c, l) => {
             console.error(error);
         }
     }
-    if(l) q = `${q} ${l}`;
     if(t === "web" || !t) {
         let searchData;
         let iaData;
 
         instantAnswers(q).then(data => iaData = data);
+        if(l) q = `${q} ${l}`;
         search(e, q, p, t, c).then(data => searchData = data);
 
         await new Promise(resolve => {
@@ -39,6 +39,7 @@ export default async (e, q, p, t, c, l) => {
             searchResults: searchData
         }
     } else {
+        if(l) q = `${q} ${l}`;
         return {
             searchResults: await search(e, q, p, t, c)
         }

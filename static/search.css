@@ -37,6 +37,23 @@ a {
     padding: 0.15rem;
 }
 
+#searchBar input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 0.8em;
+    width: 0.8em;
+    border-radius: 50em;
+    background: url("/clearSearchBtn.svg") no-repeat 50% 50%;
+    background-size: contain;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+#searchBar input:focus::-webkit-search-cancel-button {
+    opacity: 0.3;
+    pointer-events: all;
+}
+
 .webResults {
     width: 50vw;
 }
