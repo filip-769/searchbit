@@ -4,7 +4,7 @@ import randomUserAgent from "user-agents";
 
 
 export default async (q, p) => {
-    const response = await fetch(`https://www.google.com/search?q=${encodeURIComponent(q)}&lr=lang_en&start=${(p-1)*10}&hl=en&asearch=arc&async=arc_id:srp_510,ffilt:all,ve_name:MoreResultsContainer,next_id:srp_5,use_ac:true,_id:arc-srp_510,_pms:qs,_fmt:pc`, {
+    const response = await fetch(`https://www.google.com/search?q=${encodeURIComponent(q)}&start=${(p-1)*10}&lr=lang_en&hl=en&asearch=arc&async=arc_id:srp_510,ffilt:all,ve_name:MoreResultsContainer,next_id:srp_5,use_ac:true,_id:arc-srp_510,_pms:qs,_fmt:pc`, {
         headers: {
             "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
             "Accept-Language": "en, *;q=0.5",
@@ -19,8 +19,8 @@ export default async (q, p) => {
 
     dom.window.document.querySelectorAll("div.g").forEach(el => {
         const title = el.querySelector("h3.LC20lb")?.textContent;
-        const url = el.querySelector(".yuRUbf > a")?.href;
-        const desc = el.querySelector(".VwiC3b.MUxGbd.yDYNvb.lyLwlc.lEBKkf")?.textContent ?? el.querySelector(".aCOpRe.ljeAnf")?.textContent;
+        const url = el.querySelector(".yuRUbf > a, .ct3b9e > a")?.href;
+        const desc = el.querySelector(".lyLwlc, .Uroaid")?.textContent;
         json.results.push({
             title: title,
             url: url,

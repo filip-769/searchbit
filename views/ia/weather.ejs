@@ -1,0 +1,15 @@
+<h2>Weather in <%= ia.response.region %></h2>
+<p><%= ia.response.text %></p>
+<%
+    ia.response.days.forEach(day => {
+        %>
+            <div class="weatherIaDay">
+                <img class="weatherIaIcon" src="<%= day.icon %>" alt="">
+                <div>
+                    <h3><%= day.day %></h3>
+                    <p><%= day.desc %>, temperature from <%= day.temp.min %> °C to <%= day.temp.max %> °C and wind <%= day.wind.speed %> km/h</p>
+                </div>
+            </div>
+        <%
+    });
+%>

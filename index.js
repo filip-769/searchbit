@@ -34,20 +34,23 @@ app.post("/settings", (req, res) => {
 
 app.get("/search", async (req, res) => {
     try {
-        if(!req.query.q) return res.render("search.ejs", { req, autocomplete: getUserConfig(req)?.autocomplete });
+        if(!req.query.q) return res.render("search.ejs", { req, config: getUserConfig(req) });
 
         const json = await search (
             req.query.e?.toLowerCase()?.split(",") || ( req.query.t === "autocomplete" ? [ getUserConfig(req).autocomplete ] : getEnginesFromConfig(getUserConfig(req), req.query.t ?? "web") ), //search engines
             req.query.q, //search query
             parseInt(req.query.p) || 1, //search page
             req.query.t ?? "web", //search type
-            getUserConfig(req) //user config
-        );
+            getUserConfig(req), //user config
+            getUserConfig(req).lenses[req.query.l?.toLowerCase()]
+        )
 
         if(req.query.f === "json" || req.query.t === "autocomplete") {
             res.json(json);
+        } else if(json.redirect) {
+            res.redirect(json.redirect);
         } else {
-            res.render("search.ejs", { json, req, autocomplete: getUserConfig(req)?.autocomplete });
+            res.render("search.ejs", { json, req, config: getUserConfig(req) });
         }
     } catch (error) {
         console.error(error);

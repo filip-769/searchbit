@@ -6,11 +6,11 @@ export default async q => {
         const lang = q.replace("translate", "").split("to")[1].trim().toLowerCase();
 
         const response = await fetch(`https://simplytranslate.org/api/translate?text=${encodeURIComponent(text)}&to=${encodeURIComponent(lang)}`);
-        const data = await response.text();
+        const data = await response.json();
 
         return {
             fromText: text,
-            toText: data,
+            toText: data["translated-text"],
             toLang: lang
         };
     } catch (error) {

@@ -1,0 +1,10 @@
+<%
+    ia.response.answers.forEach(answer => {
+        %>
+            <div>
+                <b><%= answer.question %></b>
+                <p><%= answer.answer %></p>
+            </div>
+        <%
+    })
+%>

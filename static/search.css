@@ -84,10 +84,21 @@ aside > div {
     margin-bottom: 1rem;
 }
 
+nav {
+    display: flex;
+    margin-top: 1rem;
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    margin-top: 1rem;
+    width: 100%;
+    margin-left: 1rem;
+}
+
+nav ul button {
+    all: unset;
+    cursor: pointer;
 }
 
 nav ul li {
@@ -125,6 +136,13 @@ nav ul li[data-current] {
 
 .settingsTab {
     margin-left: auto;
+}
+
+header nav select {
+    padding: 0.25rem;
+    border: 1px solid #999;
+    background-color: unset;
+    border-radius: 0.25rem;
 }
 
 footer {
