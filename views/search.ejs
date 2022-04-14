@@ -12,7 +12,11 @@
 <body>
     <header>
         <form method="get">
-             <div id="searchBar">
+            <div id="top">
+                <h1 id="title"><a href="/search">Searchbit</a></h1>
+                <a href="/settings" id="settingsTab">Settings</a>
+            </div>
+            <div id="searchBar">
                 <input type="search" name="q" value="<%= req.query.q %>" autofocus>
                 <button type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -36,7 +40,6 @@
                 <ul>
                     <li <%- req.query.t !== "image" ? "data-current" : "" %>><button type="submit" name="t" value="web">Web</button></li>
                     <li <%- req.query.t === "image" ? "data-current" : "" %>><button type="submit" name="t" value="image">Image</button></li>
-                    <li class="settingsTab"><a href="/settings">Settings</a></li>
                 </ul>
              </nav>
         </form>

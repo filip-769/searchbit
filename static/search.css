@@ -19,6 +19,10 @@ a {
     width: max-content;
 }
 
+#title {
+    font-size: 1.5rem;
+}
+
 #searchBar button {
     display: flex;
     align-items: center;
@@ -35,6 +39,7 @@ a {
 #searchBar input {
     width: 500px;
     padding: 0.15rem;
+    padding-left: 0.45rem;
 }
 
 #searchBar input::-webkit-search-cancel-button {
@@ -103,7 +108,7 @@ aside > div {
 
 nav {
     display: flex;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 nav ul {
@@ -122,8 +127,17 @@ nav ul li {
     margin-right: 1rem;
 }
 
+#top {
+    display: flex;
+    align-items: center;
+}
+
+#settingsTab {
+    margin-left: auto;
+}
+
 nav ul li[data-current] {
-    border-bottom: 0.2rem solid #0046af;
+    border-bottom: 0.15rem solid #999;
 }
 
 .imageResults {
@@ -141,6 +155,7 @@ nav ul li[data-current] {
     width: 16vw;
     height: 9vw;
     border-radius: 0.25rem;
+    object-fit: cover;
 }
 
 .imageResult h2 {
@@ -149,10 +164,6 @@ nav ul li[data-current] {
     overflow: hidden;
     text-overflow: ellipsis;
     margin-bottom: 0.2rem;
-}
-
-.settingsTab {
-    margin-left: auto;
 }
 
 header nav select {
