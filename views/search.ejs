@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./search.css">
     <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./search.css">
     <link rel="search" type="application/opensearchdescription+xml" title="Searchbit" href="/opensearch.xml?ac=<%= config.autocomplete %>">
     <title><% if(req.query.q) { %>Search results for <%= req.query.q %><% } else { %> Searchbit <% } %></title>
 </head>
@@ -56,11 +56,9 @@
     </main>
     <footer>
         <% if (req.query.q) { %>
-            <div>
-                <a class="paginationButton" href="/search?q=<%= encodeURIComponent(req.query.q) %>&t=<%= req.query.t??"web" %>&p=<%= (+req.query.p||1) === 1 ? 1 : (+req.query.p||1) - 1 %>">← Previous</a>
-                <span class="paginationPageText">PAGE <%= (req.query.p||1) %></span>
-                <a class="paginationButton" href="/search?q=<%= encodeURIComponent(req.query.q) %>&t=<%= req.query.t??"web" %>&p=<%= (+req.query.p||1) + 1 %>">Next →</a>
-            </div>
+            <a class="paginationButton" href="/search?q=<%= encodeURIComponent(req.query.q) %>&t=<%= req.query.t??"web" %>&p=<%= (+req.query.p||1) === 1 ? 1 : (+req.query.p||1) - 1 %>">← Previous</a>
+            <span class="paginationPageText">PAGE <%= (req.query.p||1) %></span>
+            <a class="paginationButton" href="/search?q=<%= encodeURIComponent(req.query.q) %>&t=<%= req.query.t??"web" %>&p=<%= (+req.query.p||1) + 1 %>">Next →</a>
         <% } %>
     </footer>
 </body>

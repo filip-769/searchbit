@@ -37,7 +37,7 @@ a {
 }
 
 #searchBar input {
-    width: 500px;
+    width: 100%;
     padding: 0.15rem;
     padding-left: 0.45rem;
 }
@@ -94,9 +94,8 @@ a {
 }
 
 aside {
-    margin-right: 1.75rem;
     margin-left: auto;
-    max-width: 35vw;
+    width: 35vw;
 }
 
 aside > div {
@@ -173,12 +172,6 @@ header nav select {
     border-radius: 0.25rem;
 }
 
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50vw;
-}
 
 .paginationButton {
     background-color: #252627;
@@ -195,6 +188,52 @@ footer {
     font-size: 0.75rem;
     color: #999;
     margin: 0 1rem;
+}
+
+@media only screen and (min-width: 1000px) {
+    #searchBar {
+        width: 35rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    aside {
+        width: 40vw;
+        margin-left: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    body {
+        padding: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        flex-direction: column-reverse;
+    }
+    .webResults, aside {
+        width: 100%;
+    }
+    aside {
+        margin-left: 0;
+    }
+    footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+        padding: 0.75rem;
+    }
+    #searchBar {
+        width: 100%;
+    }
 }
 
 
