@@ -19,29 +19,22 @@ export default async (e, q, p, t, c, l) => {
             console.error(error);
         }
     }
-    if(t === "web" || !t) {
-        let searchData;
-        let iaData;
+    let searchData;
+    let iaData;
 
-        instantAnswers(q).then(data => iaData = data);
-        if(l) q = `${q} ${l}`;
-        search(e, q, p, t, c).then(data => searchData = data);
+    if(!t || t === "web") { instantAnswers(q).then(data => iaData = data) } else { iaData = [] };
+    if(l || c?.lenses?.default) q = `${q} ${l ?? c?.lenses?.default}`;
+    search(e, q, p, t, c).then(data => searchData = data);
 
-        await new Promise(resolve => {
-            setInterval(() => {
-                if(typeof searchData === "object" && typeof iaData === "object") {
-                    resolve();
-                }
-            }, 10)
-        })
-        return {
-            instantAnswers: iaData,
-            searchResults: searchData
-        }
-    } else {
-        if(l) q = `${q} ${l}`;
-        return {
-            searchResults: await search(e, q, p, t, c)
-        }
+    await new Promise(resolve => {
+        setInterval(() => {
+            if(typeof searchData === "object" && typeof iaData === "object") {
+                resolve();
+            }
+        }, 10)
+    })
+    return {
+        instantAnswers: iaData,
+        searchResults: searchData
     }
 }
