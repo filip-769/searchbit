@@ -13,6 +13,7 @@ import translator from "./translator.js";
 import programming from "./programming.js";
 import questions from "./questions.js";
 import status from "./status.js";
+import encDec from "./encDec.js";
 
 const regexes = {
     ipInfo: /(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])/i,
@@ -30,6 +31,7 @@ const regexes = {
     unitConvertor: /(in|to|into)/i,
     translator: /^translate .+ (into|to) .+$/i,
     status: /^is .+ (down|up)($|\?$)|^.+ status$/i,
+    encDec: /^((base64|url) (encode|decode)|sha256|md5) /i,
     questions: /^(how|where|when|what|why|am|are|is|who|whom|which|whose) /i,
     programming: /($|^| )(Shell|Bash|C#|C\+\+|C|CSS|Html|Java|Javascript|js|Objectiv-C|PHP|Python|SQL|Swift|Whatever|Ruby|TypeScript|ts|Go|Kotlin|Assembly|R|VBA|Scala|Rust|Dart|Elixir|Clojure|WebAssembly|F#|Erlang|Haskell|Matlab|Cobol|Fortran|Scheme|Perl|Groovy|Lua|Julia|Delphi|Abap|Lisp|Prolog|Pascal|PostScript|Smalltalk|ActionScript|BASIC|Solidity|PowerShell|GDScript|Excel)($|^| )/i,
     infobox: /.+/,
@@ -85,6 +87,9 @@ export default async (q) => {
                     break;
                 case "status":
                     list.push({ type: "status", response: await status(q) });
+                    break;
+                case "encDec":
+                    list.push({ type: "encDec", response: await encDec(q) });
                     break;
             }
         }

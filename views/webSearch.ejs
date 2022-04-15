@@ -1,7 +1,7 @@
 <section class="webResults">
     <% json.searchResults.results.forEach(result => { %>
         <div class="webResult">
-            <div class="ResultEngines"><span><%= result.weight %></span> <span><%- result.engines.join("</span> <span>") %></span></div>
+            <div class="ResultEngines"><span><%- result.engines.join("</span> <span>") %></span></div>
             <div class="webResultFormattedUrl"><%= result.formattedUrl %></div>
             <a class="webResultTitle" target="_blank" href="<%= result.url %>"><%= result.title %></a>
             <div class="webResultDescription"><%= result.desc %></div>

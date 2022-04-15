@@ -291,3 +291,7 @@ header nav select {
     color: white;
     background-color: var(--color);
 }
+
+.encDecIa p {
+    word-wrap: break-word;
+}
