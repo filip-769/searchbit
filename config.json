@@ -52,6 +52,7 @@
     },
     "imageProxyUrl": "https://external-content.duckduckgo.com/iu/?u=",
     "lenses": {
+        "default": null,
         "programming": "site:stackoverflow.com | site:developer.mozilla.org | site:github.com",
         "cooking": "site:based.cooking",
         "videos": "(inurl:youtube.com/watch | site:odysee.com | site:vimeo.com)",

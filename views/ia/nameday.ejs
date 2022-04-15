@@ -1,0 +1,16 @@
+<ul>
+    <%
+
+        for(const country in ia.response.today) {
+            if(ia.response.today[country]) {
+                %>
+                    <li>
+                        <%= (new Intl.DisplayNames(["en"], { type: "region" })).of(country) %> -
+                        <%= ia.response.today[country].join(", ") %>
+                    </li>
+                <%
+            }
+        }
+
+    %>
+</ul>

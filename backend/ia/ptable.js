@@ -18,7 +18,6 @@ export default async q => {
             symbol: result?.symbol,
             name: result?.name,
             description: result?.summary,
-            number: result?.number,
             url: result?.source,
             color: result["cpk-hex"] ? `#${result["cpk-hex"].toUpperCase()}` : "#000"
         }

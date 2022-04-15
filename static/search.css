@@ -237,3 +237,18 @@ footer {
 .programmingIa > pre:not(:last-of-type) {
     margin-bottom: 0.75rem;
 }
+
+.holidaysIa ul, .namedayIa ul {
+    list-style: none;
+}
+
+.ptableIa span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 3.5ch;
+    height: 3.5ch;
+    color: white;
+    background-color: var(--color);
+}

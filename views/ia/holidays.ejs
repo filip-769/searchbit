@@ -1,0 +1,13 @@
+<ul>
+    <% 
+        ia.response.forEach(holiday => {
+            %>
+                <li>
+                    <%= holiday.date %> -
+                    <%= holiday.name %>
+                    <%= holiday.localName === holiday.name ? "" : `(${holiday.localName})` %>
+                </li>
+            <%
+        })
+    %>
+</ul>
