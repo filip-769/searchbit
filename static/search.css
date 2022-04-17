@@ -68,16 +68,22 @@ a {
     word-wrap: break-word;
 }
 
-.ResultEngines span {
+.ResultBar span {
     background-color: #252627;
     padding: 0.1rem;
     border-radius: 0.25rem;
+    margin-right: 1ch;
     text-transform: capitalize;
 }
 
-.ResultEngines {
+.ResultBar {
     margin-bottom: 0.15rem;
     font-size: 0.65rem;
+    display: flex;
+}
+
+.right {
+    margin-left: auto;
 }
 
 .webResultFormattedUrl {
@@ -294,4 +300,43 @@ header nav select {
 
 .encDecIa p {
     word-wrap: break-word;
+}
+
+.wordInfoIa h3 {
+    text-transform: capitalize;
+}
+
+.wordInfoIa ol {
+    margin-left: 4rem;
+}
+
+#wordInfoIaPhonetics {
+    display: flex;
+    align-items: center;
+}
+
+.wordInfoIaSection {
+    margin-top: 1rem;
+}
+
+.wordInfoIa h5 {
+    font-size: 1rem;
+    margin-left: 2rem;
+    margin-right: 1ch;
+    display: inline-block;
+}
+
+/* if firefox */
+@supports (-moz-box-flex: unset) {
+    .wordInfoIa audio {
+        width: 3rem;
+    }
+}
+
+.codeIa img {
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    max-height: 10rem;
+    max-width: 100%;
 }

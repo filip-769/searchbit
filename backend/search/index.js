@@ -43,7 +43,7 @@ export default async (e, q, p, t, c) => {
                 result.xurl = new URL(result.url.replace("://www.", "://")).href;
                 // create formatted url
                 result.formattedUrl = (new URL(result.url).hostname + new URL(result.url).pathname).slice(0, 75);
-                if(result.img) result.img = c.imageProxyUrl + encodeURIComponent(result.img);
+                if(result.img) result.img = "/proxy?url" + encodeURIComponent(result.img);
             } catch (error) {
                 return;
             }

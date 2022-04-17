@@ -1,16 +1,11 @@
 import fetch from "node-fetch";
 
 export default async q => {
-    let json;
-    try {
-        const goeResponse = await fetch(`https://www.metaweather.com/api/location/search/?query=${encodeURIComponent(q.replace("weather", "").replace(" in ", "").trim())}`);
-        const geoJson = await goeResponse.json();
+    const goeResponse = await fetch(`https://www.metaweather.com/api/location/search/?query=${encodeURIComponent(q.replace("weather", "").replace(" in ", "").trim())}`);
+    const geoJson = await goeResponse.json();
 
-        const weatherResponse = await fetch(`https://www.metaweather.com/api/location/${geoJson[0].woeid}/`);
-        json = await weatherResponse.json();
-    } catch (error) {
-        return false;
-    }
+    const weatherResponse = await fetch(`https://www.metaweather.com/api/location/${geoJson[0].woeid}/`);
+    const json = await weatherResponse.json();
 
     let data = {
         region: json.title,
@@ -21,7 +16,7 @@ export default async q => {
         data.days.push({
             day: new Intl.DateTimeFormat("en", { weekday: "long" }).format(new Date(day.applicable_date)),
             desc: day.weather_state_name,
-            icon: `https://www.metaweather.com/static/img/weather/${day.weather_state_abbr}.svg`,
+            icon: "/proxy?url="+encodeURIComponent(`https://www.metaweather.com/static/img/weather/${day.weather_state_abbr}.svg`),
             temp: {
                 min: Math.round(day.min_temp*100)/100,
                 max: Math.round(day.max_temp*100)/100

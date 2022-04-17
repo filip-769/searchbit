@@ -5,14 +5,7 @@ export default async q => {
     const max = parseFloat(q.replaceAll(/[^0-9| ]/g, "").split(" ").filter(Boolean)[1]??10);
     if(!(min < max)) return false;
     
-
-    let number;
-
-    try {
-        number = randomInt(min, max);
-    } catch (error) {
-        return false;
-    }
+    const number = randomInt(min, max);
 
     return {
         number: number,

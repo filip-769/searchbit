@@ -1,19 +1,13 @@
 import fetch from "node-fetch";
 
 export default async q => {
-    let json;
-    let json2;
-    try {
-        const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q.replace("time", "").replace("in ", "").trim())}&count=1`);
-        json = await response.json();
+    const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q.replace("time", "").replace("in ", "").trim())}&count=1`);
+    const json = await response.json();
 
-        if(!(json?.results?.length >= 1)) return false;
+    if(!(json?.results?.length >= 1)) return false;
 
-        const response2 = await fetch(`https://timeapi.io/api/Time/current/coordinate?latitude=${encodeURIComponent(json?.results[0]?.latitude)}&longitude=${encodeURIComponent(json?.results[0]?.longitude)}`);
-        json2 = await response2.json();
-    } catch (error) {
-        return false;
-    }
+    const response2 = await fetch(`https://timeapi.io/api/Time/current/coordinate?latitude=${encodeURIComponent(json?.results[0]?.latitude)}&longitude=${encodeURIComponent(json?.results[0]?.longitude)}`);
+    const json2 = await response2.json();
     if(!json2?.dateTime) return false;
 
     return {

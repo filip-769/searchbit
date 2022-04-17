@@ -2,6 +2,7 @@ import { readFileSync } from "fs";
 import { cwd } from "process";
 import express from "express";
 import search from "./backend/index.js";
+import fetch from "node-fetch";
 const app = express();
 
 const config = JSON.parse(readFileSync(cwd()+"/config.json"));
@@ -11,6 +12,18 @@ app.use(express.static("./static/"));
 app.use(express.urlencoded({ extended: true }));
 
 app.all("/", (req, res) => res.redirect("/search"));
+
+app.get("/proxy", async (req, res) => {
+    try {
+        if(!req.query.url) return res.status(400).send("bad request");
+        const response = await fetch(req.query.url);
+        res.header({ "Content-Security-Policy": "default-src 'none'" });
+        res.type(response.headers.get("Content-Type"));
+        response.body.pipe(res);
+    } catch (error) {
+        res.send(error);
+    }
+})
 
 app.get("/settings", (req, res) => {
     res.render("settings.ejs", { config: getUserConfig(req) } );

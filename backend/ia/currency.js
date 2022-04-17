@@ -32,13 +32,8 @@ export default async q => {
             to = symbols[to];
         }
     }
-    let json;
-    try {
-        const response = await fetch(`https://api.coinbase.com/v2/exchange-rates?currency=${encodeURIComponent(from)}`);
-        json = await response.json();
-    } catch (error) {
-        return false;
-    }
+    const response = await fetch(`https://api.coinbase.com/v2/exchange-rates?currency=${encodeURIComponent(from)}`);
+    const json = await response.json();
 
     const toAmout = Math.round((+json?.data?.rates[to] * amout) * 100) / 100;
     if(isNaN(toAmout)) return;

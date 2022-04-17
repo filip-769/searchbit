@@ -1,0 +1,34 @@
+<div>
+    <h3>Phonetics:</h3>
+    <div id="wordInfoIaPhonetics">
+        <audio src="<%= ia.response.phonetics.audio %>" controls></audio>
+        <i><%= ia.response.phonetics.text %></i>
+    </div>
+</div>
+<%
+    ia.response.meanings.forEach(meaning => {
+        %>
+            <div class="wordInfoIaSection">
+                <h3><%= meaning.type %>:</h3>
+                <%
+                    if(meaning.definitions[0]) {
+                        %>
+                            <h5>Definitions:</h5>
+                            <ol>
+                                <%
+                                    meaning.definitions.forEach(definition => {
+                                        %>
+                                            <li><%= definition %></li>
+                                        <%
+                                    })
+                                %>    
+                            </ol>
+                        <%
+                    }
+                %>
+                <h5>Synonyms:</h5><%= meaning.synonyms.join(", ") || "-" %><br>
+                <h5>Antonyms:</h5><%= meaning.antonyms.join(", ") || "-" %>
+            </div>
+        <%
+    })
+%>

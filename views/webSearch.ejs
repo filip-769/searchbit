@@ -1,7 +1,11 @@
 <section class="webResults">
     <% json.searchResults.results.forEach(result => { %>
         <div class="webResult">
-            <div class="ResultEngines"><span><%- result.engines.join("</span> <span>") %></span></div>
+            <div class="ResultBar">
+                <span><%- result.engines.join("</span><span>") %></span>
+                <span class="right"><a href="https://web.archive.org/web/<%= encodeURIComponent(result.url) %>" target="_blank">Cache</a></span>
+                <span><a href="/proxy?url=<%= encodeURIComponent(result.url) %>" target="_blank">Proxy</a></span>
+            </div>
             <div class="webResultFormattedUrl"><%= result.formattedUrl %></div>
             <a class="webResultTitle" target="_blank" href="<%= result.url %>"><%= result.title %></a>
             <div class="webResultDescription"><%= result.desc %></div>

@@ -1,0 +1,21 @@
+<div id="timer"></div>
+
+<style>
+    #timer::after {
+        content: "Your browser does not support CSS animations!";
+        animation-name: countdown;
+        animation-fill-mode: forwards;
+        animation-duration: <%= ia.response.seconds %>s;
+    }
+
+    @keyframes countdown {
+        <%
+            for(let i = 0; i < ia.response.seconds; i++) {
+                %><%= (100 / ia.response.seconds) * i %>%{content:"<%= ia.response.seconds - i %> seconds remaining";}<%
+            }
+        %>
+        100% {
+            content: "Done!";
+        }
+    }
+</style>

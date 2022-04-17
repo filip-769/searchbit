@@ -50,7 +50,7 @@
         "web": 1,
         "image": 1
     },
-    "imageProxyUrl": "https://external-content.duckduckgo.com/iu/?u=",
+    "customHTML": "<!-- Write your custom code like CSS, JS, meta tags etc. here. -->\n<style></style>\n<script></script>",
     "lenses": {
         "default": null,
         "programming": "site:stackoverflow.com | site:developer.mozilla.org | site:github.com",

@@ -22,6 +22,6 @@ export default async q => {
             color: result["cpk-hex"] ? `#${result["cpk-hex"].toUpperCase()}` : "#000"
         }
     } else {
-        return false;
+        return;
     }
 }
