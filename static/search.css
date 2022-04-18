@@ -66,6 +66,10 @@ a {
 .webResult {
     margin-bottom: 2rem;
     word-wrap: break-word;
+    background-color: #202020;
+    border-radius: 0.45rem;
+    padding: 8px;
+    max-width: 600px;
 }
 
 .ResultBar span {
@@ -155,6 +159,8 @@ nav ul li[data-current] {
 .imageResult {
     width: 16vw;
     margin: 0.25rem;
+    background-color: #202020;
+    border-radius: 0.25rem;
 }
 
 .imageResult img {
@@ -352,3 +358,24 @@ header nav select {
     max-height: 10rem;
     max-width: 100%;
 }
+
+/* Custom scrollling Bar for Search Result page */
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
