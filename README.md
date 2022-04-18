@@ -1,7 +1,7 @@
 # Searchbit
 Searchbit is a meta search engine inspired by Searx.
 
-# Installation
+## Installation
 You need nodejs >= 17.5.0 to run Searchbit.
 
 1) Download all the files into a single folder.
@@ -10,7 +10,7 @@ You need nodejs >= 17.5.0 to run Searchbit.
 4) Run `npm run start`
 5) Open `http://localhost:14734` in your browser.
 
-# FAQ
+## FAQ
 
-## Why are you using `ejs-zero-dependencies` instead of `ejs`
-`EJS` is dependent on `jake`, which is dependent on `async`, which has/had a security vulnerability.
+### Why are you using `ejs-zero-dependencies` instead of `ejs`
+`ejs` is dependent on `jake`, which is dependent on `async`, which has/had a security vulnerability.
