@@ -1,40 +1,33 @@
-import { readFileSync } from "fs";
-import { cwd } from "process";
 import searchWeb from "./web/index.js";
 import searchImage from "./image/index.js";
 
-// read the config file
-const config = JSON.parse(readFileSync(cwd()+"/config.json"));
-
-export default async (e, q, p, t) => {
-    const engines = config.supported[t??"web"];
-    const engineWeight = config.weight[t??"web"];
-    // only keep engines that exist
-    const requestEngines = (e || engines).filter(x => engines.includes(x));
+export default async (e, q, p, t, c) => {
     const engineData = {};
     const allResults = {};
-    const allResultsArray = [];
+    let allResultsArray = [];
 
-    requestEngines.forEach(async engine => {
+    e = e.filter(x => c.engines[t][x] && c.engines[t][x] > 0);
+
+    e.forEach(async engine => {
         // query each engine and store the results
         let data;
         if(t === "image") {
-            data = await searchImage(engine, q, (p || 1));
+            data = await searchImage(engine, q, p);
         } else {
-            data = await searchWeb(engine, q, (p || 1));
+            data = await searchWeb(engine, q, p);
         }
         engineData[engine] = data;
     })
 
     // Wait for all engines to finish
-    const delay = config.defaultDelay;
+
     await new Promise(resolve => {
-        setTimeout(resolve, delay);
+        setTimeout(resolve, c.delay);
         setInterval(() => {
-            if(Object.keys(engineData).length === requestEngines.length) {
+            if(Object.keys(engineData).length === e.length) {
                 resolve();
             }
-        }, 50)
+        }, 10)
     })
 
     for(const engine in engineData) {
@@ -50,7 +43,7 @@ export default async (e, q, p, t) => {
                 result.xurl = new URL(result.url.replace("://www.", "://")).href;
                 // create formatted url
                 result.formattedUrl = (new URL(result.url).hostname + new URL(result.url).pathname).slice(0, 75);
-                if(result.img) result.img = config.imageProxyUrl + encodeURIComponent(result.img);
+                if(result.img) result.img = "/proxy?url" + encodeURIComponent(result.img);
             } catch (error) {
                 return;
             }
@@ -71,7 +64,7 @@ export default async (e, q, p, t) => {
             let weight = 0;
             // add weight for each result
             allResults[result.xurl].engines.forEach(x => {
-                weight += engineWeight[x];
+                weight += c.engines[t][x];
             })
             // set weight
             allResults[result.xurl].weight = weight;
@@ -88,6 +81,7 @@ export default async (e, q, p, t) => {
 
     // Sort by weight
     allResultsArray.sort((a, b) => b.weight - a.weight)
+    allResultsArray = allResultsArray.filter(x => x.weight >= c.minimumWeight[t]);
 
     return {
         results: allResultsArray

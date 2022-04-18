@@ -4,31 +4,37 @@ import searchAutocomplete from "./search/autocomplete/index.js";
 import { readFileSync } from "fs";
 import { cwd } from "process";
 
-// read the config file
-const config = JSON.parse(readFileSync(cwd()+"/config.json"));
-
-export default async (e, q, p, t) => {
+export default async (e, q, p, t, c, l) => {
     if(t === "autocomplete") {
-        return await searchAutocomplete((e??[config.defaultAutocomplete])[0], q);
+        return await searchAutocomplete(e[0], q);
     }
-    if(t === "web" || !t) {
-        return {
-            instantAnswers: await instantAnswers(q),
-            searchResults: await search(e, q, p, t)
+    if(/^!\w+ /.test(q)) {
+        try {
+            const bangs = JSON.parse(readFileSync(cwd()+"/bangs.json"));
+            const url = bangs[q.split(" ")[0].slice(1).toLowerCase()];
+            return {
+                redirect: url.replace("{searchTerms}", encodeURIComponent(q.replace(/^!\w+ /, "")))
+            }
+        } catch (error) {
+            console.error(error);
         }
-    } else {
-        return {
-            searchResults: await search(e, q, p, t)
-        }
+    }
+    let searchData;
+    let iaData;
+
+    if(!t || t === "web") { instantAnswers(q).then(data => iaData = data) } else { iaData = [] };
+    if(l || c?.lenses?.default) q = `${q} ${l ?? c?.lenses?.default}`;
+    search(e, q, p, t, c).then(data => searchData = data);
+
+    await new Promise(resolve => {
+        setInterval(() => {
+            if(typeof searchData === "object" && typeof iaData === "object") {
+                resolve();
+            }
+        }, 10)
+    })
+    return {
+        instantAnswers: iaData,
+        searchResults: searchData
     }
 }
-
-
-
-/*
-
-    if(/(^| )!\w+/.test(req.query.q)) {
-        
-    }
-
-*/

@@ -1,7 +1,11 @@
 <section class="webResults">
     <% json.searchResults.results.forEach(result => { %>
         <div class="webResult">
-            <div class="ResultEngines"><span><%= result.weight %></span> <span><%- result.engines.join("</span> <span>") %></span></div>
+            <div class="ResultBar">
+                <span><%- result.engines.join("</span><span>") %></span>
+                <span class="right"><a href="https://web.archive.org/web/<%= encodeURIComponent(result.url) %>" target="_blank">Cache</a></span>
+                <span><a href="/proxy?url=<%= encodeURIComponent(result.url) %>" target="_blank">Proxy</a></span>
+            </div>
             <div class="webResultFormattedUrl"><%= result.formattedUrl %></div>
             <a class="webResultTitle" target="_blank" href="<%= result.url %>"><%= result.title %></a>
             <div class="webResultDescription"><%= result.desc %></div>
@@ -10,63 +14,11 @@
 </section>
 <aside>
     <% json.instantAnswers.forEach(ia => { 
-            if(ia.type === "infobox") {
-                %>
-                    <div class="infoboxIa">
-                        <img src="<%= ia.response.image %>" alt="">
-                        <h2><a target="_blank" href="<%= ia.response.url %>"><%= ia.response.title %></a></h2>
-                        <p><%= ia.response.text %></p>
-                    </div>
-                <%
-            }
-            if(ia.type === "weather") {
-                %>
-                    <div class="weatherIa">
-                        <h2>Weather in <%= ia.response.region %></h2>
-                        <p><%= ia.response.text %></p>
-                        <%
-                            ia.response.days.forEach(day => {
-                                %>
-                                    <div class="weatherIaDay">
-                                        <img class="weatherIaIcon" src="<%= day.icon %>" alt="">
-                                        <div>
-                                            <h3><%= day.day %></h3>
-                                            <p><%= day.desc %>, temperature from <%= day.temp.min %> °C to <%= day.temp.max %> °C and wind <%= day.wind.speed %> km/h</p>
-                                        </div>
-                                    </div>
-                                <%
-                            });
-                        %>
-                    </div>
-                <%
-            }
-            if(ia.type === "currencyConvertor") {
-                %>
-                    <div class="currencyConvertorIa">
-                        <h2>
-                            <%= ia.response.from.amout %> <%= ia.response.from.currency %>
-                            is
-                            <%= ia.response.to.amout %> <%= ia.response.to.currency %>
-                        </h2>
-                    </div>
-                <%
-            }
-            if(ia.type === "translator") {
-                %>
-                    <div class="translatorIa">
-                        <p>
-                            <b><%= ia.response.fromText %></b>
-                        </p>
-                        <p>is</p>
-                        <p>
-                            <b><%= ia.response.toText %></b>
-                        </p>
-                        <p>
-                            in <%= ia.response.toLang %>    
-                        </p>
-                    </div>
-                <%
-            }
+            %>
+                <div class="<%= ia.type %>Ia">
+                    <%- include(`./ia/${ia.type}.ejs`, { ia }) %>
+                </div>
+            <%
         })
     %>
 </aside>

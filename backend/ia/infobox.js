@@ -3,13 +3,8 @@ import fetch from "node-fetch";
 
 export default async q => {
 
-    let json;
-    try {
-        const response = await fetch(`https://api.duckduckgo.com/?q=${encodeURIComponent(q)}&format=json&pretty=0&skip_disambig=1&no_redirect=1`);
-        json = await response.json();
-    } catch (error) {
-        return false;
-    }
+    const response = await fetch(`https://api.duckduckgo.com/?q=${encodeURIComponent(q)}&format=json&pretty=0&skip_disambig=1&no_redirect=1`);
+    const json = await response.json();
 
     if(json?.AbstractText == "") return false;
 
@@ -18,7 +13,7 @@ export default async q => {
         source: json?.AbstractSource,
         url: json?.AbstractURL,
         title: json?.Heading,
-        image: json?.Image == "" ? null : "https://duckduckgo.com" + json?.Image
+        image: json?.Image == "" ? null : "/proxy?url=" + encodeURIComponent("https://duckduckgo.com" + json?.Image)
     }
 
 }

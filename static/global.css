@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+    color: #bab4ab;
+}
+
+body {
+    background-color: #181a1b;
+    padding: 3rem;
+}
+

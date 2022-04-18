@@ -1,0 +1,9 @@
+<h3>
+    This IP is probably in
+    <%= ia.response.country %><%= ia.response.city ? ", " + ia.response.city : "" %>
+</h3>
+<div>
+    <%= ia.response.gps.latitude %>,
+    <%= ia.response.gps.longitude %>
+</div>
+<i>The location is only on estimate</i>

@@ -54,6 +54,10 @@ input[type="search"]::-webkit-search-results-decoration {
     width: max-content;
 }
 
+#title {
+    font-size: 1.5rem;
+}
+
 #searchBar button {
     display: flex;
     align-items: center;
@@ -73,31 +77,56 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 #searchBar input {
-    width: 500px;
+    width: 100%;
     padding: 0.15rem;
+    padding-left: 0.45rem;
+}
+
+#searchBar input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 0.8em;
+    width: 0.8em;
+    border-radius: 50em;
+    background: url("/clearSearchBtn.svg") no-repeat 50% 50%;
+    background-size: contain;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+#searchBar input:focus::-webkit-search-cancel-button {
+    opacity: 0.3;
+    pointer-events: all;
     position: absolute;
     right: 414px;
     top: 400px;
 }
 
 .webResults {
-    max-width: 50vw;
+    width: 50vw;
 }
 
 .webResult {
     margin-bottom: 2rem;
+    word-wrap: break-word;
 }
 
-.ResultEngines span {
+.ResultBar span {
     background-color: #252627;
     padding: 0.1rem;
     border-radius: 0.25rem;
+    margin-right: 1ch;
     text-transform: capitalize;
 }
 
-.ResultEngines {
+.ResultBar {
     margin-bottom: 0.15rem;
     font-size: 0.65rem;
+    display: flex;
+}
+
+.right {
+    margin-left: auto;
 }
 
 .webResultFormattedUrl {
@@ -114,9 +143,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 aside {
-    margin-right: 1.75rem;
     margin-left: auto;
-    max-width: 35vw;
+    width: 35vw;
 }
 
 aside > div {
@@ -126,18 +154,38 @@ aside > div {
     margin-bottom: 1rem;
 }
 
+nav {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    margin-top: 1rem;
+    width: 100%;
+    margin-left: 1rem;
+}
+
+nav ul button {
+    all: unset;
+    cursor: pointer;
 }
 
 nav ul li {
     margin-right: 1rem;
 }
 
+#top {
+    display: flex;
+    align-items: center;
+}
+
+#settingsTab {
+    margin-left: auto;
+}
+
 nav ul li[data-current] {
-    border-bottom: 0.2rem solid #0046af;
+    border-bottom: 0.15rem solid #999;
 }
 
 .imageResults {
@@ -155,6 +203,7 @@ nav ul li[data-current] {
     width: 16vw;
     height: 9vw;
     border-radius: 0.25rem;
+    object-fit: cover;
 }
 
 .imageResult h2 {
@@ -163,6 +212,77 @@ nav ul li[data-current] {
     overflow: hidden;
     text-overflow: ellipsis;
     margin-bottom: 0.2rem;
+}
+
+header nav select {
+    padding: 0.25rem;
+    border: 1px solid #999;
+    background-color: unset;
+    border-radius: 0.25rem;
+}
+
+
+.paginationButton {
+    background-color: #252627;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease;
+}
+
+.paginationButton:hover, .paginationButton:focus {
+    background-color: #2a2d2e;
+}
+
+.paginationPageText {
+    font-size: 0.75rem;
+    color: #999;
+    margin: 0 1rem;
+}
+
+@media only screen and (min-width: 1000px) {
+    #searchBar {
+        width: 35rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    aside {
+        width: 40vw;
+        margin-left: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    body {
+        padding: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        flex-direction: column-reverse;
+    }
+    .webResults, aside {
+        width: 100%;
+    }
+    aside {
+        margin-left: 0;
+    }
+    footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+        padding: 0.75rem;
+    }
+    #searchBar {
+        width: 100%;
+    }
 }
 
 
@@ -191,6 +311,76 @@ nav ul li[data-current] {
     margin-right: 0.5rem;
 }
 
+.questionsIa > div:not(:last-of-type) {
+    margin-bottom: 0.75rem;
+}
+
+.programmingIa pre {
+    max-width: 100%;
+    overflow: scroll;
+    padding: 0.25rem;
+}
+
+.programmingIa > pre:not(:last-of-type) {
+    margin-bottom: 0.75rem;
+}
+
+.holidaysIa ul, .namedayIa ul {
+    list-style: none;
+}
+
+.ptableIa span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 3.5ch;
+    height: 3.5ch;
+    color: white;
+    background-color: var(--color);
+}
+
+.encDecIa p {
+    word-wrap: break-word;
+}
+
+.wordInfoIa h3 {
+    text-transform: capitalize;
+}
+
+.wordInfoIa ol {
+    margin-left: 4rem;
+}
+
+#wordInfoIaPhonetics {
+    display: flex;
+    align-items: center;
+}
+
+.wordInfoIaSection {
+    margin-top: 1rem;
+}
+
+.wordInfoIa h5 {
+    font-size: 1rem;
+    margin-left: 2rem;
+    margin-right: 1ch;
+    display: inline-block;
+}
+
+/* if firefox */
+@supports (-moz-box-flex: unset) {
+    .wordInfoIa audio {
+        width: 3rem;
+    }
+}
+
+.codeIa img {
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    max-height: 10rem;
+    max-width: 100%;
 h2 {
     position: absolute;
     color: #B6B8B7;
