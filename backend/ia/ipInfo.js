@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 
-export default async ip => {
-    const response = await fetch(`https://reallyfreegeoip.org/json/${encodeURIComponent(ip)}`);
+export default async q => {
+    const response = await fetch(`https://reallyfreegeoip.org/json/${encodeURIComponent(q)}`);
     const json = await response.json();
 
 

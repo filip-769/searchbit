@@ -9,17 +9,6 @@
     <link rel="search" type="application/opensearchdescription+xml" title="Searchbit" href="/opensearch.xml?ac=<%= config.autocomplete %>">
     <title><% if(req.query.q) { %>Search results for <%= req.query.q %><% } else { %> Searchbit <% } %></title>
     <%- config.customHTML || "" %> 
-    <link rel="stylesheet" href="./search.css?v=2">
-    <meta name="application-name" content="Heexy"/>
-    <meta property="og:site_name" content="Heexy Alpha Search Engine">
-    <meta content="Heexy Alpha Earrly Acess"property="og:description">
-    <meta name="description" content="Heexy Alpha Earrly Acess"/>
-    <meta name="author" content="Heexy">
-    <meta content="https://cdn.heexy.tk/images/alpha.png" property="og:image">
-    <meta name="theme-color" content="#03adfc">
-    <link rel="icon" href="https://cdn.heexy.tk/images/alpha.png" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><% if(req.query.q) { %>Search results for <%= req.query.q %><% } %></title>
 </head>
 <body>
     <header>
@@ -30,8 +19,6 @@
             </div>
             <div id="searchBar">
                 <input type="search" name="q" value="<%= req.query.q %>" autofocus>
-             <div id="searchBar">
-                <input type="search" name="q" value="<%= req.query.q %>" autocomplete="off">
                 <button type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>

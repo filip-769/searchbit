@@ -42,8 +42,10 @@ export default async (e, q, p, t, c) => {
                 // remove www from url
                 result.xurl = new URL(result.url.replace("://www.", "://")).href;
                 // create formatted url
-                result.formattedUrl = (new URL(result.url).hostname + new URL(result.url).pathname).slice(0, 75);
-                if(result.img) result.img = "/proxy?url" + encodeURIComponent(result.img);
+                result.formattedUrl = (new URL(result.url).hostname + new URL(result.url).pathname).slice(0, 75);7
+                // add icon
+                result.icon = "/proxy?url=" + encodeURIComponent(`https://icons.duckduckgo.com/ip3/${new URL(result.url).hostname}.ico`);
+                if(result.img) result.img = "/proxy?url=" + encodeURIComponent(result.img);
             } catch (error) {
                 return;
             }
