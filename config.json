@@ -60,5 +60,9 @@
         "exclude_free_tlds": "-site:tk -site:ml -site:ga -site:cf -site:gq",
         "discussions": "site:forum.* | site:reddit.com"
     },
-    "port": 14734
+    "port": 14734,
+    "defaultAutocomplete": "qwant",
+    "defaultDelay": 1000,
+    "imageProxyUrl": "https://external-content.duckduckgo.com/iu/?u=",
+    "port": 8080
 }
