@@ -45,7 +45,7 @@
         }
     },
     "autocomplete": "google",
-    "delay": 2000,
+    "delay": 1000,
     "minimumWeight": {
         "web": 1,
         "image": 1
@@ -60,5 +60,5 @@
         "exclude_free_tlds": "-site:tk -site:ml -site:ga -site:cf -site:gq",
         "discussions": "site:forum.* | site:reddit.com"
     },
-    "port": 14734
+    "port": 8080
 }
