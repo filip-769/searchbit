@@ -13,4 +13,4 @@ You need nodejs >= 18 to run Searchbit.
 ## FAQ
 
 ### Security warning from NPM
-This should't have any effect on searchbit and will be fixed, when https://github.com/mde/ejs/pull/645 will be merged.
+This shouldn't have any effect on Searchbit and will be fixed, when https://github.com/mde/ejs/pull/645 will be merged.
