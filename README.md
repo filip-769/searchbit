@@ -13,4 +13,4 @@ You need nodejs >= 17.5.0 to run Searchbit.
 ## FAQ
 
 ### Why are you using `ejs-zero-dependencies` instead of `ejs`
-`ejs` is dependent on `jake`, which is dependent on `async`, which has/had a security vulnerability.
+Because `ejs` is dependent on `jake`, which is dependent on `async`, which has/had a security vulnerability.
