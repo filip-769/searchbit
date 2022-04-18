@@ -11,3 +11,6 @@ You need nodejs >= 17.5.0 to run Searchbit.
 5) Open `http://localhost:14734` in your browser.
 
 # FAQ
+
+## Why are you using `ejs-zero-dependencies` instead of `ejs`
+`EJS` is dependent on `jake`, which is dependent on `async`, which has/had a security vulnerability.
