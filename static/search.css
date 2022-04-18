@@ -8,6 +8,7 @@
 
 body {
     background-color: #181a1b;
+    /* padding: 3rem; */
     padding: 3rem;
 }
 
@@ -34,10 +35,20 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
 }
 
+@media only screen and (max-width: 600px) {
+    #searchBar input {
+        width: 340px;
+        padding: 0.15rem;
+    }
+
+    .webResults {
+        max-width: 87vw;
+    }
+
+  }
+
 #searchBar {
     border-radius: 0.25rem;
-    position: absolute;
-    right: 500px;
     border: 1px solid #252627;
     display: flex;
     width: max-content;
