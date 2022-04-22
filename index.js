@@ -1,13 +1,11 @@
 import { readFileSync } from "fs";
-import { cwd } from "process";
+import { Readable } from "node:stream";
 import express from "express";
 import search from "./backend/index.js";
-import fetch from "node-fetch";
+
 const app = express();
+const config = JSON.parse(readFileSync("./config.json"));
 
-const config = JSON.parse(readFileSync(cwd()+"/config.json"));
-
-app.set("view engine", "ejs");
 app.use(express.static("./static/"));
 app.use(express.urlencoded({ extended: true }));
 
@@ -15,13 +13,14 @@ app.all("/", (req, res) => res.redirect("/search"));
 
 app.get("/proxy", async (req, res) => {
     try {
-        if(!req.query.url) return res.status(400).send("bad request");
+        if(!/^https?:\/\//.test(req.query.url)) return res.status(400).json({ error: 400 });
         const response = await fetch(req.query.url);
         res.header({ "Content-Security-Policy": "default-src 'none'" });
         res.type(response.headers.get("Content-Type"));
-        response.body.pipe(res);
+        Readable.fromWeb(response.body).pipe(res);
     } catch (error) {
-        res.send(error);
+        console.error(error);
+        res.status(500).json({ error: 500 });
     }
 })
 
@@ -35,14 +34,13 @@ app.get("/opensearch.xml", (req, res) => {
 })
 
 app.post("/settings", (req, res) => {
-    let x;
     try {
-        x = JSON.stringify(JSON.parse(req.body.data));
+        const x = JSON.stringify(JSON.parse(req.body.data));
+        res.cookie("settings", x, { maxAge: 1000*60*60*24*365*10 });
+        res.redirect("/settings");
     } catch (error) {
         return res.status(400).redirect("/settings");
     }
-    res.cookie("settings", x, { maxAge: 1000*60*60*24*365*10 });
-    res.redirect("/settings");
 })
 
 app.get("/search", async (req, res) => {
@@ -55,7 +53,7 @@ app.get("/search", async (req, res) => {
             parseInt(req.query.p) || 1, //search page
             req.query.t ?? "web", //search type
             getUserConfig(req), //user config
-            getUserConfig(req).lenses[req.query.l?.toLowerCase()]
+            getUserConfig(req).lenses[req.query.l?.toLowerCase()] //lense
         )
 
         if(req.query.f === "json" || req.query.t === "autocomplete") {
@@ -67,7 +65,7 @@ app.get("/search", async (req, res) => {
         }
     } catch (error) {
         console.error(error);
-        res.status(500).send(error);
+        res.status(500).json({ error: 500 });
     } 
 });
 

@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 export default async q => {
     const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q.replace("time", "").replace("in ", "").trim())}&count=1`);
     const json = await response.json();

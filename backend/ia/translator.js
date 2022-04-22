@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 export default async q => {
     const text = q.replace("translate", "").split("to")[0].trim();
     const lang = q.replace("translate", "").split("to")[1].trim().toLowerCase();

@@ -1,12 +1,11 @@
 import jsdom from "jsdom";
-import fetch from "node-fetch";
-import randomUserAgent from "user-agents";
+import randomUserAgent from "../../../randomUserAgent.js";
 
 
 export default async (q, p) => {
-    const response = await fetch(`https://www.bing.com/search?q=${encodeURIComponent(q)}&first=${(p - 1) * 10 + 1}`, {
+    const response = await fetch(`https://www.bing.com/search?q=${encodeURIComponent(q)}&first=${(p - 1) * 10 + 1}&cc=clear`, {
         headers: {
-            "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
+            "User-Agent": randomUserAgent(),
             "Accept-Language": "en, *;q=0.5"
         }
     })

@@ -1,12 +1,11 @@
 import jsdom from "jsdom";
-import fetch from "node-fetch";
-import randomUserAgent from "user-agents";
+import randomUserAgent from "../../../randomUserAgent.js";
 
 
 export default async (q, p) => {
     const response = await fetch(`http://www.seekport.com/?q=${encodeURIComponent(q)}&page=${p}`, {
         headers: {
-            "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
+            "User-Agent": randomUserAgent(),
             "Accept-Language": "en, *;q=0.5"
         }
     })

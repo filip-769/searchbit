@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 export default async q => {
     const response = await fetch(`https://www.answers.com/question/search?q=${encodeURIComponent(q)}`);
     const data = await response.json();

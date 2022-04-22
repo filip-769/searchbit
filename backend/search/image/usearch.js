@@ -1,10 +1,9 @@
-import fetch from "node-fetch";
-import randomUserAgent from "user-agents";
+import randomUserAgent from "../../../randomUserAgent.js";
 
 export default async (q, p) => {
     const response = await fetch(`https://usearch.com/api/Search/GetImageSearch?q=${encodeURIComponent(q)}&pageSize=35&pageNumber=${p}`, {
         headers: {
-            "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
+            "User-Agent": randomUserAgent(),
             "Accept-Language": "en, *;q=0.5",
             "Accept": "*/*"
         }

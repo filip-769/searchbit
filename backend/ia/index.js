@@ -1,24 +1,3 @@
-import math from "./math.js";
-import weather from "./weather.js";
-import ipInfo from "./ipInfo.js";
-import currency from "./currency.js";
-import randomNumber from "./randomNumber.js";
-import randomPassword from "./randomPassword.js";
-import infobox from "./infobox.js";
-import ptable from "./ptable.js";
-import time from "./time.js";
-import holidays from "./holidays.js";
-import nameday from "./nameday.js";
-import translator from "./translator.js";
-import programming from "./programming.js";
-import questions from "./questions.js";
-import status from "./status.js";
-import encDec from "./encDec.js";
-import tempMail from "./tempMail.js";
-import code from "./code.js";
-import timer from "./timer.js";
-import wordInfo from "./wordInfo.js";
-
 const regexes = {
     ipInfo: /(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])/i,
     randomPassword: /token|random password|password generator|generate password/i,
@@ -40,7 +19,7 @@ const regexes = {
     code: /(^create|^generate|^make|^) (qr|barcode) /i,
     timer: /^timer/i,
     wordInfo: /synonyms?|antonyms?|define|definitions?|phonetics|pronunciation/i,
-    questions: /^(how|where|when|what|why|am|are|is|who|whom|which|whose) /i,
+    questions: /^(how|where|when|what|why|am|are|is|who|whom|which|whose) |\?$/i,
     programming: /($|^| )(Shell|Bash|C#|C\+\+|C|CSS|Html|Java|Javascript|js|Objectiv-C|PHP|Python|SQL|Swift|Whatever|Ruby|TypeScript|ts|Go|Kotlin|Assembly|R|VBA|Scala|Rust|Dart|Elixir|Clojure|WebAssembly|F#|Erlang|Haskell|Matlab|Cobol|Fortran|Scheme|Perl|Groovy|Lua|Julia|Delphi|Abap|Lisp|Prolog|Pascal|PostScript|Smalltalk|ActionScript|BASIC|Solidity|PowerShell|GDScript|Excel)($|^| )/i,
     infobox: /.+/,
 }
@@ -51,68 +30,8 @@ export default async (q) => {
     for (const regex in regexes) {
         if(regexes[regex].test(q)) {
             try {
-                switch(regex) {
-                    case "infobox":
-                        list.push({ type: "infobox", response: await infobox(q) });
-                        break;
-                    case "math":
-                        list.push({ type: "math", response: await math(q) });
-                        break;
-                    case "weather":
-                        list.push({ type: "weather", response: await weather(q) });
-                        break;
-                    case "ipInfo":
-                        list.push({ type: "ipInfo", response: await ipInfo(q) });
-                        break;
-                    case "ptable":
-                        list.push({ type: "ptable", response: await ptable(q) });
-                        break;
-                    case "nameday":
-                        list.push({ type: "nameday", response: await nameday(q) });
-                        break;
-                    case "holidays":
-                        list.push({ type: "holidays", response: await holidays(q) });
-                        break;
-                    case "time":
-                        list.push({ type: "time", response: await time(q) });
-                        break;
-                    case "currency":
-                        list.push({ type: "currency", response: await currency(q) });
-                        break;
-                    case "randomNumber":
-                        list.push({ type: "randomNumber", response: await randomNumber(q) });
-                        break;
-                    case "randomPassword":
-                        list.push({ type: "randomPassword", response: await randomPassword(q) });
-                        break;
-                    case "translator":
-                        list.push({ type: "translator", response: await translator(q) });
-                        break;
-                    case "programming":
-                        list.push({ type: "programming", response: await programming(q) });
-                        break;
-                    case "questions":
-                        list.push({ type: "questions", response: await questions(q) });
-                        break;
-                    case "status":
-                        list.push({ type: "status", response: await status(q) });
-                        break;
-                    case "encDec":
-                        list.push({ type: "encDec", response: await encDec(q) });
-                        break;
-                    case "tempMail":
-                        list.push({ type: "tempMail", response: await tempMail(q) });
-                        break;
-                    case "code":
-                        list.push({ type: "code", response: await code(q) });
-                        break;
-                    case "timer":
-                        list.push({ type: "timer", response: await timer(q) });
-                        break;
-                    case "wordInfo":
-                        list.push({ type: "wordInfo", response: await wordInfo(q) });
-                        break;
-                }
+                const func = (await import(`./${regex.replace(/[^a-zA-Z]+/g, "")}.js`)).default;
+                list.push({ type: regex, response: await func(q) });
             } catch (error) {
                 console.error(error);
             }

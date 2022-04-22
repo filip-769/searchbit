@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 export default async q => {
     const response = await fetch("https://nameday.abalin.net/api/V1/today");
     const json = await response.json();

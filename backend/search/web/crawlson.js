@@ -1,11 +1,10 @@
-import fetch from "node-fetch";
-import randomUserAgent from "user-agents";
+import randomUserAgent from "../../../randomUserAgent.js";
 
 
 export default async (q) => {
     const response = await fetch(`https://s1.crawlson.com/worker_search.php?q=${encodeURIComponent(q)}`, {
         headers: {
-            "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
+            "User-Agent": randomUserAgent(),
             "Accept-Language": "en, *;q=0.5"
         }
     })

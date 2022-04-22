@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 export default async q => {
     const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(q.replace(/synonyms?|antonyms?|define|definitions?|phonetics|pronunciation| for /gi, "").trim())}`);
     const data = await response.json();

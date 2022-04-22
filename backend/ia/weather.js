@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 export default async q => {
     const goeResponse = await fetch(`https://www.metaweather.com/api/location/search/?query=${encodeURIComponent(q.replace("weather", "").replace(" in ", "").trim())}`);
     const geoJson = await goeResponse.json();

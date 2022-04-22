@@ -1,11 +1,10 @@
 import jsdom from "jsdom";
-import fetch from "node-fetch";
-import randomUserAgent from "user-agents";
+import randomUserAgent from "../../../randomUserAgent.js";
 
 export default async (q, p) => {
     const response = await fetch(`https://petalsearch.com/search?query=${encodeURIComponent(q)}&channel=image&pn=${p}`, {
         headers: {
-            "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
+            "User-Agent": randomUserAgent(),
             "Accept-Language": "en, *;q=0.5",
             "Accept": "*/*"
         }

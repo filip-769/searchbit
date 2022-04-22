@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 export default async q => {
         const data = q.replace("status", "").replace(/^is /, "").replace("?", "").replace(/ down$/, "").replace(/ up$/, "").trim();
         let domain;

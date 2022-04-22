@@ -1,6 +1,5 @@
 import jsdom from "jsdom";
-import fetch from "node-fetch";
-import randomUserAgent from "user-agents";
+import randomUserAgent from "../../../randomUserAgent.js";
 
 async function asyncForEach(array, callback) {
     for (let index = 0; index < array.length; index++) {
@@ -11,7 +10,7 @@ async function asyncForEach(array, callback) {
 export default async (q, p) => {
     const response = await fetch(`http://www.baidu.com/s?wd=${encodeURIComponent(q)}&pn=${10*(p-1)}`, {
         headers: {
-            "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
+            "User-Agent": randomUserAgent(),
             "Accept-Language": "en, *;q=0.5"
         }
     })

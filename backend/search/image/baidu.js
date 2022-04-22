@@ -1,10 +1,9 @@
-import fetch from "node-fetch";
-import randomUserAgent from "user-agents";
+import randomUserAgent from "../../../randomUserAgent.js";
 
 export default async (q, p) => {
     const response = await fetch(`https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=&word=${encodeURIComponent(q)}&pn=${(p-1)*30}`, {
         headers: {
-            "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
+            "User-Agent": randomUserAgent(),
             "Accept-Language": "en, *;q=0.5",
             "Accept": "*/*"
         }

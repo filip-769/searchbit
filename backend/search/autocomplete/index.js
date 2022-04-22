@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 const autocompleteUrls = {
     alexandria: false,
     baidu: false,
