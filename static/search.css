@@ -285,11 +285,13 @@ header nav select {
     margin-bottom: 0.75rem;
 }
 
-.programmingIa pre {
+aside pre {
     max-width: 100%;
     overflow-x: auto;
     padding: 0.25rem;
+    font-family: monospace;
 }
+
 
 .programmingIa > pre:not(:last-of-type) {
     margin-bottom: 0.75rem;

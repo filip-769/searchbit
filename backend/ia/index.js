@@ -22,6 +22,7 @@ const regexes = {
     questions: /^(how|where|when|what|why|am|are|is|who|whom|which|whose) |\?$/i,
     programming: /($|^| )(Shell|Bash|C#|C\+\+|C|CSS|Html|Java|Javascript|js|Objectiv-C|PHP|Python|SQL|Swift|Whatever|Ruby|TypeScript|ts|Go|Kotlin|Assembly|R|VBA|Scala|Rust|Dart|Elixir|Clojure|WebAssembly|F#|Erlang|Haskell|Matlab|Cobol|Fortran|Scheme|Perl|Groovy|Lua|Julia|Delphi|Abap|Lisp|Prolog|Pascal|PostScript|Smalltalk|ActionScript|BASIC|Solidity|PowerShell|GDScript|Excel)($|^| )/i,
     infobox: /.+/,
+    whois: /whois +.+\..+/i,
 }
 
 

@@ -17,7 +17,7 @@ export default async (q, p) => {
     const url = `https://gigablast.com${part1}${part2}`;
     const response2 = await fetch(url, {
         headers: {
-            "User-Agent": new randomUserAgent({ deviceCategory: "desktop"}).toString(),
+            "User-Agent": randomUserAgent(),
             "Accept-Language": "en, *;q=0.5"
         }
     });

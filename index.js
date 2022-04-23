@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 import { Readable } from "node:stream";
-import express from "express";
 import search from "./backend/index.js";
+import express from "express";
 
 const app = express();
 const config = JSON.parse(readFileSync("./config.json"));

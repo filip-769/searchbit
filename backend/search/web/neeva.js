@@ -3,7 +3,7 @@ import randomUserAgent from "../../../randomUserAgent.js";
 
 
 export default async (q, p) => {
-    // we need to get the verification cookie to access the search results
+    // we need to get the verification cookie to access search results
     const cookie = 
         (
             await fetch(
