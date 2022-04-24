@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div id="timer"></div>
 
 <style>
@@ -19,3 +20,23 @@
         }
     }
 </style>
+=======
+<div id="timer">
+    <noscript>
+        <img src="/proxy?url=<%= encodeURIComponent(`http://web-dceov53.hstnw.ml/gif.php?seconds=${ia.response.seconds}`) %>" alt="timer for <%= ia.response.seconds %> seconds" loading="lazy">
+    </noscript>
+</div>
+<script>
+    let seconds = <%= ia.response.seconds %>;
+    const timerEl = document.querySelector("#timer");
+    const timerInterval = setInterval(() => {
+        timerEl.textContent = new Date(seconds * 1000).toISOString().substr(11, 8);
+        if(seconds === -1) {
+            timerEl.textContent = "Done!";
+            return clearInterval(timerInterval);
+        } else {
+            seconds--;
+        }
+    }, 1000);
+</script>
+>>>>>>> 25d96eb (Commit)

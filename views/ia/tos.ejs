@@ -1,0 +1,25 @@
+<h3>
+    <img src="<%= ia.response.img %>" alt="logo">
+    <%= ia.response.name %>
+    <span class="grade" style="--data-grade-color: <%= ia.response.rating.color %>;">
+        Grade 
+        <%= ia.response.rating.letter %>
+    </span>
+</h3>
+<div>
+    <span>
+        <a href="<%= ia.response.tosURL %>" target="_blank">Official TOS/Privacy policy</a>
+    </span>
+    <span>
+        <a href="<%= ia.response.tosdrURL %>" target="_blank">ToS;DR</a>
+    </span>
+</div>
+<ol>
+    <%
+        ia.response.points.forEach(point => {
+            %>
+                <li><%= point %></li>
+            <%
+        })
+    %>
+</ol>

@@ -33,4 +33,4 @@ Yessle | https://yessle.com | &cross; | &check; | &cross; | &cross;
 Yioop | https://yioop.com | &check; | &check; | &cross; | &cross;
 
 Notes:
-- Neeva, Qwant and Mojeek image search was excluded, because it looks like they only get images from Bing.
+- Neeva, Qwant, Brave and Mojeek image search was excluded, because it looks like they only get images from Bing.
