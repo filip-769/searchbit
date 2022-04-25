@@ -7,7 +7,7 @@ Name | Website | Pagination | Web | Autocomplete | Image
 Alexandria | https://alexandria.org | &check; | &check; | &cross; | &cross;
 Baidu | https://baidu.com | &check; | &check; | &cross; | &check;
 Bing | https://bing.com | &check; | &check; | &check; | &check;
-Brave | https://search.brave.com | &cross; | &check; | &check; | &check;
+Brave | https://search.brave.com | &check; | &check; | &check; | &check;
 Crawlson | https://crawlson.com | &cross; | &check; | &cross; | &cross;
 Entfer | https://entfer.com | &cross; | &check; | &cross; | &cross;
 Exactseek | https://exactseek.com | &check; | &check; | &cross; | &cross;

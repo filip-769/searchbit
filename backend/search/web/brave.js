@@ -2,8 +2,8 @@ import jsdom from "jsdom";
 import randomUserAgent from "../../../randomUserAgent.js";
 
 
-export default async (q) => {
-    const response = await fetch(`https://search.brave.com/search?q=${encodeURIComponent(q)}`, {
+export default async (q, p) => {
+    const response = await fetch(`https://search.brave.com/search?q=${encodeURIComponent(q)}&offset=${encodeURIComponent(p - 1)}`, {
         headers: {
             "User-Agent": randomUserAgent(),
             "Accept-Language": "en, *;q=0.5"
