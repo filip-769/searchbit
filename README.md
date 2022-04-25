@@ -14,6 +14,3 @@ You need nodejs >= 18 to run Searchbit.
 
 ### Security warning from NPM
 This shouldn't have any effect on Searchbit and will be fixed, when https://github.com/mde/ejs/pull/645 will be merged.
-
-### Only Google and Bing are returning results
-You need to change the weight of other search engines to more than 0 in config.json
