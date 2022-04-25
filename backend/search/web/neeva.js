@@ -3,7 +3,8 @@ import randomUserAgent from "../../../randomUserAgent.js";
 
 
 export default async (q, p) => {
-    // we need to get the verification cookie to access search results
+    // neeva seems to changed their internal API, so it will probably throw an error
+    // TODO: fix
     const cookie = 
         (
             await fetch(
