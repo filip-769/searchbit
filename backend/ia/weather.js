@@ -2,6 +2,8 @@ export default async q => {
     const goeResponse = await fetch(`https://www.metaweather.com/api/location/search/?query=${encodeURIComponent(q.replace("weather", "").replace(" in ", "").trim())}`);
     const geoJson = await goeResponse.json();
 
+    if(!geoJson[0]?.woeid) return;
+
     const weatherResponse = await fetch(`https://www.metaweather.com/api/location/${geoJson[0].woeid}/`);
     const json = await weatherResponse.json();
 
