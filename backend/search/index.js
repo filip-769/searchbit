@@ -10,13 +10,11 @@ export default async (e, q, p, t, c) => {
 
     e.forEach(async engine => {
         // query each engine and store the results
-        let data;
         if(t === "image") {
-            data = await searchImage(engine, q, p);
+            engineData[engine] = await searchImage(engine, q, p);
         } else {
-            data = await searchWeb(engine, q, p);
+            engineData[engine] = await searchWeb(engine, q, p);
         }
-        engineData[engine] = data;
     })
 
     // Wait for all engines to finish

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./global.css">
     <link rel="stylesheet" href="./search.css">
     <link rel="search" type="application/opensearchdescription+xml" title="Searchbit" href="/opensearch.xml?ac=<%= config.autocomplete %>">
-    <title><% if(req.query.q) { %>Search results for <%= req.query.q %><% } else { %> Searchbit <% } %></title>
+    <title><% if(typeof json !== "undefined" && json.q) { %>Search results for <%= json.q %><% } else { %> Searchbit <% } %></title>
     <%- config.customHTML || "" %> 
 </head>
 <body>
@@ -18,7 +18,7 @@
                 <a href="/settings" id="settingsTab">Settings</a>
             </div>
             <div id="searchBar">
-                <input type="search" name="q" value="<%= req.query.q %>" autofocus>
+                <input type="search" name="q" value="<%= typeof json !== "undefined" ? json.q : "" %>" autofocus>
                 <button type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -28,16 +28,6 @@
                 </button>
              </div>
              <nav>
-                <select name="l" oninput="document.querySelector('form').submit()">
-                    <option value="">None</option>
-                    <% 
-                        for(const lense in config.lenses) {
-                            %>
-                                <option value="<%= lense %>" <%= req.query.l === lense ? "selected" : "" %>><%= `${lense[0].toUpperCase()}${lense.slice(1)}`.replaceAll("_", " ") %></option>
-                            <%
-                        }
-                    %>
-                </select>
                 <ul>
                     <li <%- req.query.t !== "image" ? "data-current" : "" %>><button type="submit" name="t" value="web">Web</button></li>
                     <li <%- req.query.t === "image" ? "data-current" : "" %>><button type="submit" name="t" value="image">Image</button></li>

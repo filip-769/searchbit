@@ -120,7 +120,6 @@ nav ul {
     list-style: none;
     display: flex;
     width: 100%;
-    margin-left: 1rem;
 }
 
 nav ul button {
@@ -171,14 +170,6 @@ nav ul li[data-current] {
     text-overflow: ellipsis;
     margin-bottom: 0.2rem;
 }
-
-header nav select {
-    padding: 0.25rem;
-    border: 1px solid #999;
-    background-color: unset;
-    border-radius: 0.25rem;
-}
-
 
 .paginationButton {
     background-color: #252627;
@@ -301,42 +292,8 @@ aside pre {
     list-style: none;
 }
 
-<<<<<<< HEAD
-=======
-.tosIa h3 {
-    display: flex;
-    align-items: center;
-}
 
-.tosIa img {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.25ch;
-}
 
-.tosIa span {
-    background-color: #252627;
-    padding: 0.1rem;
-    border-radius: 0.25rem;
-    margin-right: 1ch;
-}
-
-.tosIa > *:not(:last-child) {
-    margin-bottom: 0.5rem;
-}
-
-.tosIa .grade {
-    background-color: var(--data-grade-color);
-    color: white;
-    padding: 0.25rem;
-    margin-left: 0.25ch;
-}
-
-.tosIa ol {
-    margin-left: 2ch;
-}
-
->>>>>>> 25d96eb (Commit)
 .ptableIa span {
     display: inline-flex;
     align-items: center;

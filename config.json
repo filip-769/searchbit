@@ -50,13 +50,12 @@
         "image": 2
     },
     "customHTML": "<!-- Write your custom code like CSS, JS, meta tags etc. here. -->\n<style></style>\n<script></script>",
-    "lenses": {
-        "default": null,
+    "quickShortcuts": {
         "programming": "site:stackoverflow.com | site:developer.mozilla.org | site:github.com",
         "cooking": "site:based.cooking",
         "videos": "(inurl:youtube.com/watch | site:odysee.com | site:vimeo.com)",
         "documents": "(filetype:pdf | filetype:docx)",
-        "exclude_free_tlds": "-site:tk -site:ml -site:ga -site:cf -site:gq",
+        "noFreeTlds": "-site:tk -site:ml -site:ga -site:cf -site:gq",
         "discussions": "site:forum.* | site:reddit.com"
     },
     "port": 14734

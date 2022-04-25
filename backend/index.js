@@ -5,6 +5,9 @@ import { readFileSync } from "fs";
 import { cwd } from "process";
 
 export default async (e, q, p, t, c, l) => {
+    for (const x in c.quickShortcuts) {
+        q = q.replaceAll(`@${x}`, c.quickShortcuts[x]);
+    }
     if(t === "autocomplete") {
         return await searchAutocomplete(e[0], q);
     }
@@ -23,7 +26,6 @@ export default async (e, q, p, t, c, l) => {
     let iaData;
 
     if(!t || t === "web") { instantAnswers(q).then(data => iaData = data) } else { iaData = [] };
-    if(l || c?.lenses?.default) q = `${q} ${l ?? c?.lenses?.default}`;
     search(e, q, p, t, c).then(data => searchData = data);
 
     await new Promise(resolve => {
@@ -34,6 +36,7 @@ export default async (e, q, p, t, c, l) => {
         }, 10)
     })
     return {
+        q: q,
         instantAnswers: iaData,
         searchResults: searchData
     }

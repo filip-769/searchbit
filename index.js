@@ -53,7 +53,6 @@ app.get("/search", async (req, res) => {
             parseInt(req.query.p) || 1, //search page
             req.query.t ?? "web", //search type
             getUserConfig(req), //user config
-            getUserConfig(req).lenses[req.query.l?.toLowerCase()] //lense
         )
 
         if(req.query.f === "json" || req.query.t === "autocomplete") {
