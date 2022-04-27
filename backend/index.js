@@ -4,7 +4,7 @@ import searchAutocomplete from "./search/autocomplete/index.js";
 import { readFileSync } from "fs";
 import { cwd } from "process";
 
-export default async (e, q, p, t, c, l) => {
+export default async (e, q, p, t, c) => {
     for (const x in c.quickShortcuts) {
         q = q.replaceAll(`@${x}`, c.quickShortcuts[x]);
     }
@@ -25,7 +25,7 @@ export default async (e, q, p, t, c, l) => {
     let searchData;
     let iaData;
 
-    if(!t || t === "web") { instantAnswers(q).then(data => iaData = data) } else { iaData = [] };
+    if(t === "web" && p === 1) { instantAnswers(q).then(data => iaData = data) } else { iaData = [] };
     search(e, q, p, t, c).then(data => searchData = data);
 
     await new Promise(resolve => {
