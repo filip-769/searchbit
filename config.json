@@ -45,9 +45,9 @@
     },
     "autocomplete": "qwant",
     "delay": 1000,
-    "minimumWeight": {
-        "web": 5,
-        "image": 2
+    "maximumResults": {
+        "web": 150,
+        "image": 300
     },
     "customHTML": "<!-- Write your custom code like CSS, JS, meta tags etc. here. -->\n<style></style>\n<script></script>",
     "quickShortcuts": {
@@ -57,6 +57,6 @@
         "documents": "(filetype:pdf | filetype:docx)",
         "noFreeTlds": "-site:tk -site:ml -site:ga -site:cf -site:gq",
         "discussions": "site:forum.* | site:reddit.com"
-    },
+    },maximumResults
     "port": 14734
 }

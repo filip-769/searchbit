@@ -81,7 +81,7 @@ export default async (e, q, p, t, c) => {
 
     // Sort by weight
     allResultsArray.sort((a, b) => b.weight - a.weight)
-    allResultsArray = allResultsArray.filter((x, i) => x.weight >= c.minimumWeight[t] || i < 15 || (t === "image" && i < 150));
+    allResultsArray = allResultsArray.filter((x, i) => c.maximumResults[t] > i);
 
     return {
         results: allResultsArray
