@@ -1,62 +1,62 @@
 {
-    "engines": {
-        "web": {
-            "alexandria": 1,
-            "entfer": 1,
-            "google": 1,
-            "neeva": 1,
-            "seznam": 1,
-            "yandex": 1,
-            "baidu": 1,
-            "exactseek": 1,
-            "petal": 1,
-            "teclis": 1,
-            "yessle": 1,
-            "bing": 1,
-            "exalead": 1,
-            "infotiger": 1,
-            "qwant": 1,
-            "usearch": 1,
-            "yioop": 1,
-            "brave": 1,
-            "fairsearch": 1,
-            "mojeek": 1,
-            "rightdao": 1,
-            "wiby": 1,
-            "crawlson": 1,
-            "gigablast": 1,
-            "naver": 1,
-            "seekport": 1,
-            "yacy": 1
-        },
-        "image": {
-            "baidu": 1,
-            "bing": 1,
-            "gigablast": 1,
-            "google": 1,
-            "naver": 1,
-            "petal": 1,
-            "qwant": 1,
-            "seznam": 1,
-            "usearch": 1,
-            "yacy": 1,
-            "yandex": 1
-        }
-    },
-    "autocomplete": "qwant",
-    "delay": 1000,
-    "maximumResults": {
-        "web": 150,
-        "image": 300
-    },
-    "customHTML": "<!-- Write your custom code like CSS, JS, meta tags etc. here. -->\n<style></style>\n<script></script>",
-    "quickShortcuts": {
-        "programming": "site:stackoverflow.com | site:developer.mozilla.org | site:github.com",
-        "cooking": "site:based.cooking",
-        "videos": "(inurl:youtube.com/watch | site:odysee.com | site:vimeo.com)",
-        "documents": "(filetype:pdf | filetype:docx)",
-        "noFreeTlds": "-site:tk -site:ml -site:ga -site:cf -site:gq",
-        "discussions": "site:forum.* | site:reddit.com"
-    },maximumResults
-    "port": 14734
+	"engines": {
+		"web": {
+			"alexandria": 1,
+			"entfer": 1,
+			"google": 1,
+			"neeva": 1,
+			"seznam": 1,
+			"yandex": 1,
+			"baidu": 1,
+			"exactseek": 1,
+			"petal": 1,
+			"teclis": 1,
+			"yessle": 1,
+			"bing": 1,
+			"exalead": 1,
+			"infotiger": 1,
+			"qwant": 1,
+			"usearch": 1,
+			"yioop": 1,
+			"brave": 1,
+			"fairsearch": 1,
+			"mojeek": 1,
+			"rightdao": 1,
+			"wiby": 1,
+			"crawlson": 1,
+			"gigablast": 1,
+			"naver": 1,
+			"seekport": 1,
+			"yacy": 1
+		},
+		"image": {
+			"baidu": 1,
+			"bing": 1,
+			"gigablast": 1,
+			"google": 1,
+			"naver": 1,
+			"petal": 1,
+			"qwant": 1,
+			"seznam": 1,
+			"usearch": 1,
+			"yacy": 1,
+			"yandex": 1
+		}
+	},
+	"autocomplete": "qwant",
+	"delay": 1000,
+	"maximumResults": {
+		"web": 150,
+		"image": 300
+	},
+	"customHTML": "<!-- Write your custom code like CSS, JS, meta tags etc. here. -->\n<style></style>\n<script></script>",
+	"quickShortcuts": {
+		"programming": "site:stackoverflow.com | site:developer.mozilla.org | site:github.com",
+		"cooking": "site:based.cooking",
+	    "videos": "(inurl:youtube.com/watch | site:odysee.com | site:vimeo.com)",
+		"documents": "(filetype:pdf | filetype:docx)",
+		"noFreeTlds": "-site:tk -site:ml -site:ga -site:cf -site:gq",
+		"discussions": "site:forum.* | site:reddit.com"
+	},
+	"port": 14734
 }
