@@ -46,7 +46,7 @@
 	"autocomplete": "qwant",
 	"delay": 1000,
 	"maximumResults": {
-		"web": 150,
+		"web": 15,
 		"image": 300
 	},
 	"customHTML": "<!-- Write your custom code like CSS, JS, meta tags etc. here. -->\n<style></style>\n<script></script>",
