@@ -44,7 +44,7 @@
 		}
 	},
 	"autocomplete": "qwant",
-	"delay": 1250,
+	"delay": 1500,
 	"maximumResults": {
 		"web": 15,
 		"image": 300
@@ -58,5 +58,10 @@
 		"noFreeTlds": "-site:tk -site:ml -site:ga -site:cf -site:gq",
 		"discussions": "site:forum.* | site:reddit.com"
 	},
+    "filters": {
+        "title": [],
+        "url": [],
+        "description": []
+    },
 	"port": 14734
 }

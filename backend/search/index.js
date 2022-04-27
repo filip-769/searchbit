@@ -82,7 +82,12 @@ export default async (e, q, p, t, c) => {
     // Sort by weight
     allResultsArray.sort((a, b) => b.weight - a.weight)
     allResultsArray = allResultsArray.filter((x, i) => c.maximumResults[t] > i);
-
+    for (const type in c.filters) {
+        c.filters[type].forEach(x => {
+            const regex = new RegExp(x, "gim");
+            allResultsArray = allResultsArray.filter(y => !regex.test(y[type]));
+        })
+    }
     return {
         results: allResultsArray
     }
