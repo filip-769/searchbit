@@ -25,7 +25,7 @@ export default async (e, q, p, t, c) => {
             if(Object.keys(engineData).length === e.length) {
                 resolve();
             }
-        }, 10)
+        }, 1)
     })
 
     for(const engine in engineData) {
