@@ -22,22 +22,15 @@ export default async (e, q, p, t, c) => {
             console.error(error);
         }
     }
-    let searchData;
-    let iaData;
 
-    if(t === "web" && p === 1) { instantAnswers(q).then(data => iaData = data) } else { iaData = [] };
-    search(e, q, p, t, c).then(data => searchData = data);
-
-    await new Promise(resolve => {
-        setInterval(() => {
-            if(typeof searchData === "object" && typeof iaData === "object") {
-                resolve();
-            }
-        }, 10)
-    })
+    const data = await Promise.all
+        ([
+            search(e, q, p, t, c),
+            (t === "web" && p === 1) ? instantAnswers(q) : []
+        ])
     return {
         q: q,
-        instantAnswers: iaData,
-        searchResults: searchData
+        searchResults: data[0],
+        instantAnswers: data[1]
     }
 }
