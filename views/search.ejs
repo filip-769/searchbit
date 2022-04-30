@@ -21,7 +21,7 @@
                 <input type="search" name="q" value="<%= typeof json !== "undefined" ? json.q : "" %>" autofocus>
                 <%
                     for (const param in req.query) {
-                        if(param !== "q" && param !== "p") {
+                        if(param !== "q" && param !== "p" && (param === "e" ? true : req.query[param].includes(","))) {
                             %>
                                 <input type="hidden" name="<%= param %>" value="<%= req.query[param] %>">
                             <%
