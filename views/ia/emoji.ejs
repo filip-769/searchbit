@@ -1,0 +1,17 @@
+<div>
+    <h1><%= ia.response.character %></h1>
+    <h3><%= ia.response.name %></h3>
+</div>
+<p><%= ia.response.description %></p>
+<ul>
+    <%
+        for (const img in ia.response.imgs) {
+            %>
+                <li>
+                    <img src="<%= ia.response.imgs[img] %>" alt="">
+                    <span><%= img %></span>
+                </li>
+            <%
+        }
+    %>
+</ul>
