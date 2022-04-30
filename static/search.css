@@ -141,7 +141,7 @@ nav ul li {
 }
 
 nav ul li[data-current] {
-    border-bottom: 0.15rem solid #999;
+    border-bottom: 0.1rem solid lightskyblue;
 }
 
 .imageResults {

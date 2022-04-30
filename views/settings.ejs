@@ -10,12 +10,15 @@
 </head>
 <body>
     <form method="post">
-        <textarea name="data">
+        <textarea name="data" rows="<%= JSON.stringify(config, null, 4).split("\n").length + 1 %>">
             <%=
-                JSON.stringify(config, null, 2)
+                JSON.stringify(config, null, 4)
             %>
         </textarea>
-        <button type="submit">Save</button>
+        <div>
+            <button type="submit">Save</button>
+            <button tabindex="-1"><a href="/">Back</a></button>
+        </div>
     </form>
 </body>
 </html>

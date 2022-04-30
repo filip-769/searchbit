@@ -1,3 +1,54 @@
-* {
-    background-color: black;
+body, form {
+    height: 100vh;
+}
+
+textarea {
+    background-color: #161616;
+    border: 1.75px solid white;
+    color: white;
+    border-radius: 0.5rem;
+    padding-top: 0.75rem;
+    padding-left: 2ch;
+    width: 100%;
+}
+
+textarea:focus {
+    outline: none;
+    border-width: 2.5px;
+    border-color: lightskyblue;
+}
+
+button {
+    background-color: #16161a;
+    border: 1.75px solid white;
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    cursor: pointer;
+}
+
+button:not(:last-child) {
+    margin-right: 0.5ch;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+    padding: 0.25rem;
+    display: block;
+}
+
+button[tabindex] {
+    padding: 0;
+}
+
+button:focus-within, button:focus {
+    border: 2.5px solid lightskyblue;
+    outline: none;
+}
+
+button a:focus {
+    outline: none;
 }
