@@ -44,10 +44,10 @@
 		}
 	},
 	"autocomplete": "qwant",
-	"delay": 1500,
+	"delay": 5000,
 	"maximumResults": {
 		"web": 15,
-		"image": 300
+		"image": 1000
 	},
 	"customHTML": "<!-- Write your custom code like CSS, JS, meta tags etc. here. -->\n<style></style>\n<script></script>",
 	"quickShortcuts": {

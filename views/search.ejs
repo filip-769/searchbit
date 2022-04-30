@@ -19,6 +19,15 @@
             </div>
             <div id="searchBar">
                 <input type="search" name="q" value="<%= typeof json !== "undefined" ? json.q : "" %>" autofocus>
+                <%
+                    for (const param in req.query) {
+                        if(param !== "q" && param !== "p") {
+                            %>
+                                <input type="hidden" name="<%= param %>" value="<%= req.query[param] %>">
+                            <%
+                        }
+                    }
+                %>
                 <button type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -29,8 +38,8 @@
              </div>
              <nav>
                 <ul>
-                    <li <%- req.query.t !== "image" ? "data-current" : "" %>><button type="submit" name="t" value="web">Web</button></li>
-                    <li <%- req.query.t === "image" ? "data-current" : "" %>><button type="submit" name="t" value="image">Image</button></li>
+                    <li <%- req.query.t !== "image" ? "data-current" : "" %>><button type="submit" name="t" value="web" accesskey="w">Web</button></li>
+                    <li <%- req.query.t === "image" ? "data-current" : "" %>><button type="submit" name="t" value="image" accesskey="i">Image</button></li>
                 </ul>
              </nav>
         </form>
@@ -47,9 +56,20 @@
     </main>
     <footer>
         <% if (req.query.q) { %>
-            <a class="paginationButton" href="/search?q=<%= encodeURIComponent(req.query.q) %>&t=<%= req.query.t??"web" %>&p=<%= (+req.query.p||1) === 1 ? 1 : (+req.query.p||1) - 1 %>">← Previous</a>
-            <span class="paginationPageText">PAGE <%= (req.query.p||1) %></span>
-            <a class="paginationButton" href="/search?q=<%= encodeURIComponent(req.query.q) %>&t=<%= req.query.t??"web" %>&p=<%= (+req.query.p||1) + 1 %>">Next →</a>
+            <form method="get">
+                <%
+                    for (const param in req.query) {
+                        if(param !== "p") {
+                            %>
+                                <input type="hidden" name="<%= param %>" value="<%= req.query[param] %>">
+                            <%
+                        }
+                    }
+                %>
+                <button class="paginationButton" type="submit" name="p" value="<%= (+req.query.p||1) === 1 ? 1 : (+req.query.p||1) - 1 %>" <%= req.query.p > 1 ? "" : "disabled" %>>← Previous</button>
+                <span class="paginationPageText">PAGE <%= (req.query.p||1) %></span>
+                <button class="paginationButton" type="submit" name="p" value="<%= (+req.query.p||1) + 1 %>">Next →</button>
+            </form>
         <% } %>
     </footer>
 </body>

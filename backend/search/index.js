@@ -6,7 +6,7 @@ export default async (e, q, p, t, c) => {
     const allResults = {};
     let allResultsArray = [];
 
-    e = e.filter(x => c.engines[t][x] && c.engines[t][x] > 0);
+    e = e.filter(x => c.engines?.[t]?.[x] && c.engines[t][x] > 0);
 
     e.forEach(async engine => {
         // query each engine and store the results
