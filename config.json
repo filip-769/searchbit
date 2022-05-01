@@ -44,7 +44,7 @@
 		}
 	},
 	"autocomplete": "qwant",
-	"delay": 5000,
+	"delay": 2500,
 	"maximumResults": {
 		"web": 15,
 		"image": 1000

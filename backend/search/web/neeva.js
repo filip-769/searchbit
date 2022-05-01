@@ -3,17 +3,8 @@ import randomUserAgent from "../../../randomUserAgent.js";
 
 
 export default async (q, p) => {
-    // neeva seems to changed their internal API, so it will probably throw an error
-    // TODO: fix
-    const cookie = 
-        (
-            await fetch(
-                new URL(
-                    ( await fetch(`https://neeva.com/search?q=${encodeURIComponent(q)}`, { redirect: "manual" } ) )
-                        .headers.get("location"), "https://neeva.com"
-                ).href, { redirect: "manual" }
-            )
-        ).headers.get("set-cookie").split("httpd~preview=")[1].split(";")[0]
+   const cookie = (await fetch("https://neeva.com/preview", { redirect: "manual" }))
+                  .headers.get("Set-Cookie")?.split("httpd~preview=")?.[1]?.split(";")?.[0]
 
     const response = await fetch(`https://neeva.com/search?q=${encodeURIComponent(q)}&page=${p}`, {
         headers: {
