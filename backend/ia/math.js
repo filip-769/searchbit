@@ -3,7 +3,7 @@ export default async q => {
     const data = await response.text();
 
     return {
-        left: q.replaceAll(",", "."),
-        right: data
+        input: q.replaceAll(",", "."),
+        result: data
     }
 }

@@ -1,0 +1,10 @@
+<b>Input:</b>
+<pre><%= ia.response.input %></pre>
+<%
+    ia.response.results.forEach(result => {
+        %>
+            <b><%= result.name %>:</b>
+            <pre><%= result.data %></pre>
+        <%
+    });
+%>

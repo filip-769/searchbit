@@ -19,6 +19,10 @@ a {
     width: max-content;
 }
 
+#searchBar:focus-within {
+    border-color: lightskyblue;
+}
+
 #title {
     font-size: 1.5rem;
 }
@@ -140,8 +144,26 @@ nav ul li {
     margin-left: auto;
 }
 
+#settingsTab:focus {
+    outline: none;
+    border-bottom: 1px solid lightskyblue;
+    margin-bottom: -1px;
+}
+
+nav ul li {
+    border-bottom: 0.1rem solid transparent;
+}
+
 nav ul li[data-current] {
-    border-bottom: 0.1rem solid lightskyblue;
+    border-color: white;
+}
+
+nav ul li a:focus {
+    outline: none;
+}
+
+nav ul li:focus-within {
+    border-color: lightskyblue;
 }
 
 .imageResults {
