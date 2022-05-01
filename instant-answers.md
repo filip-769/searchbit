@@ -4,11 +4,11 @@ Name|API/Source|Example trigger|Example|Description
 ----|----------|---------------|-------|-----------
 Code|qrserver.com and metafloor.com|{type} {data}|qr https://wikipedia.org|Creates 1D or 2D codes (Currently only QR and Barcode)
 Currency|coinbase.com|{amout}{from} to {to}|5€ to USD|Converts currencies and fiat
-Emoji|Emojipedia.org via DuckDuckGo.com|{emoji}|❤️|Shows basic info about emoji.
+Emoji|emojipedia.org via duckduckgo.com|{emoji}|❤️|Shows basic info about emoji.
 EncDec|none|{action} {data}|base64 encode hello|Simple actions: url encode/decode, base64 encode/decode, braille encode/decode, morse code encode/decode, md5, sha256
 Figlet|External noname API|figlet {data}|figlet hello|Creates a figlet of text.
 Holidays|date.nager.at|holidays {country}|holidays poland|Shows a list of public holidays in specific country.
-Infobox|Wikipedia.org via DuckDuckGo.com|{anything}|Paris|Shows a short text and image from Wikipedia.
+Infobox|wikipedia.org via duckduckgo.com|{anything}|Paris|Shows a short text and image from Wikipedia.
 IpInfo|reallyfreegeoip.org|{ip}|1.1.1.1|Basic info about IP adress.
 Math|mathjs.org|{expression}|6-2|Basic math operations and also unit conversions
 Nameday|nameday.abalin.net|nameday|nameday|Nameday data for today.
