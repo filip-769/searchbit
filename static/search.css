@@ -14,7 +14,7 @@ a {
 
 #searchBar {
     border-radius: 0.25rem;
-    border: 1px solid #252627;
+    border: 1px solid hsl(210, 3%, 15%);
     display: flex;
     width: max-content;
 }
@@ -70,10 +70,27 @@ a {
 .webResult {
     margin-bottom: 2rem;
     word-wrap: break-word;
+    background-color: hsl(220, 4%, 10%);
+    border-radius: 0.25rem;
+    padding: 0.4rem;
+}
+
+.webResult:focus-within { 
+    border-left: 2.5px solid lightskyblue;
+}
+
+.webResult a:focus {
+    outline: none;
+}
+
+.ResultBar span:focus-within {
+    border: 1px solid lightskyblue;
+    display: inline-block;
+    margin-top: -1px;
 }
 
 .ResultBar span {
-    background-color: #252627;
+    background-color: hsl(210, 3%, 15%);
     padding: 0.1rem;
     border-radius: 0.25rem;
     margin-right: 1ch;
@@ -91,12 +108,12 @@ a {
 }
 
 .webResultFormattedUrl {
-    color: #999;
+    color: hsl(0, 0%, 60%);
     font-size: 0.75rem;
 }
 
 .webResultTitle {
-    color: #0087b4;
+    color: hsl(195, 100%, 35%);
 }
 
 .webResultTitle:hover {
@@ -109,7 +126,7 @@ aside {
 }
 
 aside > div {
-    border: 1px solid #252627;
+    background-color: hsl(220, 4%, 10%);
     padding: 0.4rem;
     border-radius: 0.25rem;
     margin-bottom: 1rem;
@@ -194,7 +211,7 @@ nav ul li:focus-within {
 }
 
 .paginationButton {
-    background-color: #252627;
+    background-color: hsl(220, 4%, 13%);
     padding: 0.5rem;
     border: none;
     border-radius: 0.25rem;
@@ -205,12 +222,19 @@ nav ul li:focus-within {
 .paginationButton:not(:disabled) { cursor: pointer; }
 
 .paginationButton:hover, .paginationButton:focus {
-    background-color: #2a2d2e;
+    background-color: hsl(195, 5%, 17%);
+}
+
+.paginationButton:focus {
+    outline: none;
+    border: 2.5px solid lightskyblue;
+    margin-left: -2.5px;
+    margin-top: -2.5px;
 }
 
 .paginationPageText {
     font-size: 0.75rem;
-    color: #999;
+    color: hsl(0, 0%, 60%);
     margin: 0 1rem;
 }
 
@@ -271,6 +295,12 @@ nav ul li:focus-within {
     margin-right: 0.25rem;
 }
 
+aside pre {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 0.25rem;
+    font-family: monospace;
+}
 
 .infoboxIa img {
     border-radius: 0.25rem;
@@ -299,7 +329,7 @@ nav ul li:focus-within {
 }
 
 .infoboxIaSourceUrl {
-    color: #0087b4;
+    color: hsl(195, 100%, 35%);
 }
 
 
@@ -322,14 +352,6 @@ nav ul li:focus-within {
 .questionsIa > div:not(:last-of-type) {
     margin-bottom: 0.75rem;
 }
-
-aside pre {
-    max-width: 100%;
-    overflow-x: auto;
-    padding: 0.25rem;
-    font-family: monospace;
-}
-
 
 .programmingIa > pre:not(:last-of-type) {
     margin-bottom: 0.75rem;
@@ -364,7 +386,7 @@ aside pre {
     margin-left: 4rem;
 }
 
-#wordInfoIaPhonetics {
+.wordInfoIaPhonetics {
     display: flex;
     align-items: center;
 }

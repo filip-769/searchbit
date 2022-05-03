@@ -62,5 +62,6 @@
         "title": [],
         "url": [],
         "description": []
-    }
+    },
+	"tabOnResultOptions": false
 }

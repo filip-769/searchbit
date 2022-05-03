@@ -52,8 +52,8 @@
         <%- 
             req.query.q ? 
                 req.query.t === "image" ?
-                    include("imageSearch.ejs", { json }) :
-                    include("webSearch.ejs", { json })
+                    include("imageSearch.ejs", { json, config }) :
+                    include("webSearch.ejs", { json, config })
                 :
                 ""
         %>

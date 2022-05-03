@@ -3,8 +3,8 @@
         <div class="webResult">
             <div class="ResultBar">
                 <span><%- result.engines.join("</span><span>") %></span>
-                <span class="right"><a href="https://web.archive.org/web/<%= encodeURIComponent(result.url) %>" target="_blank">Cache</a></span>
-                <span><a href="/proxy?url=<%= encodeURIComponent(result.url) %>" target="_blank">Proxy</a></span>
+                <span class="right"><a href="https://web.archive.org/web/<%= encodeURIComponent(result.url) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>Cache</a></span>
+                <span><a href="/proxy?url=<%= encodeURIComponent(result.url) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>Proxy</a></span>
             </div>
             <div class="iconAndFormattedUrl">
                 <img src="<%= result.icon %>" alt="" loading="lazy">
