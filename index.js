@@ -5,6 +5,7 @@ import express from "express";
 
 const app = express();
 const config = JSON.parse(readFileSync("./config.json"));
+const serverConfig = JSON.parse(readFileSync("./serverConfig.json"));
 
 app.use(express.static("./static/"));
 app.use(express.urlencoded({ extended: true }));
@@ -68,7 +69,7 @@ app.get("/search", async (req, res) => {
     } 
 });
 
-app.listen(config.port, () =>  console.log(`Server is listening on port ${config.port}`));
+app.listen(serverConfig.port, () =>  console.log(`Server is listening on port ${serverConfig.port}`));
 
 function getUserConfig(req) {
     let userConfig = config;
