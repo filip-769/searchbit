@@ -1,6 +1,9 @@
 # Searchbit
 Searchbit is a meta search engine inspired by Searx.
 
+## Official instance
+I plan to host one, probably hosted on opeNode.io.
+
 ## Installation
 You need nodejs >= 18 to run Searchbit.
 
