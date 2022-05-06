@@ -48,7 +48,7 @@
 		"web": 15,
 		"image": 1000
 	},
-	"customHTML": "<!-- Write your custom code like CSS, JS, meta tags etc. here. -->\n<style></style>\n<script></script>",
+	"customHTML": "<!-- Write your custom code like CSS, JS, meta tags etc. here. (use json escaper) -->",
 	"quickShortcuts": {
 		"programming": "site:stackoverflow.com | site:developer.mozilla.org | site:github.com",
 		"cooking": "site:based.cooking",

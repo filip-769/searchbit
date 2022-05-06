@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./search.css">
     <link rel="search" type="application/opensearchdescription+xml" title="Searchbit" href="/opensearch.xml?ac=<%= config.autocomplete %>">
     <title><% if(typeof json !== "undefined" && json.q) { %>Search results for <%= json.q %><% } else { %> Searchbit <% } %></title>
-    <%- config.customHTML || "" %> 
+    <%- config.customHTML %> 
 </head>
 <body>
     <header>
