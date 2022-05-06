@@ -1,9 +1,6 @@
 # Searchbit
 Searchbit is a meta search engine inspired by Searx.
 
-## Official instance
-I plan to host one, probably hosted on opeNode.io.
-
 ## Installation
 You need nodejs >= 18 to run Searchbit.
 
@@ -15,5 +12,5 @@ You need nodejs >= 18 to run Searchbit.
 
 ## FAQ
 
-### Security warning from NPM
+### Why am i getting a security warning from NPM?
 This shouldn't have any effect on Searchbit and will be fixed, when https://github.com/mde/ejs/pull/645 will be merged.
