@@ -63,6 +63,14 @@ a {
     pointer-events: all;
 }
 
+.imageResult a:focus {
+    outline: none;
+}
+
+.imageResult a:focus img {
+    border: 2.5px solid lightskyblue;
+}
+
 .webResults {
     width: 50vw;
 }
