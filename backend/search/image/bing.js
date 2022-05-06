@@ -17,7 +17,7 @@ export default async (q, p) => {
     };
 
     dom.window.document.querySelectorAll(".imgpt .iusc").forEach(el => {
-        const desc = JSON.parse(el.getAttribute("m"))?.t;
+        const desc = JSON.parse(el.getAttribute("m"))?.t?.replaceAll("\ue000", "")?.replaceAll("\ue001", "");
         const url = JSON.parse(el.getAttribute("m"))?.purl;
         const img = JSON.parse(el.getAttribute("m"))?.turl;
         json.results.push({
