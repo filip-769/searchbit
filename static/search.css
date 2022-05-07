@@ -424,3 +424,7 @@ aside pre {
     max-height: 10rem;
     max-width: 100%;
 }
+
+.mapIa img {
+    width: 100%;
+}
