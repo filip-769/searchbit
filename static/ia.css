@@ -1,0 +1,131 @@
+aside > div {
+    background-color: var(--section-bg);
+    padding: var(--section-padding);
+    border-radius: var(--main-border-radius);
+    margin-bottom: 1rem;
+}
+
+aside pre {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 0.25rem;
+    font-family: monospace;
+}
+
+.infoboxIa img {
+    border-radius: 0.25rem;
+    background-color: white;
+    width: 100%;
+}
+
+.emojiIa img {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5ch;
+}
+
+.emojiIa > div, .emojiIa li {
+    display: flex;
+    align-items: center;
+}
+
+.emojiIa h1 {
+    font-size: 2.5rem;
+    margin-right: 0.3ch;
+}
+
+.emojiIa ul {
+    list-style: none;
+    text-transform: capitalize;
+}
+
+.infoboxIaSourceUrl {
+    color: hsl(195, 100%, 35%);
+}
+
+
+.weatherIa h2 {
+    margin-bottom: 0.3rem;
+}
+
+.weatherIaDay {
+    display: flex;
+    margin-bottom: 0.125rem;
+}
+
+.weatherIaIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.5rem;
+}
+
+.questionsIa > div:not(:last-of-type) {
+    margin-bottom: 0.75rem;
+}
+
+.programmingIa > pre:not(:last-of-type) {
+    margin-bottom: 0.75rem;
+}
+
+.holidaysIa ul, .namedayIa ul {
+    list-style: none;
+}
+
+.ptableIa span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 3.5ch;
+    height: 3.5ch;
+    color: white;
+    background-color: var(--color);
+}
+
+.encDecIa p {
+    word-wrap: break-word;
+}
+
+.wordInfoIa h3 {
+    text-transform: capitalize;
+}
+
+.wordInfoIa ol {
+    margin-left: 4rem;
+}
+
+.wordInfoIaPhonetics {
+    display: flex;
+    align-items: center;
+}
+
+.wordInfoIaSection {
+    margin-top: 1rem;
+}
+
+.wordInfoIa h5 {
+    font-size: 1rem;
+    margin-left: 2rem;
+    margin-right: 1ch;
+    display: inline-block;
+}
+
+/* if firefox */
+@supports (-moz-box-flex: unset) {
+    .wordInfoIa audio {
+        width: 3rem;
+    }
+}
+
+.codeIa img {
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    max-height: 10rem;
+    max-width: 100%;
+}
+
+.mapIa img {
+    width: 100%;
+    border-radius: 0.25rem;
+}

@@ -2,31 +2,35 @@ body, form {
     height: 100vh;
 }
 
+button:hover, textarea:hover {
+    outline-color: var(--element-outline-hover);
+}
+
 textarea {
-    background-color: #161616;
-    border: 1.75px solid white;
-    color: white;
-    border-radius: 0.5rem;
+    background-color: var(--element-bg);
+    outline: var(--light-outline-width) solid var(--element-outline);
+    color: var(--txt-color);
+    border-radius: var(--main-border-radius);
+    font-family: var(--mono-font);
     padding-top: 0.75rem;
     padding-left: 2ch;
     width: 100%;
 }
 
 textarea:focus {
-    outline: none;
-    border-width: 2.5px;
-    border-color: lightskyblue;
+    outline-width: var(--bold-outline-width);
+    outline-color: var(--primary-highlight);
 }
 
 button {
-    background-color: #16161a;
-    border: 1.75px solid white;
-    color: white;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-    padding: 0.25rem;
+    background-color: var(--element-bg);
+    outline: var(--light-outline-width) solid var(--element-outline);
+    color: var(--txt-color);
+    border-radius: var(--main-border-radius);
+    padding: var(--element-padding);
     cursor: pointer;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 button:not(:last-child) {
@@ -34,9 +38,9 @@ button:not(:last-child) {
 }
 
 button a {
+    color: var(--txt-color);
+    padding: var(--element-padding);
     text-decoration: none;
-    color: white;
-    padding: 0.25rem;
     display: block;
 }
 
@@ -45,10 +49,5 @@ button[tabindex] {
 }
 
 button:focus-within, button:focus {
-    border: 2.5px solid lightskyblue;
-    outline: none;
-}
-
-button a:focus {
-    outline: none;
+    outline: var(--bold-outline-width) solid var(--primary-highlight);
 }

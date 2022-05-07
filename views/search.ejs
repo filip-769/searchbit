@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./ia.css">
     <link rel="stylesheet" href="./search.css">
     <link rel="search" type="application/opensearchdescription+xml" title="Searchbit" href="/opensearch.xml?ac=<%= config.autocomplete %>">
     <title><% if(typeof json !== "undefined" && json.q) { %>Search results for <%= json.q %><% } else { %> Searchbit <% } %></title>
@@ -29,11 +30,7 @@
                     }
                 %>
                 <button type="submit" tabindex="-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <circle cx="10" cy="10" r="7" />
-                        <line x1="21" y1="21" x2="15" y2="15" />
-                    </svg>
+                    <img src="/searchBtn.svg" alt="Search">
                 </button>
              </div>
              <nav>

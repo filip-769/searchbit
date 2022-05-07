@@ -13,18 +13,24 @@ a {
 }
 
 #searchBar {
-    border-radius: 0.25rem;
-    border: 1px solid hsl(210, 3%, 15%);
+    border-radius: var(--main-border-radius);
+    outline: var(--light-outline-width) solid var(--element-outline);
     display: flex;
     width: max-content;
 }
 
+#searchBar:hover {
+    outline-color: var(--element-outline-hover);
+}
+
 #searchBar:focus-within {
-    border-color: lightskyblue;
+    outline-color: var(--primary-highlight);
+    outline-width: var(--bold-outline-width);
 }
 
 #title {
     font-size: 1.5rem;
+    margin-bottom: 0.5ch;
 }
 
 #searchBar button {
@@ -33,7 +39,7 @@ a {
     justify-content: center;
 }
 
-#searchBar svg {
+#searchBar img {
     width: 2.25rem;
     height: 2.25rem;
     cursor: pointer;
@@ -63,44 +69,36 @@ a {
     pointer-events: all;
 }
 
-.imageResult a:focus {
-    outline: none;
-}
-
 .imageResult a:focus img {
-    border: 2.5px solid lightskyblue;
+    outline: var(--bold-outline-width) solid var(--primary-highlight);
 }
 
 .webResults {
     width: 50vw;
+    margin-left: calc(0 - var(--section-padding));
 }
 
 .webResult {
-    margin-bottom: 2rem;
+    background-color: var(--section-bg);
+    border-radius: var(--main-border-radius);
+    padding: var(--section-padding);
+    margin-bottom: 1rem;
     word-wrap: break-word;
-    background-color: hsl(220, 4%, 10%);
-    border-radius: 0.25rem;
-    padding: 0.4rem;
 }
 
 .webResult:focus-within { 
-    border-left: 2.5px solid lightskyblue;
-}
-
-.webResult a:focus {
-    outline: none;
+    border-left: var(--bold-outline-width) solid var(--primary-highlight);
 }
 
 .ResultBar span:focus-within {
-    border: 1px solid lightskyblue;
+    outline: var(--light-outline-width) solid var(--primary-highlight);
     display: inline-block;
-    margin-top: -1px;
 }
 
 .ResultBar span {
-    background-color: hsl(210, 3%, 15%);
-    padding: 0.1rem;
-    border-radius: 0.25rem;
+    background-color: var(--small-element-bg);
+    padding: var(--small-element-padding);
+    border-radius: var(--small-border-radius);
     margin-right: 1ch;
     text-transform: capitalize;
 }
@@ -116,12 +114,12 @@ a {
 }
 
 .webResultFormattedUrl {
-    color: hsl(0, 0%, 60%);
+    color: var(--dark-txt-color);
     font-size: 0.75rem;
 }
 
 .webResultTitle {
-    color: hsl(195, 100%, 35%);
+    color: var(--link-color);
 }
 
 .webResultTitle:hover {
@@ -131,13 +129,6 @@ a {
 aside {
     margin-left: auto;
     width: 35vw;
-}
-
-aside > div {
-    background-color: hsl(220, 4%, 10%);
-    padding: 0.4rem;
-    border-radius: 0.25rem;
-    margin-bottom: 1rem;
 }
 
 nav {
@@ -171,8 +162,8 @@ nav ul li {
 
 #settingsTab:focus {
     outline: none;
-    border-bottom: 1px solid lightskyblue;
-    margin-bottom: -1px;
+    border-bottom: var(--light-outline-width) solid var(--primary-highlight);
+    margin-bottom: calc(0 - var(--light-outline-width));
 }
 
 nav ul li {
@@ -188,7 +179,7 @@ nav ul li a:focus {
 }
 
 nav ul li:focus-within {
-    border-color: lightskyblue;
+    border-color: var(--primary-highlight);
 }
 
 .imageResults {
@@ -219,31 +210,40 @@ nav ul li:focus-within {
 }
 
 .paginationButton {
-    background-color: hsl(220, 4%, 13%);
-    padding: 0.5rem;
-    border: none;
-    border-radius: 0.25rem;
-    transition: background-color 0.2s ease;
+    background-color: var(--element-bg);
+    padding: var(--element-padding);
+    border-radius: var(--main-border-radius);
+    outline: var(--light-outline-width) solid var(--element-outline);
 }
 
 .paginationButton:disabled { cursor: not-allowed; }
 .paginationButton:not(:disabled) { cursor: pointer; }
 
-.paginationButton:hover, .paginationButton:focus {
-    background-color: hsl(195, 5%, 17%);
+.paginationButton:hover {
+    outline-color: var(--element-outline-hover);
 }
 
 .paginationButton:focus {
-    outline: none;
-    border: 2.5px solid lightskyblue;
-    margin-left: -2.5px;
-    margin-top: -2.5px;
+    outline-width: var(--bold-outline-width);
+    outline-color: var(--primary-highlight);
 }
 
 .paginationPageText {
     font-size: 0.75rem;
-    color: hsl(0, 0%, 60%);
+    color: var(--dark-txt-color);
     margin: 0 1rem;
+}
+
+.iconAndFormattedUrl {
+    display: flex;
+    align-items: center;
+}
+
+.iconAndFormattedUrl img {
+    width: 0.85rem;
+    height: 0.85rem;
+    margin-right: 0.25rem;
+    border-radius: 50%;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -290,141 +290,4 @@ nav ul li:focus-within {
     #searchBar {
         width: 100%;
     }
-}
-
-.iconAndFormattedUrl {
-    display: flex;
-    align-items: center;
-}
-
-.iconAndFormattedUrl img {
-    width: 0.85rem;
-    height: 0.85rem;
-    margin-right: 0.25rem;
-}
-
-aside pre {
-    max-width: 100%;
-    overflow-x: auto;
-    padding: 0.25rem;
-    font-family: monospace;
-}
-
-.infoboxIa img {
-    border-radius: 0.25rem;
-    width: 100%;
-}
-
-.emojiIa img {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 0.5ch;
-}
-
-.emojiIa > div, .emojiIa li {
-    display: flex;
-    align-items: center;
-}
-
-.emojiIa h1 {
-    font-size: 2.5rem;
-    margin-right: 0.3ch;
-}
-
-.emojiIa ul {
-    list-style: none;
-    text-transform: capitalize;
-}
-
-.infoboxIaSourceUrl {
-    color: hsl(195, 100%, 35%);
-}
-
-
-.weatherIa h2 {
-    margin-bottom: 0.3rem;
-}
-
-
-.weatherIaDay {
-    display: flex;
-    margin-bottom: 0.125rem;
-}
-
-.weatherIaIcon {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-right: 0.5rem;
-}
-
-.questionsIa > div:not(:last-of-type) {
-    margin-bottom: 0.75rem;
-}
-
-.programmingIa > pre:not(:last-of-type) {
-    margin-bottom: 0.75rem;
-}
-
-.holidaysIa ul, .namedayIa ul {
-    list-style: none;
-}
-
-
-
-.ptableIa span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    width: 3.5ch;
-    height: 3.5ch;
-    color: white;
-    background-color: var(--color);
-}
-
-.encDecIa p {
-    word-wrap: break-word;
-}
-
-.wordInfoIa h3 {
-    text-transform: capitalize;
-}
-
-.wordInfoIa ol {
-    margin-left: 4rem;
-}
-
-.wordInfoIaPhonetics {
-    display: flex;
-    align-items: center;
-}
-
-.wordInfoIaSection {
-    margin-top: 1rem;
-}
-
-.wordInfoIa h5 {
-    font-size: 1rem;
-    margin-left: 2rem;
-    margin-right: 1ch;
-    display: inline-block;
-}
-
-/* if firefox */
-@supports (-moz-box-flex: unset) {
-    .wordInfoIa audio {
-        width: 3rem;
-    }
-}
-
-.codeIa img {
-    background-color: white;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    max-height: 10rem;
-    max-width: 100%;
-}
-
-.mapIa img {
-    width: 100%;
 }
