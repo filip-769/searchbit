@@ -10,7 +10,7 @@ export default async q => {
         source: json?.AbstractSource,
         url: json?.AbstractURL,
         title: json?.Heading,
-        image: json?.Image == "" ? null : "/proxy?url=" + encodeURIComponent("https://duckduckgo.com" + json?.Image)
+        img: json?.Image == "" ? null : "/proxy?url=" + encodeURIComponent("https://duckduckgo.com" + json?.Image)
     }
 
 }
