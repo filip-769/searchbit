@@ -6,6 +6,6 @@ export default async q => {
 
     return {
         name: json.results[0].name,
-        img: `/proxy?url=${encodeURIComponent(`https://external-content.duckduckgo.com/ssv2/?center=${json.results[0].latitude},${json.results[0].longitude}&colorScheme=dark`)}`
+        img: `/proxy?url=${encodeURIComponent(`https://external-content.duckduckgo.com/ssv2/?center=${json.results[0].latitude},${json.results[0].longitude}&colorScheme=dark&spn=1,1`)}`
     }
 }
