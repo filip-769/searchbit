@@ -5,15 +5,19 @@ aside > div {
     margin-bottom: 1rem;
 }
 
+aside :focus {
+    outline: var(--bold-outline-width) solid var(--primary-highlight);
+}
+
 aside pre {
     max-width: 100%;
     overflow-x: auto;
     padding: 0.25rem;
-    font-family: monospace;
+    font-family: var(--mono-font);
 }
 
 .infoboxIa img {
-    border-radius: 0.25rem;
+    border-radius: var(--small-border-radius);
     background-color: white;
     width: 100%;
 }
@@ -120,12 +124,12 @@ aside pre {
 .codeIa img {
     background-color: white;
     padding: 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: var(--small-border-radius);
     max-height: 10rem;
     max-width: 100%;
 }
 
 .mapIa img {
     width: 100%;
-    border-radius: 0.25rem;
+    border-radius: var(--small-border-radius);
 }
