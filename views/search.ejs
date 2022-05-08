@@ -36,8 +36,8 @@
              <nav>
                 <ul>
                     <%
-                        const x = (new URLSearchParams(req.query)); x.set("t", "web");
-                        const y = (new URLSearchParams(req.query)); y.set("t", "image");
+                        const x = (new URLSearchParams(req.query)); x.set("t", "web"); x.delete("p");
+                        const y = (new URLSearchParams(req.query)); y.set("t", "image"); y.delete("p");
                     %>
                     <li <%- req.query.t !== "image" ? "data-current" : "" %>><a href="/search?<%= x.toString() %>">Web</a></li>
                     <li <%- req.query.t === "image" ? "data-current" : "" %>><a href="/search?<%= y.toString() %>">Image</a></li>
