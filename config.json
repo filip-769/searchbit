@@ -59,7 +59,9 @@
 	},
     "filters": {
         "title": [],
-        "url": [],
+        "url": [
+			"^https?:\\/\\/www\\.bing\\.com\\/ck\\/a"
+		],
         "description": []
     },
 	"tabOnResultOptions": false

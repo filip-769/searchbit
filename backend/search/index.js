@@ -93,7 +93,7 @@ export default async (e, q, p, t, c) => {
     allResultsArray = allResultsArray.filter((x, i) => c.maximumResults[t] > i);
     for (const type in c.filters) {
         c.filters[type].forEach(x => {
-            const regex = new RegExp(x, "gim");
+            const regex = new RegExp(x, "mi");
             allResultsArray = allResultsArray.filter(y => !regex.test(y[type]));
         })
     }
