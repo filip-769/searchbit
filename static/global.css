@@ -9,8 +9,8 @@
     --element-outline-hover: #434c5e;
     --element-outline: #4c566a;
     --small-element-bg: #424b5c;
-    --main-font: system-ui;
-    --mono-font: monospace;
+    --main-font: -apple-system, BlinkMacSystemFont, system-ui, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+    --mono-font: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
     --main-border-radius: 0.5rem;
     --small-border-radius: 0.25rem;
     --element-padding: 0.35rem;
