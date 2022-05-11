@@ -7,6 +7,7 @@ export default async (e, q, p, t, c) => {
     let allResultsArray = [];
 
     e = e.filter(x => c.engines?.[t]?.[x] && c.engines[t][x] > 0);
+    e.sort((a, b) => c.engines[t][b] - c.engines[t][a]);
 
     e.forEach(async engine => {
         // query each engine and store the results
@@ -50,12 +51,18 @@ export default async (e, q, p, t, c) => {
             if(!allResults[result.xurl]) {
                 // if this is the first time we've seen this url, add it to the results
                 result.engines = [ engine ];
+                result.titleEngine = engine;
+                result.descEngine = engine;
                 allResults[result.xurl] = result;
             } else {
                 // if this is the longest description, set it as description
-                if((result.desc?.length??0) > allResults[result.xurl].desc?.length) allResults[result.xurl].desc = result.desc;
+                if(c.engines[t][allResults[result.xurl].descEngine] < c.engines[t][engine]) {
+                    allResults[result.xurl].desc = result.desc;
+                };
                 // if this is the longest title, set it as title
-                if((result.title?.length??0) > allResults[result.xurl].title?.length) allResults[result.xurl].title = result.title;
+                if(c.engines[t][allResults[result.xurl].titleEngine] < c.engines[t][engine]) {
+                    allResults[result.xurl].title = result.title;
+                };
                 // add this engine to the list of engines
                 allResults[result.xurl].engines.push(engine);
             }
@@ -75,12 +82,14 @@ export default async (e, q, p, t, c) => {
     for(const result in allResults) {
         // delete the xurl property
         delete allResults[result].xurl;
+        delete allResults[result].titleEngine;
+        delete allResults[result].descEngine;
         // push the result to the array
         allResultsArray.push(allResults[result]);
     }
 
     // Sort by weight
-    allResultsArray.sort((a, b) => b.weight - a.weight)
+    allResultsArray.sort((a, b) => b.weight - a.weight);
     allResultsArray = allResultsArray.filter((x, i) => c.maximumResults[t] > i);
     for (const type in c.filters) {
         c.filters[type].forEach(x => {

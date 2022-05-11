@@ -15,6 +15,7 @@ a {
 #searchBar {
     border-radius: var(--main-border-radius);
     outline: var(--light-outline-width) solid var(--element-outline);
+    background-color: var(--element-bg);
     display: flex;
     width: max-content;
 }
