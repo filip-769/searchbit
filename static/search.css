@@ -96,12 +96,14 @@ a {
     display: inline-block;
 }
 
+.ResultBar span:not(:last-child) {
+    margin-right: 1ch;
+}
+
 .ResultBar span {
     background-color: var(--small-element-bg);
-    padding: var(--small-element-padding);
     border-radius: var(--small-border-radius);
-    margin-right: 1ch;
-    text-transform: capitalize;
+    padding: var(--small-element-padding);
 }
 
 .ResultBar {
