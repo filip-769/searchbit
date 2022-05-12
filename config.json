@@ -50,12 +50,12 @@
 	},
 	"customHTML": "<!-- Write your custom code like CSS, JS, meta tags etc. here. (use json escaper) -->",
 	"quickShortcuts": {
-		"programming": "site:stackoverflow.com | site:developer.mozilla.org | site:github.com",
-		"cooking": "site:based.cooking",
-	    "videos": "(inurl:youtube.com/watch | site:odysee.com | site:vimeo.com)",
-		"documents": "(filetype:pdf | filetype:docx)",
-		"noFreeTlds": "-site:tk -site:ml -site:ga -site:cf -site:gq",
-		"discussions": "site:forum.* | site:reddit.com"
+		"wd": "site:stackoverflow.com | site:developer.mozilla.org | site:github.com",
+		"c": "site:based.cooking",
+	    "v": "site:youtube.com | site:odysee.com | site:vimeo.com",
+		"d": "filetype:pdf | filetype:docx",
+		"nf": "-site:tk -site:ml -site:ga -site:cf -site:gq",
+		"f": "site:forum.* | site:reddit.com"
 	},
     "filters": {
         "title": [],
