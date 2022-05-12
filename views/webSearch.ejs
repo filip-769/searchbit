@@ -11,7 +11,7 @@
                 <span class="right"><a href="https://web.archive.org/web/<%= encodeURIComponent(result.url) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>Cache</a></span>
                 <span><a href="/proxy?url=<%= encodeURIComponent(result.url) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>Proxy</a></span>
                 <% if(/(\.s?html?$)|(\.php3?$)|(\.aspx?$)|(\.cfml?$)|(\/$)|(\/[^./]+$)/i.test((new URL(result.url)).pathname)) {  %>
-                    <span><a href="/proxy?url=<%= encodeURIComponent(`https://swisscows.com/api/preview/image?url=${encodeURIComponent(result.url)}`) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>View .html as .png</a></span>
+                    <span><a href="/proxy?url=<%= encodeURIComponent(`https://swisscows.com/api/preview/image?url=${encodeURIComponent(result.url)}`) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>View .html as .jpg</a></span>
                 <% } %>
                 <% if(/\.pptx?$/.test((new URL(result.url)).pathname)) {  %>
                     <span><a href="/proxy?url=<%= encodeURIComponent(`https://pnl1-powerpoint.officeapps.live.com/p/pdfhandler.ashx?PV=0&Pid=WOPIsrc%3Dhttp%253A%252F%252Fpnl1%252Dview%252Dwopi%252Ewopi%252Eonline%252Eoffice%252Enet%253A808%252Foh%252Fwopi%252Ffiles%252F%2540%252FwFileId%253FwFileId%253D${encodeURIComponent(encodeURIComponent(encodeURIComponent(result.url)))}%26access%5Ftoken%3D1`) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>View .pptx as .pdf</a></span>
