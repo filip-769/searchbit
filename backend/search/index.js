@@ -33,15 +33,15 @@ export default async (e, q, p, t, c) => {
         engineData[engine]?.results?.forEach(result => {
             try {
                 // change http protocol to https
-                result.url = result.url.replace("http://", "https://");
+                result.url = result.url.replace(/^http:\/\//, "https://");
                 // remove whitespaces from title
                 result.title = result.title?.trim()?.replaceAll(/\.{3,}/g,"…")?.replace(/\s\s+/g, " ");
                 // remove whitespaces from description and replace three dots with three dots character
                 result.desc = result.desc?.trim()?.replaceAll(/\.{3,}/g,"…")?.replace(/\s\s+/g, " ");
                 // remove www from url
-                result.xurl = new URL(result.url.replace("://www.", "://")).href;
+                result.xurl = new URL(result.url.replace(/^https:\/\/www\./, "https://")).href;
                 // create formatted url
-                result.formattedUrl = (new URL(result.url).hostname + new URL(result.url).pathname).slice(0, 75);7
+                result.formattedUrl = result.xurl.replace(/https:\/\//, "").slice(0, 100);
                 // add icon
                 result.icon = "/proxy?url=" + encodeURIComponent(`https://icons.duckduckgo.com/ip3/${new URL(result.url).hostname}.ico`);
                 if(result.img) result.img = "/proxy?url=" + encodeURIComponent(result.img);
