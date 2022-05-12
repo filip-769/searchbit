@@ -117,6 +117,9 @@ a {
 .webResultFormattedUrl {
     color: var(--dark-txt-color);
     font-size: 0.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .webResultTitle {

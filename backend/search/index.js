@@ -41,7 +41,7 @@ export default async (e, q, p, t, c) => {
                 // remove www from url
                 result.xurl = new URL(result.url.replace(/^https:\/\/www\./, "https://")).href;
                 // create formatted url
-                result.formattedUrl = result.xurl.replace(/https:\/\//, "").slice(0, 100);
+                result.formattedUrl = result.xurl.replace(/https:\/\//, "");
                 // add icon
                 result.icon = "/proxy?url=" + encodeURIComponent(`https://icons.duckduckgo.com/ip3/${new URL(result.url).hostname}.ico`);
                 if(result.img) result.img = "/proxy?url=" + encodeURIComponent(result.img);
