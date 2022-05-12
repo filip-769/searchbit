@@ -64,5 +64,6 @@
 		],
         "description": []
     },
-	"tabOnResultOptions": false
+	"tabOnResultOptions": false,
+	"documentsToPDF": true
 }

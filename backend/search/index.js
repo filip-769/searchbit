@@ -30,7 +30,7 @@ export default async (e, q, p, t, c) => {
     })
 
     for(const engine in engineData) {
-        engineData[engine]?.results?.forEach(result => {
+        engineData[engine]?.results?.forEach(async result => {
             try {
                 // change http protocol to https
                 result.url = result.url.replace(/^http:\/\//, "https://");
