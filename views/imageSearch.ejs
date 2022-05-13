@@ -1,5 +1,10 @@
 <section class="imageResults">
     <% json.searchResults.results.forEach(result => { %>
+        <%
+            result.engines.forEach((x, i) => {
+                result.engines[i] = x.slice(0, 1).toUpperCase() + x.slice(1);
+            })
+        %> 
         <div class="imageResult">
             <a href="<%= result.url %>" target="_blank">
                 <img src="<%= result.img %> " alt="<%= result.desc %>" title="<%= result.desc %>" loading="lazy">
