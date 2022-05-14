@@ -1,5 +1,5 @@
 # Searchbit
-Searchbit is a meta search engine inspired by Searx.
+Searchbit is a meta search engine inspired by Searx. You can try demo at http://62.171.164.217:2021.
 
 ## Installation
 You need nodejs >= 18 to run Searchbit.
