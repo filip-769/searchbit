@@ -75,7 +75,7 @@ a {
 }
 
 .webResults {
-    width: 50vw;
+    width: clamp(500px, 50vw, 1000px);
     margin-left: calc(0 - var(--section-padding));
 }
 

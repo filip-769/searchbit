@@ -14,3 +14,6 @@ You need nodejs >= 18 to run Searchbit.
 
 ### Why am i getting a security warning from NPM?
 This shouldn't have any effect on Searchbit and will be fixed, when https://github.com/mde/ejs/pull/645 will be merged.
+
+### Which browser rendering engines are supported?
+Currently only Blink 100+, Gecko 100+, WebKit 600+.
