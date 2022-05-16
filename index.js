@@ -19,6 +19,7 @@ app.use((req, res, next) => {
 });
 
 app.all("/", (req, res) => res.redirect("/search"));
+app.all("/favicon.ico", (req, res) => res.redirect("/searchBtn.svg"))
 
 app.get("/proxy", async (req, res) => {
     try {
