@@ -10,6 +10,13 @@ const serverConfig = JSON.parse(readFileSync("./serverConfig.json"));
 
 app.use(express.static("./static/"));
 app.use(express.urlencoded({ extended: true }));
+app.use((req, res, next) => {
+    res.header({
+        "Access-Control-Allow-Origin": serverConfig.cors,
+        "Content-Security-Policy": "default-src 'none'; style-src 'self'; img-src 'self';"
+    });
+    next();
+});
 
 app.all("/", (req, res) => res.redirect("/search"));
 
@@ -29,20 +36,18 @@ app.get("/proxy", async (req, res) => {
                 dom.window.document.head.appendChild(iconEl);
             }
             dom.window.document.querySelectorAll("script, meta").forEach(el => el.remove());
-            dom.window.document.querySelectorAll("[src], [href]").forEach(el => {
+            dom.window.document.querySelectorAll("[src], [href], [srcset], [poster]").forEach(el => {
                 try {
                     if(el.hasAttribute("src")) el.setAttribute("src", `/proxy?url=${encodeURIComponent((new URL(el.getAttribute("src"), req.query.url)).href)}`);
                     if(el.hasAttribute("href")) el.setAttribute("href", `/proxy?url=${encodeURIComponent((new URL(el.getAttribute("href"), req.query.url)).href)}`);
+                    if(el.hasAttribute("poster")) el.setAttribute("poster", `/proxy?url=${encodeURIComponent((new URL(el.getAttribute("poster"), req.query.url)).href)}`);
                     if(el.hasAttribute("srcset")) {
-                        el.setAttribute("srcset", el.getAttribute("srcset").split(", ").map(src => {
+                        el.setAttribute("srcset", el.getAttribute("srcset").split(",").map(src => {
                             return src.replace(src.split(" ")[0], `/proxy?url=${encodeURIComponent((new URL(src.split(" ")[0], req.query.url)).href)}`);
-                        }).join(", "));
+                        }).join(","));
                     };
                 } catch (error) {
-                    if(el.hasAttribute("src")) el.removeAttribute("src");
-                    if(el.hasAttribute("srcset")) el.removeAttribute("srcset");
-                    if(el.hasAttribute("href")) el.removeAttribute("href");
-                    console.error(error)
+                    console.error(error);
                 }
             })
             res.send(`<!DOCTYPE html>${dom.window.document.documentElement.outerHTML}`);
