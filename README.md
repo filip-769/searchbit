@@ -23,7 +23,7 @@ Run this command in some easily accessible folder to install* or if installed st
 ```
 If everything worked you should be able to visit `http://localhost:PORT`.
 
-#### **Windows**
+#### **Every OS**
 To install, run these commands in any empty directory.
 - `git clone https://github.com/filip-769/searchbit.git .`
 - `npm i`
@@ -55,9 +55,10 @@ We don't have any limit, but it's recommended to have:
 Currently only Blink 100+, Gecko 100+, WebKit 600+.
 
 ## Donations
-- **XMR**: 4AabpD4rV4cfznin3cYQmGJ7sLmB3VdX9FPN9xLKKMBkQUtiFXBUEJWBZnudQEZTuRKCAiXBmjtxdWKVNJgpcoXcFV3ztKW
-- **BTC**: bc1qva8ztzeulyuhtknw0pnfcg62t8xudjsx3tn90q
-- **XCH**: xch1defzgchzl0v9tkdckgd997z43axlxgv88reqr8e6kzj9vpl7rcpq7y0xhc
+- **XMR**: `4AabpD4rV4cfznin3cYQmGJ7sLmB3VdX9FPN9xLKKMBkQUtiFXBUEJWBZnudQEZTuRKCAiXBmjtxdWKVNJgpcoXcFV3ztKW`
+- **XCH**: `xch1defzgchzl0v9tkdckgd997z43axlxgv88reqr8e6kzj9vpl7rcpq7y0xhc`
+- **BCH**: `qp4d3zvf9x8n54hfjh9hs4x7sncdyz6h7y6mepd38h`
+- **BTC**: `bc1qva8ztzeulyuhtknw0pnfcg62t8xudjsx3tn90q`
 
 ## Contact me
 If you need help with Searchbit, please create an issue.
