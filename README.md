@@ -34,10 +34,13 @@ To start server, run this command in that directory.
 If everything worked you should be able to visit `http://localhost:PORT`.
 
 ## Public Instances
-| URL                                 | Notes                            |
-|-------------------------------------|----------------------------------|
-| http://connect.zenet.host:2021/     | no https, port 2021 only         |
-| https://searchbit.filip769.repl.co/ | slow, usage monitoring by replit |
+| URL                                   | Notes                                   | Hosting                     |
+|---------------------------------------|-----------------------------------------|-----------------------------|
+| https://searchbit1.privateweb.eu.org/ | official                                | https://skyhosting.digital/ |
+| https://searchbit2.privateweb.eu.org/ | official, usage monitoring by replit    | https://repl.it/            |
+| https://searchbit3.privateweb.eu.org/ | official, traffic proxied by cloudflare | https://zenet.host/         |
+
+Note: Official instances are updated at least once a month.
 
 ## FAQ
 
