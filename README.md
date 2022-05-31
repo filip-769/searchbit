@@ -58,9 +58,8 @@ We don't have any limit, but it's recommended to have:
 Currently only Blink 100+, Gecko 100+, WebKit 600+.
 
 ## Donations
+
 - **XMR**: `4AabpD4rV4cfznin3cYQmGJ7sLmB3VdX9FPN9xLKKMBkQUtiFXBUEJWBZnudQEZTuRKCAiXBmjtxdWKVNJgpcoXcFV3ztKW`
-- **XCH**: `xch1defzgchzl0v9tkdckgd997z43axlxgv88reqr8e6kzj9vpl7rcpq7y0xhc`
-- **BCH**: `qp4d3zvf9x8n54hfjh9hs4x7sncdyz6h7y6mepd38h`
 - **BTC**: `bc1qva8ztzeulyuhtknw0pnfcg62t8xudjsx3tn90q`
 
 ## Contact me
