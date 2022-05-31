@@ -66,4 +66,4 @@ Currently only Blink 100+, Gecko 100+, WebKit 600+.
 ## Contact me
 If you need help with Searchbit, please create an issue.
 - Email: 1byo2en5@duck.com
-- Matrix: @filip769:matrix.org
+- Matrix: [@filip769:matrix.org](https://matrix.to/#/@filip769:matrix.org)
