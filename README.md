@@ -61,8 +61,8 @@ Currently only Blink 100+, Gecko 100+, WebKit 600+.
 
 ### OpenAlias:
 
-- **XMR**: xmr@privateweb.eu.org
-- **BTC**: btc@privateweb.eu.org
+- **XMR**: `xmr@privateweb.eu.org`
+- **BTC**: `btc@privateweb.eu.org`
 
 ### Address:
 
