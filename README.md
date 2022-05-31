@@ -59,6 +59,13 @@ Currently only Blink 100+, Gecko 100+, WebKit 600+.
 
 ## Donations
 
+### OpenAlias:
+
+- **XMR**: xmr@privateweb.eu.org
+- **BTC**: btc@privateweb.eu.org
+
+### Address:
+
 - **XMR**: `4AabpD4rV4cfznin3cYQmGJ7sLmB3VdX9FPN9xLKKMBkQUtiFXBUEJWBZnudQEZTuRKCAiXBmjtxdWKVNJgpcoXcFV3ztKW`
 - **BTC**: `bc1qva8ztzeulyuhtknw0pnfcg62t8xudjsx3tn90q`
 
