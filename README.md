@@ -1,11 +1,11 @@
 # Searchbit
 Searchbit is a meta search engine inspired by Searx.
-- [Installation](../../wiki/docs/installation)
-- [Public instances](../../wiki/docs/instances)
-- [Instant answers](../../wiki/docs/instant-answers)
-- [Search engines](../../wiki/docs/search-engines)
-- [API](../../wiki/docs/api)
-- [FAQ](../../wiki/docs/faq)
+- [Installation](../../wiki/installation)
+- [Public instances](../../wiki/instances)
+- [Instant answers](../../wiki/instant-answers)
+- [Search engines](../../wiki/search-engines)
+- [API](../../wiki/api)
+- [FAQ](../../wiki/faq)
 
 ## Features
 - 27 search engines
