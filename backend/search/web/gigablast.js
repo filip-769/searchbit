@@ -1,11 +1,11 @@
 import jsdom from "jsdom";
-import randomUserAgent from "../../../randomUserAgent.js";
+import getUserAgent from "../../../getUserAgent.js";
 
 
 export default async (q, p) => {
     const response = await fetch(`https://gigablast.com/search?q=${encodeURIComponent(q)}&format=json&fromjs=1&s=${(p-1)*25}`, {
         headers: {
-            "User-Agent": randomUserAgent(),
+            "User-Agent": getUserAgent(),
             "Accept-Language": "en, *;q=0.5"
         }
     })
@@ -17,7 +17,7 @@ export default async (q, p) => {
     const url = `https://gigablast.com${part1}${part2}`;
     const response2 = await fetch(url, {
         headers: {
-            "User-Agent": randomUserAgent(),
+            "User-Agent": getUserAgent(),
             "Accept-Language": "en, *;q=0.5"
         }
     });

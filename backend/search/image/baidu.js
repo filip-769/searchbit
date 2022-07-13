@@ -1,9 +1,9 @@
-import randomUserAgent from "../../../randomUserAgent.js";
+import getUserAgent from "../../../getUserAgent.js";
 
 export default async (q, p) => {
     const response = await fetch(`https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=&word=${encodeURIComponent(q)}&pn=${(p-1)*30}`, {
         headers: {
-            "User-Agent": randomUserAgent(),
+            "User-Agent": getUserAgent(),
             "Accept-Language": "en, *;q=0.5",
             "Accept": "*/*"
         }

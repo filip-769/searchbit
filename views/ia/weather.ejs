@@ -1,14 +1,31 @@
-<h2>Weather in <%= ia.response.region %></h2>
-<%
-    ia.response.days.forEach(day => {
-        %>
-            <div class="weatherIaDay">
-                <img class="weatherIaIcon" src="<%= day.icon %>" alt="">
-                <div>
-                    <h3><%= day.day %></h3>
-                    <p><%= day.desc %>, temperature from <%= day.temp.min %> °C to <%= day.temp.max %> °C and wind <%= day.wind.speed %> km/h</p>
-                </div>
-            </div>
-        <%
-    });
-%>
+<h3>Weather in <%= ia.response.city %></h3>
+<div class="text-5xl"><%= ia.response.current.temp %> °C</div>
+<div class="flex items-center">
+    <img src="<%= ia.response.current.symbol %>" alt="" class="h-6" loading="lazy">
+    <span><%= ia.response.current.message.slice(0, 1).toUpperCase() + ia.response.current.message.slice(1) %></span>
+</div>
+<div>Wind <%= ia.response.current.wind.speed %> km/h - <%= ia.response.current.wind.direction %> °</div>
+<div class="tabs">
+    <label class="tab focus:tab-active" tabindex="0" for="weather0">Temperatures</label>
+    <label class="tab focus:tab-active" tabindex="0" for="weather1">Precipitation</label>
+    <label class="tab focus:tab-active" tabindex="0" for="weather2">Clouds</label>
+    <label class="tab focus:tab-active" tabindex="0" for="weather3">Wind</label>
+</div>
+<div>
+    <div>
+        <input type="radio" name="weather" id="weather0" hidden class="peer" checked>
+        <img src="/proxy?url=<%= encodeURIComponent(`https://quickchart.io/chart?c=${encodeURIComponent(JSON.stringify(ia.response.charts[0]))}&f=svg`) %>" class="hidden peer-checked:block rounded-2xl" loading="lazy" alt="">
+    </div>
+    <div>
+        <input type="radio" name="weather" id="weather1" hidden class="peer">
+        <img src="/proxy?url=<%= encodeURIComponent(`https://quickchart.io/chart?c=${encodeURIComponent(JSON.stringify(ia.response.charts[1]))}&f=svg`) %>" class="hidden peer-checked:block rounded-2xl" loading="lazy" alt="">
+    </div>
+    <div>
+        <input type="radio" name="weather" id="weather2" hidden class="peer">
+        <img src="/proxy?url=<%= encodeURIComponent(`https://quickchart.io/chart?c=${encodeURIComponent(JSON.stringify(ia.response.charts[2]))}&f=svg`) %>" class="hidden peer-checked:block rounded-2xl" loading="lazy" alt="">
+    </div>
+    <div>
+        <input type="radio" name="weather" id="weather3" hidden class="peer">
+        <img src="/proxy?url=<%= encodeURIComponent(`https://quickchart.io/chart?c=${encodeURIComponent(JSON.stringify(ia.response.charts[3]))}&f=svg`) %>" class="hidden peer-checked:block rounded-2xl" loading="lazy" alt="">
+    </div>
+</div>

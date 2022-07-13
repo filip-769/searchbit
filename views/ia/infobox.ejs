@@ -1,9 +1,9 @@
 <%
     if(ia.response.img) {
         %>
-            <img src="<%= ia.response.img %>" alt="">
+            <img src="<%= ia.response.img %>" alt="" class="rounded-2xl">
         <%
     }
 %>
-<h2><a target="_blank" href="<%= ia.response.url %>"><%= ia.response.title %></a></h2>
+<h2 class="text-2xl"><a target="_blank" href="<%= ia.response.url %>"><%= ia.response.title %></a></h2>
 <p><%= ia.response.text %></p>

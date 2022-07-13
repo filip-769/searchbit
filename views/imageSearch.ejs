@@ -1,16 +1,18 @@
-<section class="imageResults">
+<section class="flex justify-evenly flex-wrap">
     <% json.searchResults.results.forEach(result => { %>
         <%
             result.engines.forEach((x, i) => {
                 result.engines[i] = x.slice(0, 1).toUpperCase() + x.slice(1);
             })
-        %> 
-        <div class="imageResult">
-            <a href="<%= result.url %>" target="_blank">
-                <img src="<%= result.img %> " alt="<%= result.desc %>" title="<%= result.desc %>" loading="lazy">
-                <h2><%= result.desc %></h2>
-                <div class="ResultBar"><span><%- result.engines.join("</span> <span>") %></span></div>
-            </a>
-        </div>
+        %>
+        <a href="<%= result.url %>" target="_blank">
+            <div class="card w-52 bg-base-100 shadow-xl mb-4 card-compact">
+                <figure><img class="h-32 w-52 object-cover" src="<%= result.img %>" alt="<%= result.desc %>" title="<%= result.desc %>" loading="lazy"></figure>
+                <div class="card-body">
+                    <h2 class="whitespace-nowrap overflow-hidden text-ellipsis"><%= result.desc %></h2>
+                    <div class="card-actions justify-end overflow-x-scroll w-full whitespace-nowrap block"><span class="badge badge-outline text-xs"><%- result.engines.join("</span> <span class=\"badge badge-outline text-xs\">") %></span></div>
+                </div>
+            </div>
+        </a>
     <% }); %>
 </section>

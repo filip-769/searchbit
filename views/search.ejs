@@ -1,51 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="<%= config.theme %>" class="h-full bg-base-200">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./global.css">
-    <link rel="stylesheet" href="./ia.css">
-    <link rel="stylesheet" href="./search.css">
+    <link rel="stylesheet" href="tailwind.css">
     <link rel="search" type="application/opensearchdescription+xml" title="Searchbit" href="/opensearch.xml?ac=<%= config.autocomplete %>">
     <title><% if(typeof json !== "undefined" && json.q) { %>Search results for <%= json.q %><% } else { %> Searchbit <% } %></title>
     <%- config.customHTML %> 
 </head>
-<body>
+<body class="pl-2 pr-2 sm:pl-10 sm:pr-10 pt-3 pb-3">
     <header>
-        <form method="get">
-            <div id="top">
-                <h1 id="title"><a href="/search" tabindex="-1">Searchbit</a></h1>
-                <a href="/settings" id="settingsTab">Settings</a>
-            </div>
-            <div id="searchBar">
-                <input type="search" name="q" value="<%= typeof json !== "undefined" ? json.q : "" %>" autofocus>
-                <%
-                    for (const param in req.query) {
-                        if(param !== "q" && param !== "p") {
-                            %>
-                                <input type="hidden" name="<%= param %>" value="<%= req.query[param] %>">
-                            <%
-                        }
+        <form method="get" class="navbar block pl-0 pr-0">
+            <%
+                for (const param in req.query) {
+                    if(param !== "q" && param !== "p") {
+                        %>
+                            <input type="hidden" name="<%= param %>" value="<%= req.query[param] %>">
+                        <%
                     }
-                %>
-                <button type="submit" tabindex="-1">
-                    <img src="/searchBtn.svg" alt="Search">
-                </button>
-             </div>
-             <nav>
-                <ul>
-                    <%
+                }
+            %>
+            <div class="flex-col sm:flex-row w-full">
+                <h1 class="text-3xl mb-4 sm:mb-0"><a href="/search" tabindex="-1">Searchbit</a></h1>
+                <div class="sm:ml-5 flex w-full">
+                    <div class="input-group justify-center sm:justify-start">
+                        <input class="input focus:outline-offset-0" type="search" placeholder="Search" name="q" value="<%= typeof json !== "undefined" ? json.q : "" %>" autofocus>
+                        <button type="submit" tabindex="-1" class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="10" cy="10" r="7" /><line x1="21" y1="21" x2="15" y2="15" /></svg>
+                        </button>
+                    </div>
+                    <a href="/settings" class="absolute right-2 top-2 sm:static ml-auto btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </a>
+                </div>
+            </div>
+        </form>
+        <div>
+        <% if (req.query.q) { %>
+            <ul class="tabs pl-0 pt-2">
+                <%
                         const x = (new URLSearchParams(req.query)); x.set("t", "web"); x.delete("p");
                         const y = (new URLSearchParams(req.query)); y.set("t", "image"); y.delete("p");
-                    %>
-                    <li <%- req.query.t !== "image" ? "data-current" : "" %>><a href="/search?<%= x.toString() %>">Web</a></li>
-                    <li <%- req.query.t === "image" ? "data-current" : "" %>><a href="/search?<%= y.toString() %>">Image</a></li>
-                </ul>
-             </nav>
-        </form>
+                %>
+                <li class="tab tab-lifted <%- req.query.t !== "image" ? "tab-active" : "" %>">
+                    <a href="/search?<%= x.toString() %>">Web</a> 
+                </li>
+                <li class="tab tab-lifted <%- req.query.t === "image" ? "tab-active" : "" %>">
+                    <a href="/search?<%= y.toString() %>">Image</a>
+                </li>
+            </ul>
+        <% } %>
+        </div>
     </header>
-    <main>
+    <main class="flex-col-reverse sm:flex-row flex p-1 pt-2">
         <%- 
             req.query.q ? 
                 req.query.t === "image" ?
@@ -67,9 +75,11 @@
                         }
                     }
                 %>
-                <button class="paginationButton" type="submit" name="p" value="<%= (+req.query.p||1) === 1 ? 1 : (+req.query.p||1) - 1 %>" <%= req.query.p > 1 ? "" : "disabled" %>>← Previous</button>
-                <span class="paginationPageText">PAGE <%= (req.query.p||1) %></span>
-                <button class="paginationButton" type="submit" name="p" value="<%= (+req.query.p||1) + 1 %>">Next →</button>
+                <div class="justify-center sm:justify-start btn-group">
+                    <button class="btn text-lg <%= req.query.p > 1 ? "" : "btn-disabled" %>" type="submit" name="p" value="<%= (+req.query.p||1) === 1 ? 1 : (+req.query.p||1) - 1 %>">«</button>
+                    <button class="btn pointer-events-none">PAGE <%= (req.query.p||1) %></button>
+                    <button class="btn text-lg" type="submit" name="p" value="<%= (+req.query.p||1) + 1 %>">»</button>
+                </div>
             </form>
         <% } %>
     </footer>

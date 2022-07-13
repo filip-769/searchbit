@@ -1,11 +1,11 @@
 import jsdom from "jsdom";
-import randomUserAgent from "../../../randomUserAgent.js";
+import getUserAgent from "../../../getUserAgent.js";
 
 
 export default async (q, p) => {
     const response = await fetch(`https://www.exalead.com/search/web/results/?q=${encodeURIComponent(q)}&start_index=${(p-1)*10}`, {
         headers: {
-            "User-Agent": randomUserAgent(),
+            "User-Agent": getUserAgent(),
             "Accept-Language": "en, *;q=0.5"
         }
     })

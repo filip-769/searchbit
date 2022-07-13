@@ -1,10 +1,10 @@
-import randomUserAgent from "../../../randomUserAgent.js";
+import getUserAgent from "../../../getUserAgent.js";
 
 
 export default async (q, p) => {
     const response = await fetch(`https://api.qwant.com/v3/search/web?q=${encodeURIComponent(q)}&locale=en_GB&offset=${(p-1)*10}`, {
         headers: {
-            "User-Agent": randomUserAgent(),
+            "User-Agent": getUserAgent(),
             "Accept-Language": "en, *;q=0.5"
         }
     })

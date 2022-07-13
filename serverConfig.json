@@ -1,4 +1,17 @@
+/*
+	This is a server config file fo Searchbit.
+	It uses the JSON5 format (https://json5.org/)
+	Breaking this file will throw errors and force you to restart Searchbit!
+*/
 {
+    // Searchbit will listen on this port. Access it on http://localhost:PORT
     "port": 14734,
-    "cors": "*"
+    // CORS origin header
+    "cors": "*",
+    // User agent to send to search engines. The default uses user agent from Tor browser.
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0",
+    // Redirect users that use Tor browser to .onion version of your instance. Write a root onion url.
+    "onionLocation": null,
+    // HTTP proxy to use for network requests. Use it to bypass rate limits and hide IP address of your instance. Write an url of your http proxy.
+    "httpProxy": null
 }

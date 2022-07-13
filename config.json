@@ -1,4 +1,46 @@
+/*
+	This is a config file for Searchbit.
+	It uses the JSON5 format (https://json5.org/)
+	Breaking this file will throw errors and force you to clear cookies!
+	You may need to clear your cookies after updating Searchbit.
+*/
 {
+	"autocomplete": "qwant", // Autocomplete to use in opensearch.xml. Avaible options: bing, brave, exalead, fairsearch, google, naver, neeva, qwant, seznam, usearch, yacy, yandex
+	"delay": 2500, // Delay to wait for search engines to respond
+	// Maximum number of results to show in category
+	"maximumResults": {
+		"web": 15,
+		"image": 1000
+	},
+	"customHTML": "", // Write your custom code like CSS, JS, meta tags etc. here. (use json escaper)
+	/*
+		Write your often used words here.
+		Searching for @shortcut will replace it with the specified string.
+	*/
+	"quickShortcuts": {
+		"wd": "site:stackoverflow.com | site:developer.mozilla.org | site:github.com",
+		"c": "site:based.cooking",
+	    "v": "site:youtube.com | site:odysee.com | site:vimeo.com",
+		"d": "filetype:pdf | filetype:docx",
+		"nf": "-site:tk -site:ml -site:ga -site:cf -site:gq",
+		"f": "site:forum.* | site:reddit.com"
+	},
+	/*
+		Filter unwanted websites from search results.
+		Removes results that match at least one regex in array.
+	*/
+    "filters": {
+        "title": [],
+        "url": [],
+        "description": []
+    },
+	"tabOnResultOptions": false, // Allow tab for the options for search results.
+	"theme": "light", // Avaible themes: light, dark, cupcake, bumblebee, emerald, corporate, synthwave, retro, cyberpunk, valentine, halloween, garden, forest, aqua, lofi, pastel, fantasy, wireframe, black, luxury, dracula, cmyk, autumn, business, acid, lemonade, night, coffee, winter, light, dark, cupcake, bumblebee, emerald, corporate, synthwave, retro, cyberpunk, valentine, halloween, garden, forest, aqua, lofi, pastel, fantasy, wireframe, black, luxury, dracula, cmyk, autumn, business, acid, lemonade, night, coffee, winter
+	/*
+		Set weight for specific search engines.
+		Higher weight means higher ranking in search results and priority of description and title.
+		Weight 0 will disable engine.
+	*/
 	"engines": {
 		"web": {
 			"alexandria": 1,
@@ -41,26 +83,5 @@
 			"yacy": 1,
 			"yandex": 1
 		}
-	},
-	"autocomplete": "qwant",
-	"delay": 2500,
-	"maximumResults": {
-		"web": 15,
-		"image": 1000
-	},
-	"customHTML": "<!-- Write your custom code like CSS, JS, meta tags etc. here. (use json escaper) -->",
-	"quickShortcuts": {
-		"wd": "site:stackoverflow.com | site:developer.mozilla.org | site:github.com",
-		"c": "site:based.cooking",
-	    "v": "site:youtube.com | site:odysee.com | site:vimeo.com",
-		"d": "filetype:pdf | filetype:docx",
-		"nf": "-site:tk -site:ml -site:ga -site:cf -site:gq",
-		"f": "site:forum.* | site:reddit.com"
-	},
-    "filters": {
-        "title": [],
-        "url": [],
-        "description": []
-    },
-	"tabOnResultOptions": false
+	}
 }

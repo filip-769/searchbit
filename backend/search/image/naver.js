@@ -1,9 +1,9 @@
-import randomUserAgent from "../../../randomUserAgent.js";
+import getUserAgent from "../../../getUserAgent.js";
 
 export default async (q, p) => {
     const response = await fetch(`https://s.search.naver.com/p/c/image/search.naver?query=${encodeURIComponent(q)}&start=${(p-1)*100}&display=100&json_type=6`, {
         headers: {
-            "User-Agent": randomUserAgent(),
+            "User-Agent": getUserAgent(),
             "Accept-Language": "en, *;q=0.5",
             "Accept": "*/*"
         }

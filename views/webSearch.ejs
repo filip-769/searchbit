@@ -1,38 +1,38 @@
-<section class="webResults">
+<section class="sm:w-[50vw]">
     <% json.searchResults.results.forEach(result => { %>
-        <div class="webResult">
-            <div class="ResultBar">
+        <div class="mb-5">
+            <div class="overflow-x-scroll w-full whitespace-nowrap">
                 <%
                     result.engines.forEach((x, i) => {
                         result.engines[i] = x.slice(0, 1).toUpperCase() + x.slice(1);
                     })
-                %> 
-                <span><%- result.engines.join("</span><span>") %></span>
-                <span class="right"><a href="https://web.archive.org/web/<%= encodeURIComponent(result.url) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>Archive</a></span>
-                <span><a href="/proxy?url=<%= encodeURIComponent(result.url) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>NoJS</a></span>
+                %>
+                <span class="badge badge-outline text-xs"><%- result.engines.join("</span> <span class=\"badge badge-outline text-xs\">") %></span>
+                <span class="badge text-xs"><a href="https://web.archive.org/web/<%= encodeURIComponent(result.url) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>Archive</a></span>
+                <span class="badge text-xs"><a href="/proxy?url=<%= encodeURIComponent(result.url) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>NoJS</a></span>
                 <% if(/(\.s?html?$)|(\.php3?$)|(\.aspx?$)|(\.cfml?$)|(\/$)|(\/[^./]+$)/i.test((new URL(result.url)).pathname)) {  %>
-                    <span><a href="/proxy?url=<%= encodeURIComponent(`https://swisscows.com/api/preview/image?url=${encodeURIComponent(result.url)}`) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>.html as .jpg</a></span>
+                    <span class="badge text-xs"><a href="/proxy?url=<%= encodeURIComponent(`https://swisscows.com/api/preview/image?url=${encodeURIComponent(result.url)}`) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>.html as .jpg</a></span>
                 <% } %>
                 <% if(/\.pptx?$/.test((new URL(result.url)).pathname)) {  %>
-                    <span><a href="/proxy?url=<%= encodeURIComponent(`https://pnl1-powerpoint.officeapps.live.com/p/pdfhandler.ashx?PV=0&Pid=WOPIsrc%3Dhttp%253A%252F%252Fpnl1%252Dview%252Dwopi%252Ewopi%252Eonline%252Eoffice%252Enet%253A808%252Foh%252Fwopi%252Ffiles%252F%2540%252FwFileId%253FwFileId%253D${encodeURIComponent(encodeURIComponent(encodeURIComponent(result.url)))}%26access%5Ftoken%3D1`) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>.pptx as .pdf</a></span>
+                    <span class="badge text-xs"><a href="/proxy?url=<%= encodeURIComponent(`https://pnl1-powerpoint.officeapps.live.com/p/pdfhandler.ashx?PV=0&Pid=WOPIsrc%3Dhttp%253A%252F%252Fpnl1%252Dview%252Dwopi%252Ewopi%252Eonline%252Eoffice%252Enet%253A808%252Foh%252Fwopi%252Ffiles%252F%2540%252FwFileId%253FwFileId%253D${encodeURIComponent(encodeURIComponent(encodeURIComponent(result.url)))}%26access%5Ftoken%3D1`) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>.pptx as .pdf</a></span>
                 <% } %>
                 <% if(/\.docx?$/.test((new URL(result.url)).pathname)) {  %>
-                    <span><a href="/proxy?url=<%= encodeURIComponent(`https://pnl1-word-view.officeapps.live.com/wv/WordViewer/Document.pdf?access_token=1&type=accesspdf&WOPIsrc=http://pnl1-view-wopi.wopi.online.office.net:808/oh/wopi/files/@/wFileId?wFileId=${encodeURIComponent(result.url)}`) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>.docx as .pdf</a></span>
+                    <span class="badge text-xs"><a href="/proxy?url=<%= encodeURIComponent(`https://pnl1-word-view.officeapps.live.com/wv/WordViewer/Document.pdf?access_token=1&type=accesspdf&WOPIsrc=http://pnl1-view-wopi.wopi.online.office.net:808/oh/wopi/files/@/wFileId?wFileId=${encodeURIComponent(result.url)}`) %>" target="_blank" <%- config.tabOnResultOptions ? "" : "tabindex=\"-1\"" %>>.docx as .pdf</a></span>
                 <% } %>
             </div>
-            <div class="iconAndFormattedUrl">
-                <img src="<%= result.icon %>" alt="" loading="lazy">
-                <div class="webResultFormattedUrl"><%= result.formattedUrl %></div>
+            <div class="flex items-center text-xs mt-1">
+                <img src="<%= result.icon %>" alt="" loading="lazy" class="h-4 w-4 p-0.5 mr-1 rounded-full bg-white">
+                <div><%= result.formattedUrl %></div>
             </div>
-            <a class="webResultTitle" target="_blank" href="<%= result.url %>"><%= result.title %></a>
-            <div class="webResultDescription"><%= result.desc %></div>
+            <a target="_blank" href="<%= result.url %>" class="text-primary hover:underline"><%= result.title %></a>
+            <div><%= result.desc %></div>
         </div>
     <% }); %>
 </section>
-<aside>
+<aside class="sm:max-w-[33vw] sm:ml-auto">
     <% json.instantAnswers.forEach(ia => { 
             %>
-                <div class="<%= ia.type %>Ia">
+                <div class="card p-4 border border-base-content mb-4">
                     <%- include(`./ia/${ia.type}.ejs`, { ia }) %>
                 </div>
             <%

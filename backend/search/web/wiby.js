@@ -1,10 +1,10 @@
-import randomUserAgent from "../../../randomUserAgent.js";
+import getUserAgent from "../../../getUserAgent.js";
 
 
 export default async (q, p) => {
     const response = await fetch(`https://wiby.org/json/?q=${encodeURIComponent(q)}&o=${(p-1)*12}`, {
         headers: {
-            "User-Agent": randomUserAgent(),
+            "User-Agent": getUserAgent(),
             "Accept-Language": "en, *;q=0.5"
         }
     })

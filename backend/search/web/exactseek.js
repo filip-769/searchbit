@@ -1,10 +1,10 @@
 import jsdom from "jsdom";
-import randomUserAgent from "../../../randomUserAgent.js";
+import getUserAgent from "../../../getUserAgent.js";
 
 export default async (q, p) => {
     const response = await fetch(`https://www.exactseek.com/cgi-bin/search.cgi?q=${encodeURIComponent(q)}&s=${(p - 1) * 10 + 1}`, {
         headers: {
-            "User-Agent": randomUserAgent(),
+            "User-Agent": getUserAgent(),
             "Accept-Language": "en, *;q=0.5"
         }
     })

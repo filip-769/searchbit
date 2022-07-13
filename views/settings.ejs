@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="<%= config.theme %>">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./global.css">
-    <link rel="stylesheet" href="./settings.css">
+    <link rel="stylesheet" href="tailwind.css">
     <title>Settings</title>
     <%- config.customHTML %> 
 </head>
 <body>
     <form method="post">
-        <textarea
-        spellcheck="false"
-        name="data"
-        rows="<%= JSON.stringify(config, null, 4).split("\n").length + 1 %>"
-        ><%= JSON.stringify(config, null, 4) %></textarea>
-        <div>
-            <button type="submit">Save</button>
-            <button tabindex="-1"><a href="/">Back</a></button>
+        <div class="w-screen flex items-center p-10 flex-col pt-5 pb-0">
+            <textarea
+                class="textarea textarea-bordered w-[85vw] h-[85vh] mb-1 focus:outline-offset-0"
+                spellcheck="false"
+                name="data"
+                ><%= JSON.stringify(config, null, 4) %></textarea>
+            <div class="w-[85vw]">
+                <button class="btn" type="submit">Save</button>
+                <a href="/">
+                    <button class="btn" tabindex="-1" type="button">Back</button>
+                </a>
+                <a href="/defaultConfig">
+                    <button class="btn" tabindex="-1" type="button">Default</button>
+                </a>
+            </div>
         </div>
     </form>
 </body>

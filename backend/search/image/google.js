@@ -1,10 +1,10 @@
 import jsdom from "jsdom";
-import randomUserAgent from "../../../randomUserAgent.js";
+import getUserAgent from "../../../getUserAgent.js";
 
 export default async (q, p) => {
     const response = await fetch(`https://www.google.com/search?q=${encodeURIComponent(q)}&lr=lang_en&tbm=isch&ijn=${p-1}&hl=en&asearch=arc&async=arc_id:srp_510,ffilt:all,ve_name:MoreResultsContainer,next_id:srp_5,use_ac:true,_id:arc-srp_510,_pms:qs,_fmt:pc`, {
         headers: {
-            "User-Agent": randomUserAgent(),
+            "User-Agent": getUserAgent(),
             "Accept-Language": "en, *;q=0.5",
             "Accept": "*/*"
         }

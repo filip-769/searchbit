@@ -1,20 +1,31 @@
 {
   "name": "searchbit",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "description": "Searchbit is a meta search engine inspired by Searx.",
   "main": "index.js",
   "keywords": [
     "search engine"
   ],
+  "scripts": {
+    "start": "NODE_EXTRA_CA_CERTS=node_modules/node_extra_ca_certs_mozilla_bundle/ca_bundle/ca_intermediate_root_bundle.pem node --no-warnings index.js",
+    "css": "npx tailwindcss -i ./tailwindsrc.css -o ./static/tailwind.css --watch"
+  },
   "author": "filip-769",
   "license": "MIT",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.3",
-    "jsdom": "^19.0.0"
+    "jsdom": "^19.0.0",
+    "json5": "^2.2.1",
+    "node_extra_ca_certs_mozilla_bundle": "^1.0.5",
+    "undici": "^5.6.1"
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "daisyui": "^2.18.1",
+    "tailwindcss": "^3.1.5"
   }
 }

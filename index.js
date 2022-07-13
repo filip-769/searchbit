@@ -1,19 +1,31 @@
 import { readFileSync } from "fs";
+import { ProxyAgent } from "undici";
 import search from "./backend/index.js";
 import express from "express";
 import proxy from "./proxy/proxy.js";
+import json5 from "json5";
+
+global.JSON.parse = json5.parse;
 
 const app = express();
 const config = JSON.parse(readFileSync("./config.json"));
 const serverConfig = JSON.parse(readFileSync("./serverConfig.json"));
 
+if(serverConfig.httpProxy) {
+    global[Symbol.for('undici.globalDispatcher.1')] = new ProxyAgent(serverConfig.httpProxy);
+}
+
 app.use(express.static("./static/"));
 app.use(express.urlencoded({ extended: true }));
 app.use((req, res, next) => {
-    res.header({
+    const headers = {
         "Access-Control-Allow-Origin": serverConfig.cors,
-        "Content-Security-Policy": "default-src 'none'; style-src 'self'; img-src 'self';"
-    });
+        "Content-Security-Policy": "default-src 'none'; style-src 'self'; img-src 'self'",
+        "Referrer-Policy": "no-referrer",
+        "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload"
+    };
+    if(serverConfig.onionLocation) headers["Onion-Location"] = serverConfig.onionLocation + req.path;
+    res.header(headers);
     next();
 });
 
@@ -21,6 +33,10 @@ app.all("/", (req, res) => res.redirect("/search"));
 app.all("/favicon.ico", (req, res) => res.redirect("/searchBtn.svg"))
 app.get("/proxy", async (req, res) => proxy(req, res))
 app.get("/settings", (req, res) => res.render("settings.ejs", { config: getUserConfig(req) } ))
+app.get("/defaultConfig", (req, res) => {
+    res.type("txt");
+    res.send(readFileSync("./config.json", { encoding: "utf8" }))
+});
 
 app.get("/opensearch.xml", (req, res) => {
     res.type("application/opensearchdescription+xml");
@@ -29,8 +45,10 @@ app.get("/opensearch.xml", (req, res) => {
 
 app.post("/settings", (req, res) => {
     try {
-        const x = JSON.stringify(JSON.parse(req.body.data));
-        res.cookie("settings", x, { maxAge: 1000*60*60*24*365*10 });
+        const json = JSON.parse(req.body.data)  
+        for (const x in json) {
+            res.cookie(x, (typeof json[x] === "object" ? JSON.stringify(json[x]) : json[x]), { maxAge: 1000*60*60*24*365*10, httpOnly: true });
+        }
         res.redirect("/settings");
     } catch (error) {
         return res.status(400).redirect("/settings");
@@ -44,7 +62,7 @@ app.get("/search", async (req, res) => {
         const json = await search (
             req.query.e?.toLowerCase()?.split(",") || ( req.query.t === "autocomplete" ? [ getUserConfig(req).autocomplete ] : getEnginesFromConfig(getUserConfig(req), req.query.t ?? "web") ), //search engines
             req.query.q, //search query
-            parseInt(req.query.p) || 1, //search page
+            parseInt(req.query.p) || 1, //search page
             req.query.t ?? "web", //search type
             getUserConfig(req), //user config
         )
@@ -62,24 +80,21 @@ app.get("/search", async (req, res) => {
     } 
 });
 
-app.listen(serverConfig.port, () =>  console.log(`Server is listening on port ${serverConfig.port}`));
-
 function getUserConfig(req) {
-    let userConfig = config;
+    let userConfig = structuredClone(config);
 
     req.headers.cookie?.split("; ")?.forEach(cookie => {
         const [key, value] = cookie.split("=");
-        if(key === "settings") {
-            try {
-                userConfig = JSON.parse(decodeURIComponent(value));
-            } catch (error) {
-                return;
-            }
+        try {
+            userConfig[key] = JSON.parse(decodeURIComponent(value));
+        } catch (error) {
+            userConfig[key] = decodeURIComponent(value);
         }
     })
 
     return userConfig;
 }
+
 
 function getEnginesFromConfig(config, type) {
     const engines = [];
@@ -89,3 +104,15 @@ function getEnginesFromConfig(config, type) {
 
     return engines;
 }
+
+app.listen(serverConfig.port, async () => {
+    console.log(` 
+    _______ _______ _______  ______ _______ _     _ ______  _____ _______
+    |______ |______ |_____| |_____/ |       |_____| |_____]   |      |   
+    ______| |______ |     | |    \\_ |_____  |     | |_____] __|__    |   
+                                                                                                                                                
+    Server is running
+    Server is listening on port ${serverConfig.port}
+    Server IP: ${await(await fetch("https://api.ipify.org")).text()}
+    `);
+});

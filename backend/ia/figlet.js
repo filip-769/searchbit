@@ -1,8 +1,8 @@
 export default async q => {
-    const response = await fetch(`http://d03.eu01.bot-hosting.net:5593/figlet?text=${encodeURIComponent(q.replace(/figlet|big text/i, ""))}`);
+    const response = await fetch(`https://uploadbeta.com/api/figlet/?cached&msg=${encodeURIComponent(q.replace(/figlet|big text/i, ""))}`);
     const data = await response.json();
 
     return {
-        figlet: data.figlet
+        figlet: data
     }
 }

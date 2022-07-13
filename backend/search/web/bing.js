@@ -1,11 +1,12 @@
 import jsdom from "jsdom";
-import randomUserAgent from "../../../randomUserAgent.js";
+//import getUserAgent from "../../../getUserAgent.js";
 
 
 export default async (q, p) => {
     const response = await fetch(`https://www.bing.com/search?q=${encodeURIComponent(q)}&first=${(p - 1) * 10 + 1}&cc=clear`, {
         headers: {
-            "User-Agent": randomUserAgent(),
+            // bing will return tracking urls when using firefox user agent
+            "User-Agent": /* getUserAgent() */ "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100 Safari/537.36",
             "Accept-Language": "en, *;q=0.5"
         }
     })
