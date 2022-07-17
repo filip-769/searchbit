@@ -1,5 +1,8 @@
 # Searchbit
 Searchbit is a meta search engine inspired by Searx.
+
+> :warning: Searchbit is in BETA!
+
 - [Installation](../../wiki/installation)
 - [Public instances](../../wiki/instances)
 - [Instant answers](../../wiki/instant-answers)

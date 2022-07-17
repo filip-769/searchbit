@@ -1924,45 +1924,6 @@ html {
   color: hsl(var(--nc) / var(--tw-text-opacity));
 }
 
-.checkbox {
-  flex-shrink: 0;
-  --chkbg: var(--bc);
-  --chkfg: var(--b1);
-  height: 1.5rem;
-  width: 1.5rem;
-  cursor: pointer;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border-width: 1px;
-  border-color: hsl(var(--bc) / var(--tw-border-opacity));
-  --tw-border-opacity: 0.2;
-  border-radius: var(--rounded-btn, 0.5rem);
-}
-
-:root .countdown {
-  line-height: 1em;
-}
-
-.countdown {
-  display: inline-flex;
-}
-
-.countdown > * {
-  height: 1em;
-  display: inline-block;
-  overflow-y: hidden;
-}
-
-.countdown > *:before {
-  position: relative;
-  content: "00\A 01\A 02\A 03\A 04\A 05\A 06\A 07\A 08\A 09\A 10\A 11\A 12\A 13\A 14\A 15\A 16\A 17\A 18\A 19\A 20\A 21\A 22\A 23\A 24\A 25\A 26\A 27\A 28\A 29\A 30\A 31\A 32\A 33\A 34\A 35\A 36\A 37\A 38\A 39\A 40\A 41\A 42\A 43\A 44\A 45\A 46\A 47\A 48\A 49\A 50\A 51\A 52\A 53\A 54\A 55\A 56\A 57\A 58\A 59\A 60\A 61\A 62\A 63\A 64\A 65\A 66\A 67\A 68\A 69\A 70\A 71\A 72\A 73\A 74\A 75\A 76\A 77\A 78\A 79\A 80\A 81\A 82\A 83\A 84\A 85\A 86\A 87\A 88\A 89\A 90\A 91\A 92\A 93\A 94\A 95\A 96\A 97\A 98\A 99\A";
-  white-space: pre;
-  top: calc(var(--value) * -1em);
-  text-align: center;
-  transition: all 1s cubic-bezier(1, 0, 0, 1);
-}
-
 .footer {
   display: grid;
   width: 100%;
@@ -2473,38 +2434,6 @@ html {
   line-height: 1.25rem;
 }
 
-.checkbox:focus-visible {
-  outline: 2px solid hsl(var(--bc));
-  outline-offset: 2px;
-}
-
-.checkbox:checked, 
-  .checkbox[checked="true"] {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--bc) / var(--tw-bg-opacity));
-  background-repeat: no-repeat;
-  -webkit-animation: checkmark var(--animation-input, 0.2s) ease-in-out;
-          animation: checkmark var(--animation-input, 0.2s) ease-in-out;
-  background-image: linear-gradient(-45deg, transparent 65%, hsl(var(--chkbg)) 65.99%), linear-gradient(45deg, transparent 75%, hsl(var(--chkbg)) 75.99%), linear-gradient(-45deg, hsl(var(--chkbg)) 40%, transparent 40.99%), linear-gradient(45deg, hsl(var(--chkbg)) 30%, hsl(var(--chkfg)) 30.99%, hsl(var(--chkfg)) 40%, transparent 40.99%), linear-gradient(-45deg, hsl(var(--chkfg)) 50%, hsl(var(--chkbg)) 50.99%);
-}
-
-.checkbox:indeterminate {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--bc) / var(--tw-bg-opacity));
-  background-repeat: no-repeat;
-  -webkit-animation: checkmark var(--animation-input, 0.2s) ease-in-out;
-          animation: checkmark var(--animation-input, 0.2s) ease-in-out;
-  background-image: linear-gradient(90deg, transparent 80%, hsl(var(--chkbg)) 80%), linear-gradient(-90deg, transparent 80%, hsl(var(--chkbg)) 80%), linear-gradient(0deg, hsl(var(--chkbg)) 43%, hsl(var(--chkfg)) 43%, hsl(var(--chkfg)) 57%, hsl(var(--chkbg)) 57%);
-}
-
-.checkbox:disabled {
-  cursor: not-allowed;
-  border-color: transparent;
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--bc) / var(--tw-bg-opacity));
-  opacity: 0.2;
-}
-
 @-webkit-keyframes checkmark {
   0% {
     background-position-y: 5px;
@@ -2531,20 +2460,6 @@ html {
   100% {
     background-position-y: 0;
   }
-}
-
-body[dir="rtl"] .checkbox {
-  --chkbg: var(--bc);
-  --chkfg: var(--b1);
-}
-
-body[dir="rtl"] .checkbox:checked,
-    body[dir="rtl"] .checkbox[checked="true"] {
-  background-image: linear-gradient(45deg, transparent 65%, hsl(var(--chkbg)) 65.99%), linear-gradient(-45deg, transparent 75%, hsl(var(--chkbg)) 75.99%), linear-gradient(45deg, hsl(var(--chkbg)) 40%, transparent 40.99%), linear-gradient(-45deg, hsl(var(--chkbg)) 30%, hsl(var(--chkfg)) 30.99%, hsl(var(--chkfg)) 40%, transparent 40.99%), linear-gradient(45deg, hsl(var(--chkfg)) 50%, hsl(var(--chkbg)) 50.99%);
-}
-
-.drawer-toggle:focus-visible ~ .drawer-content .drawer-button.glass {
-  outline: 2px solid currentColor;
 }
 
 .label a:hover {
@@ -2799,13 +2714,6 @@ body[dir="rtl"] .checkbox:checked,
   background: none;
 }
 
-.tabs-boxed {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b2, var(--b1)) / var(--tw-bg-opacity));
-  padding: 0.25rem;
-  border-radius: var(--rounded-btn, 0.5rem);
-}
-
 .tabs-boxed .tab-active {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--p) / var(--tw-bg-opacity));
@@ -2847,29 +2755,6 @@ body[dir="rtl"] .checkbox:checked,
   .textarea[disabled]::placeholder {
   color: hsl(var(--bc) / var(--tw-placeholder-opacity));
   --tw-placeholder-opacity: 0.2;
-}
-
-.glass,
-  .glass:hover,
-  .glass.btn-active {
-  border: none;
-  -webkit-backdrop-filter: blur(var(--glass-blur, 40px));
-  backdrop-filter: blur(var(--glass-blur, 40px));
-  background-color: transparent;
-  background-image: linear-gradient(
-        135deg,
-        rgb(255 255 255 / var(--glass-opacity, 30%)) 0%,
-        rgb(0 0 0 / 0%) 100%
-      ),
-      linear-gradient(
-        var(--glass-reflex-degree, 100deg),
-        rgb(255 255 255 / var(--glass-reflex-opacity, 10%)) 25%,
-        rgb(0 0 0 / 0%) 25%
-      );
-  box-shadow: 0 0 0 1px rgb(255 255 255 / var(--glass-border-opacity, 10%))
-        inset,
-      0 0 0 2px rgb(0 0 0 / 5%);
-  text-shadow: 0 1px rgb(0 0 0 / var(--glass-text-shadow-opacity, 5%));
 }
 
 .avatar.online:before {
@@ -2949,40 +2834,20 @@ body[dir="rtl"] .checkbox:checked,
   pointer-events: none;
 }
 
-.invisible {
-  visibility: hidden;
-}
-
 .absolute {
   position: absolute;
-}
-
-.right-3 {
-  right: 0.75rem;
-}
-
-.right-4 {
-  right: 1rem;
-}
-
-.top-4 {
-  top: 1rem;
-}
-
-.top-2 {
-  top: 0.5rem;
 }
 
 .right-2 {
   right: 0.5rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
+.top-2 {
+  top: 0.5rem;
 }
 
-.ml-5 {
-  margin-left: 1.25rem;
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-auto {
@@ -3053,36 +2918,16 @@ body[dir="rtl"] .checkbox:checked,
   width: 85vw;
 }
 
-.w-\[50vw\] {
-  width: 50vw;
-}
-
 .w-4 {
   width: 1rem;
 }
 
-.max-w-\[30vw\] {
-  max-width: 30vw;
+.w-60 {
+  width: 15rem;
 }
 
-.max-w-\[3vw\] {
-  max-width: 3vw;
-}
-
-.max-w-\[40vw\] {
-  max-width: 40vw;
-}
-
-.max-w-\[35vw\] {
-  max-width: 35vw;
-}
-
-.max-w-\[352vw\] {
-  max-width: 352vw;
-}
-
-.max-w-\[33vw\] {
-  max-width: 33vw;
+.w-96 {
+  width: 24rem;
 }
 
 .flex-col {
@@ -3097,10 +2942,6 @@ body[dir="rtl"] .checkbox:checked,
   flex-wrap: wrap;
 }
 
-.content-center {
-  align-content: center;
-}
-
 .items-center {
   align-items: center;
 }
@@ -3111,10 +2952,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .justify-center {
   justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
 }
 
 .justify-evenly {
@@ -3141,40 +2978,12 @@ body[dir="rtl"] .checkbox:checked,
   border-radius: 9999px;
 }
 
-.rounded {
-  border-radius: 0.25rem;
-}
-
-.rounded-3xl {
-  border-radius: 1.5rem;
-}
-
 .rounded-2xl {
   border-radius: 1rem;
 }
 
 .border {
   border-width: 1px;
-}
-
-.border-red-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(254 226 226 / var(--tw-border-opacity));
-}
-
-.border-accent {
-  --tw-border-opacity: 1;
-  border-color: hsl(var(--a) / var(--tw-border-opacity));
-}
-
-.border-accent-content {
-  --tw-border-opacity: 1;
-  border-color: hsl(var(--ac) / var(--tw-border-opacity));
-}
-
-.border-neutral-content {
-  --tw-border-opacity: 1;
-  border-color: hsl(var(--nc) / var(--tw-border-opacity));
 }
 
 .border-base-content {
@@ -3222,16 +3031,12 @@ body[dir="rtl"] .checkbox:checked,
   padding: 1rem;
 }
 
-.p-2 {
-  padding: 0.5rem;
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
-.pl-10 {
-  padding-left: 2.5rem;
-}
-
-.pr-10 {
-  padding-right: 2.5rem;
+.pr-2 {
+  padding-right: 0.5rem;
 }
 
 .pt-3 {
@@ -3262,14 +3067,6 @@ body[dir="rtl"] .checkbox:checked,
   padding-bottom: 0px;
 }
 
-.pl-2 {
-  padding-left: 0.5rem;
-}
-
-.pr-2 {
-  padding-right: 0.5rem;
-}
-
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -3285,33 +3082,19 @@ body[dir="rtl"] .checkbox:checked,
   line-height: 1.75rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
-.capitalize {
-  text-transform: capitalize;
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .text-primary {
   --tw-text-opacity: 1;
   color: hsl(var(--p) / var(--tw-text-opacity));
-}
-
-.text-red-300 {
-  --tw-text-opacity: 1;
-  color: rgb(252 165 165 / var(--tw-text-opacity));
 }
 
 .shadow-xl {
@@ -3405,10 +3188,6 @@ body[dir="rtl"] .checkbox:checked,
   outline-offset: 0px;
 }
 
-.peer:checked ~ .peer-checked\:visible {
-  visibility: visible;
-}
-
 .peer:checked ~ .peer-checked\:block {
   display: block;
 }
@@ -3430,10 +3209,6 @@ body[dir="rtl"] .checkbox:checked,
     margin-left: auto;
   }
 
-  .sm\:flex {
-    display: flex;
-  }
-
   .sm\:w-\[50vw\] {
     width: 50vw;
   }
@@ -3444,10 +3219,6 @@ body[dir="rtl"] .checkbox:checked,
 
   .sm\:flex-row {
     flex-direction: row;
-  }
-
-  .sm\:flex-col {
-    flex-direction: column;
   }
 
   .sm\:justify-start {
@@ -3463,584 +3234,14 @@ body[dir="rtl"] .checkbox:checked,
   }
 }
 
-@media (min-width: 1024px) {
-  .peer:checked ~ .lg\:peer-checked\:block {
-    display: block;
+@media (min-width: 768px) {
+  .md\:w-96 {
+    width: 24rem;
   }
 }
 
-.tab.\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3) {
-  border-color: hsl(var(--bc) / var(--tw-border-opacity));
-  --tw-border-opacity: 1;
-  --tw-text-opacity: 1;
-}
-
-.tab-lifted.\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3) {
-  background-color: var(--tab-bg);
-  border-width: var(--tab-border, 1px) var(--tab-border, 1px) 0 var(--tab-border, 1px);
-  border-left-color: var(--tab-border-color);
-  border-right-color: var(--tab-border-color);
-  border-top-color: var(--tab-border-color);
-  padding-left: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-right: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-bottom: var(--tab-border, 1px);
-  padding-top: 0;
-}
-
-.tab-lifted.\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3):before,
-    .tab-lifted.\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3):after {
-  z-index: 1;
-  content: "";
-  display: block;
-  position: absolute;
-  width: var(--tab-radius, 0.5rem);
-  height: var(--tab-radius, 0.5rem);
-  bottom: 0;
-  --tab-grad: calc(68% - var(--tab-border, 1px));
-  --tab-corner-bg: radial-gradient(circle at var(--circle-pos), transparent var(--tab-grad), var(--tab-border-color) calc(var(--tab-grad) + 0.3px), var(--tab-border-color) calc(var(--tab-grad) + var(--tab-border, 1px)), var(--tab-bg) calc(var(--tab-grad) + var(--tab-border, 1px) + 0.3px));
-}
-
-.tab-lifted.\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3):before {
-  left: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top left;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3):before {
-  --circle-pos: top right;
-}
-
-.tab-lifted.\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3):after {
-  right: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top right;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3):after {
-  --circle-pos: top left;
-}
-
-.tab-lifted.\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3):first-child:before {
-  background: none;
-}
-
-.tab-lifted.\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3):last-child:after {
-  background: none;
-}
-
-.tab-lifted.\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3) + .tab-lifted.\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3):before {
-  background: none;
-}
-
-.tabs-boxed .\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3) {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--p) / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-  border-radius: var(--rounded-btn, 0.5rem);
-}
-
-.tabs-boxed .\[\&\:nth-child\(3\)\]\:tab-active:nth-child(3):hover {
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-}
-
-.tab.\[\&\[data-x\]\]\:tab-active[data-x] {
-  border-color: hsl(var(--bc) / var(--tw-border-opacity));
-  --tw-border-opacity: 1;
-  --tw-text-opacity: 1;
-}
-
-.tab-lifted.\[\&\[data-x\]\]\:tab-active[data-x] {
-  background-color: var(--tab-bg);
-  border-width: var(--tab-border, 1px) var(--tab-border, 1px) 0 var(--tab-border, 1px);
-  border-left-color: var(--tab-border-color);
-  border-right-color: var(--tab-border-color);
-  border-top-color: var(--tab-border-color);
-  padding-left: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-right: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-bottom: var(--tab-border, 1px);
-  padding-top: 0;
-}
-
-.tab-lifted.\[\&\[data-x\]\]\:tab-active[data-x]:before,
-    .tab-lifted.\[\&\[data-x\]\]\:tab-active[data-x]:after {
-  z-index: 1;
-  content: "";
-  display: block;
-  position: absolute;
-  width: var(--tab-radius, 0.5rem);
-  height: var(--tab-radius, 0.5rem);
-  bottom: 0;
-  --tab-grad: calc(68% - var(--tab-border, 1px));
-  --tab-corner-bg: radial-gradient(circle at var(--circle-pos), transparent var(--tab-grad), var(--tab-border-color) calc(var(--tab-grad) + 0.3px), var(--tab-border-color) calc(var(--tab-grad) + var(--tab-border, 1px)), var(--tab-bg) calc(var(--tab-grad) + var(--tab-border, 1px) + 0.3px));
-}
-
-.tab-lifted.\[\&\[data-x\]\]\:tab-active[data-x]:before {
-  left: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top left;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\[data-x\]\]\:tab-active[data-x]:before {
-  --circle-pos: top right;
-}
-
-.tab-lifted.\[\&\[data-x\]\]\:tab-active[data-x]:after {
-  right: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top right;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\[data-x\]\]\:tab-active[data-x]:after {
-  --circle-pos: top left;
-}
-
-.tab-lifted.\[\&\[data-x\]\]\:tab-active[data-x]:first-child:before {
-  background: none;
-}
-
-.tab-lifted.\[\&\[data-x\]\]\:tab-active[data-x]:last-child:after {
-  background: none;
-}
-
-.tab-lifted.\[\&\[data-x\]\]\:tab-active[data-x] + .tab-lifted.\[\&\[data-x\]\]\:tab-active[data-x]:before {
-  background: none;
-}
-
-.tabs-boxed .\[\&\[data-x\]\]\:tab-active[data-x] {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--p) / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-  border-radius: var(--rounded-btn, 0.5rem);
-}
-
-.tabs-boxed .\[\&\[data-x\]\]\:tab-active[data-x]:hover {
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-}
-
-.tab.\[\&\[\]\]\:tab-active[undefined] {
-  border-color: hsl(var(--bc) / var(--tw-border-opacity));
-  --tw-border-opacity: 1;
-  --tw-text-opacity: 1;
-}
-
-.tab-lifted.\[\&\[\]\]\:tab-active[undefined] {
-  background-color: var(--tab-bg);
-  border-width: var(--tab-border, 1px) var(--tab-border, 1px) 0 var(--tab-border, 1px);
-  border-left-color: var(--tab-border-color);
-  border-right-color: var(--tab-border-color);
-  border-top-color: var(--tab-border-color);
-  padding-left: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-right: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-bottom: var(--tab-border, 1px);
-  padding-top: 0;
-}
-
-.tab-lifted.\[\&\[\]\]\:tab-active[undefined]:before,
-    .tab-lifted.\[\&\[\]\]\:tab-active[undefined]:after {
-  z-index: 1;
-  content: "";
-  display: block;
-  position: absolute;
-  width: var(--tab-radius, 0.5rem);
-  height: var(--tab-radius, 0.5rem);
-  bottom: 0;
-  --tab-grad: calc(68% - var(--tab-border, 1px));
-  --tab-corner-bg: radial-gradient(circle at var(--circle-pos), transparent var(--tab-grad), var(--tab-border-color) calc(var(--tab-grad) + 0.3px), var(--tab-border-color) calc(var(--tab-grad) + var(--tab-border, 1px)), var(--tab-bg) calc(var(--tab-grad) + var(--tab-border, 1px) + 0.3px));
-}
-
-.tab-lifted.\[\&\[\]\]\:tab-active[undefined]:before {
-  left: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top left;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\[\]\]\:tab-active[undefined]:before {
-  --circle-pos: top right;
-}
-
-.tab-lifted.\[\&\[\]\]\:tab-active[undefined]:after {
-  right: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top right;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\[\]\]\:tab-active[undefined]:after {
-  --circle-pos: top left;
-}
-
-.tab-lifted.\[\&\[\]\]\:tab-active[undefined]:first-child:before {
-  background: none;
-}
-
-.tab-lifted.\[\&\[\]\]\:tab-active[undefined]:last-child:after {
-  background: none;
-}
-
-.tab-lifted.\[\&\[\]\]\:tab-active[undefined] + .tab-lifted.\[\&\[\]\]\:tab-active[undefined]:before {
-  background: none;
-}
-
-.tabs-boxed .\[\&\[\]\]\:tab-active[undefined] {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--p) / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-  border-radius: var(--rounded-btn, 0.5rem);
-}
-
-.tabs-boxed .\[\&\[\]\]\:tab-active[undefined]:hover {
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-}
-
-.tab.\[\&\[for\]\]\:tab-active[for] {
-  border-color: hsl(var(--bc) / var(--tw-border-opacity));
-  --tw-border-opacity: 1;
-  --tw-text-opacity: 1;
-}
-
-.tab-lifted.\[\&\[for\]\]\:tab-active[for] {
-  background-color: var(--tab-bg);
-  border-width: var(--tab-border, 1px) var(--tab-border, 1px) 0 var(--tab-border, 1px);
-  border-left-color: var(--tab-border-color);
-  border-right-color: var(--tab-border-color);
-  border-top-color: var(--tab-border-color);
-  padding-left: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-right: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-bottom: var(--tab-border, 1px);
-  padding-top: 0;
-}
-
-.tab-lifted.\[\&\[for\]\]\:tab-active[for]:before,
-    .tab-lifted.\[\&\[for\]\]\:tab-active[for]:after {
-  z-index: 1;
-  content: "";
-  display: block;
-  position: absolute;
-  width: var(--tab-radius, 0.5rem);
-  height: var(--tab-radius, 0.5rem);
-  bottom: 0;
-  --tab-grad: calc(68% - var(--tab-border, 1px));
-  --tab-corner-bg: radial-gradient(circle at var(--circle-pos), transparent var(--tab-grad), var(--tab-border-color) calc(var(--tab-grad) + 0.3px), var(--tab-border-color) calc(var(--tab-grad) + var(--tab-border, 1px)), var(--tab-bg) calc(var(--tab-grad) + var(--tab-border, 1px) + 0.3px));
-}
-
-.tab-lifted.\[\&\[for\]\]\:tab-active[for]:before {
-  left: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top left;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\[for\]\]\:tab-active[for]:before {
-  --circle-pos: top right;
-}
-
-.tab-lifted.\[\&\[for\]\]\:tab-active[for]:after {
-  right: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top right;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\[for\]\]\:tab-active[for]:after {
-  --circle-pos: top left;
-}
-
-.tab-lifted.\[\&\[for\]\]\:tab-active[for]:first-child:before {
-  background: none;
-}
-
-.tab-lifted.\[\&\[for\]\]\:tab-active[for]:last-child:after {
-  background: none;
-}
-
-.tab-lifted.\[\&\[for\]\]\:tab-active[for] + .tab-lifted.\[\&\[for\]\]\:tab-active[for]:before {
-  background: none;
-}
-
-.tabs-boxed .\[\&\[for\]\]\:tab-active[for] {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--p) / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-  border-radius: var(--rounded-btn, 0.5rem);
-}
-
-.tabs-boxed .\[\&\[for\]\]\:tab-active[for]:hover {
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-}
-
-.tab.\[\&\[for\=\]\]\:tab-active[for] {
-  border-color: hsl(var(--bc) / var(--tw-border-opacity));
-  --tw-border-opacity: 1;
-  --tw-text-opacity: 1;
-}
-
-.tab-lifted.\[\&\[for\=\]\]\:tab-active[for] {
-  background-color: var(--tab-bg);
-  border-width: var(--tab-border, 1px) var(--tab-border, 1px) 0 var(--tab-border, 1px);
-  border-left-color: var(--tab-border-color);
-  border-right-color: var(--tab-border-color);
-  border-top-color: var(--tab-border-color);
-  padding-left: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-right: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-bottom: var(--tab-border, 1px);
-  padding-top: 0;
-}
-
-.tab-lifted.\[\&\[for\=\]\]\:tab-active[for]:before,
-    .tab-lifted.\[\&\[for\=\]\]\:tab-active[for]:after {
-  z-index: 1;
-  content: "";
-  display: block;
-  position: absolute;
-  width: var(--tab-radius, 0.5rem);
-  height: var(--tab-radius, 0.5rem);
-  bottom: 0;
-  --tab-grad: calc(68% - var(--tab-border, 1px));
-  --tab-corner-bg: radial-gradient(circle at var(--circle-pos), transparent var(--tab-grad), var(--tab-border-color) calc(var(--tab-grad) + 0.3px), var(--tab-border-color) calc(var(--tab-grad) + var(--tab-border, 1px)), var(--tab-bg) calc(var(--tab-grad) + var(--tab-border, 1px) + 0.3px));
-}
-
-.tab-lifted.\[\&\[for\=\]\]\:tab-active[for]:before {
-  left: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top left;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\[for\=\]\]\:tab-active[for]:before {
-  --circle-pos: top right;
-}
-
-.tab-lifted.\[\&\[for\=\]\]\:tab-active[for]:after {
-  right: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top right;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\[for\=\]\]\:tab-active[for]:after {
-  --circle-pos: top left;
-}
-
-.tab-lifted.\[\&\[for\=\]\]\:tab-active[for]:first-child:before {
-  background: none;
-}
-
-.tab-lifted.\[\&\[for\=\]\]\:tab-active[for]:last-child:after {
-  background: none;
-}
-
-.tab-lifted.\[\&\[for\=\]\]\:tab-active[for] + .tab-lifted.\[\&\[for\=\]\]\:tab-active[for]:before {
-  background: none;
-}
-
-.tabs-boxed .\[\&\[for\=\]\]\:tab-active[for] {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--p) / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-  border-radius: var(--rounded-btn, 0.5rem);
-}
-
-.tabs-boxed .\[\&\[for\=\]\]\:tab-active[for]:hover {
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-}
-
-.tab.\[\&\[for\=weather0\]\]\:tab-active[for=weather0] {
-  border-color: hsl(var(--bc) / var(--tw-border-opacity));
-  --tw-border-opacity: 1;
-  --tw-text-opacity: 1;
-}
-
-.tab-lifted.\[\&\[for\=weather0\]\]\:tab-active[for=weather0] {
-  background-color: var(--tab-bg);
-  border-width: var(--tab-border, 1px) var(--tab-border, 1px) 0 var(--tab-border, 1px);
-  border-left-color: var(--tab-border-color);
-  border-right-color: var(--tab-border-color);
-  border-top-color: var(--tab-border-color);
-  padding-left: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-right: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-bottom: var(--tab-border, 1px);
-  padding-top: 0;
-}
-
-.tab-lifted.\[\&\[for\=weather0\]\]\:tab-active[for=weather0]:before,
-    .tab-lifted.\[\&\[for\=weather0\]\]\:tab-active[for=weather0]:after {
-  z-index: 1;
-  content: "";
-  display: block;
-  position: absolute;
-  width: var(--tab-radius, 0.5rem);
-  height: var(--tab-radius, 0.5rem);
-  bottom: 0;
-  --tab-grad: calc(68% - var(--tab-border, 1px));
-  --tab-corner-bg: radial-gradient(circle at var(--circle-pos), transparent var(--tab-grad), var(--tab-border-color) calc(var(--tab-grad) + 0.3px), var(--tab-border-color) calc(var(--tab-grad) + var(--tab-border, 1px)), var(--tab-bg) calc(var(--tab-grad) + var(--tab-border, 1px) + 0.3px));
-}
-
-.tab-lifted.\[\&\[for\=weather0\]\]\:tab-active[for=weather0]:before {
-  left: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top left;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\[for\=weather0\]\]\:tab-active[for=weather0]:before {
-  --circle-pos: top right;
-}
-
-.tab-lifted.\[\&\[for\=weather0\]\]\:tab-active[for=weather0]:after {
-  right: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top right;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\[for\=weather0\]\]\:tab-active[for=weather0]:after {
-  --circle-pos: top left;
-}
-
-.tab-lifted.\[\&\[for\=weather0\]\]\:tab-active[for=weather0]:first-child:before {
-  background: none;
-}
-
-.tab-lifted.\[\&\[for\=weather0\]\]\:tab-active[for=weather0]:last-child:after {
-  background: none;
-}
-
-.tab-lifted.\[\&\[for\=weather0\]\]\:tab-active[for=weather0] + .tab-lifted.\[\&\[for\=weather0\]\]\:tab-active[for=weather0]:before {
-  background: none;
-}
-
-.tabs-boxed .\[\&\[for\=weather0\]\]\:tab-active[for=weather0] {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--p) / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-  border-radius: var(--rounded-btn, 0.5rem);
-}
-
-.tabs-boxed .\[\&\[for\=weather0\]\]\:tab-active[for=weather0]:hover {
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-}
-
-.tab.\[\&\[for\=weather2\]\]\:tab-active[for=weather2] {
-  border-color: hsl(var(--bc) / var(--tw-border-opacity));
-  --tw-border-opacity: 1;
-  --tw-text-opacity: 1;
-}
-
-.tab-lifted.\[\&\[for\=weather2\]\]\:tab-active[for=weather2] {
-  background-color: var(--tab-bg);
-  border-width: var(--tab-border, 1px) var(--tab-border, 1px) 0 var(--tab-border, 1px);
-  border-left-color: var(--tab-border-color);
-  border-right-color: var(--tab-border-color);
-  border-top-color: var(--tab-border-color);
-  padding-left: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-right: calc(var(--tab-padding, 1rem) - var(--tab-border, 1px));
-  padding-bottom: var(--tab-border, 1px);
-  padding-top: 0;
-}
-
-.tab-lifted.\[\&\[for\=weather2\]\]\:tab-active[for=weather2]:before,
-    .tab-lifted.\[\&\[for\=weather2\]\]\:tab-active[for=weather2]:after {
-  z-index: 1;
-  content: "";
-  display: block;
-  position: absolute;
-  width: var(--tab-radius, 0.5rem);
-  height: var(--tab-radius, 0.5rem);
-  bottom: 0;
-  --tab-grad: calc(68% - var(--tab-border, 1px));
-  --tab-corner-bg: radial-gradient(circle at var(--circle-pos), transparent var(--tab-grad), var(--tab-border-color) calc(var(--tab-grad) + 0.3px), var(--tab-border-color) calc(var(--tab-grad) + var(--tab-border, 1px)), var(--tab-bg) calc(var(--tab-grad) + var(--tab-border, 1px) + 0.3px));
-}
-
-.tab-lifted.\[\&\[for\=weather2\]\]\:tab-active[for=weather2]:before {
-  left: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top left;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\[for\=weather2\]\]\:tab-active[for=weather2]:before {
-  --circle-pos: top right;
-}
-
-.tab-lifted.\[\&\[for\=weather2\]\]\:tab-active[for=weather2]:after {
-  right: calc(var(--tab-radius, 0.5rem) * -1);
-  --circle-pos: top right;
-  background-image: var(--tab-corner-bg);
-}
-
-[dir="rtl"] .tab-lifted.\[\&\[for\=weather2\]\]\:tab-active[for=weather2]:after {
-  --circle-pos: top left;
-}
-
-.tab-lifted.\[\&\[for\=weather2\]\]\:tab-active[for=weather2]:first-child:before {
-  background: none;
-}
-
-.tab-lifted.\[\&\[for\=weather2\]\]\:tab-active[for=weather2]:last-child:after {
-  background: none;
-}
-
-.tab-lifted.\[\&\[for\=weather2\]\]\:tab-active[for=weather2] + .tab-lifted.\[\&\[for\=weather2\]\]\:tab-active[for=weather2]:before {
-  background: none;
-}
-
-.tabs-boxed .\[\&\[for\=weather2\]\]\:tab-active[for=weather2] {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--p) / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-  border-radius: var(--rounded-btn, 0.5rem);
-}
-
-.tabs-boxed .\[\&\[for\=weather2\]\]\:tab-active[for=weather2]:hover {
-  --tw-text-opacity: 1;
-  color: hsl(var(--pc) / var(--tw-text-opacity));
-}
-
-.peer:checked ~ .\[\&\[for\=weather2\]\]\:peer-checked\:block[for=weather2] {
-  display: block;
-}
-
-.\[\&\:wgw\:checked\]\:block:wgw:checked {
-  display: block;
-}
-
-.\[\&wgw\:checked\]\:blockwgw:checked {
-  display: block;
-}
-
-.\[\&\:\#weather0\:checked\]\:block:#weather0:checked {
-  display: block;
-}
-
-.\[\&\:\#weather1\:checked\]\:block:#weather1:checked {
-  display: block;
-}
-
-.\[\&\:\#weather2\:checked\]\:block:#weather2:checked {
-  display: block;
-}
-
-.\[\&\:\#weather3\:checked\]\:block:#weather3:checked {
-  display: block;
-}
-
-.\[\&\#weather0\:checked\]\:block#weather0:checked {
-  display: block;
-}
-
-.\[\&\#weather1\:checked\]\:block#weather1:checked {
-  display: block;
-}
-
-.\[\&\#weather2\:checked\]\:block#weather2:checked {
-  display: block;
-}
-
-.\[\&\#weather3\:checked\]\:block#weather3:checked {
-  display: block;
+@media (min-width: 1024px) {
+  .lg\:w-96 {
+    width: 24rem;
+  }
 }
