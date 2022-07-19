@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use((req, res, next) => {
     const headers = {
         "Access-Control-Allow-Origin": serverConfig.cors,
-        "Content-Security-Policy": "default-src 'none'; style-src 'self'; img-src 'self'",
+        "Content-Security-Policy": "default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'",
         "Referrer-Policy": "no-referrer",
         "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload"
     };
@@ -33,10 +33,10 @@ app.all("/", (req, res) => res.redirect("/search"));
 app.all("/favicon.ico", (req, res) => res.redirect("/searchBtn.svg"))
 app.get("/proxy", async (req, res) => proxy(req, res))
 app.get("/settings", (req, res) => res.render("settings.ejs", { config: getUserConfig(req) } ))
-app.get("/defaultConfig", (req, res) => {
-    res.type("txt");
-    res.send(readFileSync("./config.json", { encoding: "utf8" }))
-});
+app.get("/clearCookies", (req, res) => {
+    req.headers.cookie?.split("; ")?.forEach(cookie => { res.clearCookie(cookie.split("=")[0]) });
+    res.redirect("/settings");
+})
 
 app.get("/opensearch.xml", (req, res) => {
     res.type("application/opensearchdescription+xml");
@@ -45,9 +45,16 @@ app.get("/opensearch.xml", (req, res) => {
 
 app.post("/settings", (req, res) => {
     try {
-        const json = JSON.parse(req.body.data)  
-        for (const x in json) {
-            res.cookie(x, (typeof json[x] === "object" ? JSON.stringify(json[x]) : json[x]), { maxAge: 1000*60*60*24*365*10, httpOnly: true });
+        config.checkboxes.forEach(checkbox => req.body[checkbox] ? 0 : req.body[checkbox] = false );
+        for (const x in req.body) {
+            if(x === "quickShortcuts") {
+                req.body[x].split("\n").forEach(l => {
+                    const [key, value] = l.split("=");
+                    res.cookie(`quickShortcuts.${key}`, value, { maxAge: 1000*60*60*24*365*10, httpOnly: true });
+                })
+            } else {
+                res.cookie(x, req.body[x], { maxAge: 1000*60*60*24*365*10, httpOnly: true });
+            }
         }
         res.redirect("/settings");
     } catch (error) {
@@ -85,13 +92,14 @@ function getUserConfig(req) {
 
     req.headers.cookie?.split("; ")?.forEach(cookie => {
         const [key, value] = cookie.split("=");
-        try {
-            userConfig[key] = JSON.parse(decodeURIComponent(value));
-        } catch (error) {
-            userConfig[key] = decodeURIComponent(value);
-        }
+        let x = decodeURIComponent(value);
+        if(x === "false") x = false;
+        if(x === "true") x = true;
+        if (x?.toString()?.replace(/[^0-9]/g, "") === x?.toString() && x !== "") x = +x;
+        if(key.startsWith("filters.")) x = x.split("\n").filter(q => !!q);
+        setPath(userConfig, key, x);
     })
-
+    console.log(userConfig)
     return userConfig;
 }
 
@@ -103,6 +111,12 @@ function getEnginesFromConfig(config, type) {
     }
 
     return engines;
+}
+
+function setPath(object, path, value) {
+    return path
+        .split('.')
+        .reduce((o,p,i) => o[p] = path.split('.').length === ++i ? value : o[p] || {}, object);
 }
 
 app.listen(serverConfig.port, async () => {

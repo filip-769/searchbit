@@ -12,7 +12,7 @@
 		"web": 15,
 		"image": 1000
 	},
-	"customHTML": "", // Write your custom code like CSS, JS, meta tags etc. here. (use json escaper)
+	"customCSS": "", // Write your custom CSS here.
 	/*
 		Write your often used words here.
 		Searching for @shortcut will replace it with the specified string.
@@ -32,7 +32,7 @@
     "filters": {
         "title": [],
         "url": [],
-        "description": []
+        "desc": []
     },
 	"tabOnResultOptions": false, // Allow tab for the options for search results.
 	"theme": "light", // Avaible themes: light, dark, cupcake, bumblebee, emerald, corporate, synthwave, retro, cyberpunk, valentine, halloween, garden, forest, aqua, lofi, pastel, fantasy, wireframe, black, luxury, dracula, cmyk, autumn, business, acid, lemonade, night, coffee, winter, light, dark, cupcake, bumblebee, emerald, corporate, synthwave, retro, cyberpunk, valentine, halloween, garden, forest, aqua, lofi, pastel, fantasy, wireframe, black, luxury, dracula, cmyk, autumn, business, acid, lemonade, night, coffee, winter
@@ -83,5 +83,63 @@
 			"yacy": 1,
 			"yandex": 1
 		}
-	}
+	},
+
+
+
+
+
+	/*
+		For use by /settings
+	    Editing this is not recommended!
+	*/
+
+	"options": {
+		"autocomplete": [
+			"bing",
+			"brave",
+			"exalead",
+			"fairsearch",
+			"google",
+			"naver",
+			"neeva",
+			"qwant",
+			"seznam",
+			"usearch",
+			"yacy",
+			"yandex"
+		],
+		"theme": [
+			"light",
+			"dark",
+			"cupcake",
+			"bumblebee",
+			"emerald",
+			"corporate",
+			"synthwave",
+			"retro",
+			"cyberpunk",
+			"valentine",
+			"halloween",
+			"garden",
+			"forest",
+			"aqua",
+			"lofi",
+			"pastel",
+			"fantasy",
+			"wireframe",
+			"black",
+			"luxury",
+			"dracula",
+			"cmyk",
+			"autumn",
+			"business",
+			"acid",
+			"lemonade",
+			"night",
+			"coffee",
+			"winter"
+		]
+	},
+	"checkboxes": [ "tabOnResultOptions" ]
 }

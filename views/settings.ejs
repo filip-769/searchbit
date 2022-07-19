@@ -6,24 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="tailwind.css">
     <title>Settings</title>
-    <%- config.customHTML %> 
+    <style><%- config.customCSS %></style>
 </head>
 <body>
     <form method="post">
-        <div class="w-screen flex items-center p-10 flex-col pt-5 pb-0">
-            <textarea
-                class="textarea textarea-bordered w-[85vw] h-[85vh] mb-1 focus:outline-offset-0"
-                spellcheck="false"
-                name="data"
-                ><%= JSON.stringify(config, null, 4) %></textarea>
-            <div class="w-[85vw]">
+        <div class="pl-24 pr-24 pt-10 pb-10">
+            <h1 class="text-2xl">Settings</h1>
+            <div>
+                <h2 class="text-xl mt-3">Appearance</h2>
+                <div class="mt-2 flex items-center">
+                    <label class="label pl-0 text-md mr-3" for="theme">Theme</label>
+                    <select name="theme" id="theme" class="select font-medium select-bordered focus:outline-offset-0">
+                        <% 
+                            config.options.theme.forEach(x => {
+                                %>
+                                    <option value="<%= x %>" <%= x === config.theme ? "selected" : "" %>>
+                                        <%= x.slice(0, 1).toUpperCase() + x.slice(1) %>
+                                    </option>
+                                <%
+                            });    
+                        %> 
+                    </select>
+                </div>
+                <div>
+                    <label class="label pl-0" for="customCSS">Custom CSS</label>
+                    <textarea class="textarea resize textarea-bordered focus:outline-offset-0" name="customCSS" id="customCSS"><%= config.customCSS %></textarea>
+                </div>
+                <h2 class="text-xl mt-5">Result filters</h2>
+                <div>
+                    <label class="label pl-0" for="filters.title">Result filters by title</label>
+                    <textarea class="textarea resize textarea-bordered focus:outline-offset-0" name="filters.title" id="filters.title"><%= config.filters.title.join("\n") %></textarea>
+                </div>
+                <div>
+                    <label class="label pl-0" for="filters.url">Result filters by url</label>
+                    <textarea class="textarea resize textarea-bordered focus:outline-offset-0" name="filters.url" id="filters.url"><%= config.filters.url.join("\n") %></textarea>
+                </div>
+                <div>
+                    <label class="label pl-0" for="filters.desc">Result filters by description</label>
+                    <textarea class="textarea resize textarea-bordered focus:outline-offset-0" name="filters.desc" id="filters.desc"><%= config.filters.desc.join("\n") %></textarea>
+                </div>
+                <h2 class="text-xl mt-5">Search</h2>
+                <div>
+                    <%
+                        let d = "";
+                        for (const s in config.quickShortcuts) {
+                            d = `${d}\n${s}=${config.quickShortcuts[s]}`;
+                        }
+                        d = d.trim();
+                    %>
+                    <label class="label pl-0" for="quickShortcuts">Quick shortcuts</label>
+                    <textarea class="textarea resize textarea-bordered focus:outline-offset-0" name="quickShortcuts" id="quickShortcuts"><%= d %></textarea>
+                </div>
+                <div>
+                    <label class="label pl-0" for="maximumResults.web">Maximum web search results</label>
+                    <input class="input input-bordered focus:outline-offset-0" type="number" name="maximumResults.web" id="maximumResults.web" value="<%= config.maximumResults.web %>" min="0">
+                </div>
+                <div>
+                    <label class="label pl-0" for="maximumResults.image">Maximum image search results</label>
+                    <input class="input input-bordered focus:outline-offset-0" type="number" name="maximumResults.image" id="maximumResults.image" value="<%= config.maximumResults.image %>" min="0">
+                </div>
+                <div class="mt-2 flex items-center">
+                    <label class="label pl-0 text-md mr-3" for="autocomplete">Autocomplete</label>
+                    <select name="autocomplete" id="autocomplete" class="select font-medium select-bordered focus:outline-offset-0">
+                        <% 
+                            config.options.autocomplete.forEach(x => {
+                                %>
+                                    <option value="<%= x %>" <%= x === config.autocomplete ? "selected" : "" %>>
+                                        <%= x.slice(0, 1).toUpperCase() + x.slice(1) %>
+                                    </option>
+                                <%
+                            });    
+                        %> 
+                    </select>
+                </div>
+                <div>
+                    <label class="label pl-0" for="delay">Maximum search time (ms)</label>
+                    <input class="input input-bordered focus:outline-offset-0" type="number" name="delay" id="delay" value="<%= config.delay %>" min="0">
+                </div>
+                <h2 class="text-xl mt-5">Weight of engines</h2>
+                <div class="flex">
+                    <%
+                        for(const category in config.engines) {
+                            %>
+                                <div class="mr-4">
+                                    <h3 class="capitalize text-lg"><%= category %></h3>
+                                    <ul>
+                                        <%
+                                            for(const engine in config.engines[category]) {
+                                                %>
+                                                    <li class="flex justify-between items-center mb-3">
+                                                        <label for="<%= `engines.${category}.${engine}` %>" class="capitalize mr-3"><%= engine %></label>
+                                                        <input type="number" value="<%= config.engines[category][engine] %>" name="<%= `engines.${category}.${engine}` %>" id="<%= `engines.${category}.${engine}` %>" class="ml-auto input input-bordered focus:outline-offset-0" min="0">
+                                                    </li>
+                                                <%
+                                            }
+                                        %>
+                                    </ul>
+                                </div>
+                            <%
+                        }
+                    %>
+                </div>
+                <h2 class="text-xl mt-5">Accessability</h2>
+                <div class="form-control w-max">
+                    <label class="label pl-0 cursor-pointer" for="tabOnResultOptions">
+                        <input class="checkbox" type="checkbox" name="tabOnResultOptions" value="true" id="tabOnResultOptions" <%= config.tabOnResultOptions ? "checked": "" %>>
+                        <span class="label pl-0-text ml-2">Allow focus on search result options</span>
+                    </label>
+                </div>
+            </div>
+            <div class="w-[85vw] mt-2">
                 <button class="btn" type="submit">Save</button>
-                <a href="/">
-                    <button class="btn" tabindex="-1" type="button">Back</button>
-                </a>
-                <a href="/defaultConfig">
-                    <button class="btn" tabindex="-1" type="button">Default</button>
-                </a>
+                <a href="/clearCookies" class="btn">Restore defaults</a>
+                <a href="/" class="btn">Home</a>
             </div>
         </div>
     </form>
