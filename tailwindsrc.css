@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.textarea {  @apply resize textarea-bordered focus:outline-offset-0; }
+.select { @apply font-medium select-bordered focus:outline-offset-0; }
+.input { @apply input-bordered focus:outline-offset-0; }

@@ -16,7 +16,7 @@
                 <h2 class="text-xl mt-3">Appearance</h2>
                 <div class="mt-2 flex items-center">
                     <label class="label pl-0 text-md mr-3" for="theme">Theme</label>
-                    <select name="theme" id="theme" class="select font-medium select-bordered focus:outline-offset-0">
+                    <select name="theme" id="theme" class="select">
                         <% 
                             config.options.theme.forEach(x => {
                                 %>
@@ -30,20 +30,20 @@
                 </div>
                 <div>
                     <label class="label pl-0" for="customCSS">Custom CSS</label>
-                    <textarea class="textarea resize textarea-bordered focus:outline-offset-0" name="customCSS" id="customCSS"><%= config.customCSS %></textarea>
+                    <textarea class="textarea" name="customCSS" id="customCSS"><%= config.customCSS %></textarea>
                 </div>
                 <h2 class="text-xl mt-5">Result filters</h2>
                 <div>
                     <label class="label pl-0" for="filters.title">Result filters by title</label>
-                    <textarea class="textarea resize textarea-bordered focus:outline-offset-0" name="filters.title" id="filters.title"><%= config.filters.title.join("\n") %></textarea>
+                    <textarea class="textarea" name="filters.title" id="filters.title"><%= config.filters.title.join("\n") %></textarea>
                 </div>
                 <div>
                     <label class="label pl-0" for="filters.url">Result filters by url</label>
-                    <textarea class="textarea resize textarea-bordered focus:outline-offset-0" name="filters.url" id="filters.url"><%= config.filters.url.join("\n") %></textarea>
+                    <textarea class="textarea" name="filters.url" id="filters.url"><%= config.filters.url.join("\n") %></textarea>
                 </div>
                 <div>
                     <label class="label pl-0" for="filters.desc">Result filters by description</label>
-                    <textarea class="textarea resize textarea-bordered focus:outline-offset-0" name="filters.desc" id="filters.desc"><%= config.filters.desc.join("\n") %></textarea>
+                    <textarea class="textarea" name="filters.desc" id="filters.desc"><%= config.filters.desc.join("\n") %></textarea>
                 </div>
                 <h2 class="text-xl mt-5">Search</h2>
                 <div>
@@ -55,19 +55,19 @@
                         d = d.trim();
                     %>
                     <label class="label pl-0" for="quickShortcuts">Quick shortcuts</label>
-                    <textarea class="textarea resize textarea-bordered focus:outline-offset-0" name="quickShortcuts" id="quickShortcuts"><%= d %></textarea>
+                    <textarea class="textarea" name="quickShortcuts" id="quickShortcuts"><%= d %></textarea>
                 </div>
                 <div>
                     <label class="label pl-0" for="maximumResults.web">Maximum web search results</label>
-                    <input class="input input-bordered focus:outline-offset-0" type="number" name="maximumResults.web" id="maximumResults.web" value="<%= config.maximumResults.web %>" min="0">
+                    <input class="input" type="number" name="maximumResults.web" id="maximumResults.web" value="<%= config.maximumResults.web %>" min="0">
                 </div>
                 <div>
                     <label class="label pl-0" for="maximumResults.image">Maximum image search results</label>
-                    <input class="input input-bordered focus:outline-offset-0" type="number" name="maximumResults.image" id="maximumResults.image" value="<%= config.maximumResults.image %>" min="0">
+                    <input class="input" type="number" name="maximumResults.image" id="maximumResults.image" value="<%= config.maximumResults.image %>" min="0">
                 </div>
                 <div class="mt-2 flex items-center">
                     <label class="label pl-0 text-md mr-3" for="autocomplete">Autocomplete</label>
-                    <select name="autocomplete" id="autocomplete" class="select font-medium select-bordered focus:outline-offset-0">
+                    <select name="autocomplete" id="autocomplete" class="select">
                         <% 
                             config.options.autocomplete.forEach(x => {
                                 %>
@@ -81,7 +81,7 @@
                 </div>
                 <div>
                     <label class="label pl-0" for="delay">Maximum search time (ms)</label>
-                    <input class="input input-bordered focus:outline-offset-0" type="number" name="delay" id="delay" value="<%= config.delay %>" min="0">
+                    <input class="input" type="number" name="delay" id="delay" value="<%= config.delay %>" min="0">
                 </div>
                 <h2 class="text-xl mt-5">Weight of engines</h2>
                 <div class="flex">
@@ -96,7 +96,7 @@
                                                 %>
                                                     <li class="flex justify-between items-center mb-3">
                                                         <label for="<%= `engines.${category}.${engine}` %>" class="capitalize mr-3"><%= engine %></label>
-                                                        <input type="number" value="<%= config.engines[category][engine] %>" name="<%= `engines.${category}.${engine}` %>" id="<%= `engines.${category}.${engine}` %>" class="ml-auto input input-bordered focus:outline-offset-0" min="0">
+                                                        <input type="number" value="<%= config.engines[category][engine] %>" name="<%= `engines.${category}.${engine}` %>" id="<%= `engines.${category}.${engine}` %>" class="ml-auto input" min="0">
                                                     </li>
                                                 <%
                                             }

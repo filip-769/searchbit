@@ -2172,18 +2172,6 @@ html {
   padding-right: var(--tab-padding, 1rem);
 }
 
-.table {
-  position: relative;
-  text-align: left;
-}
-
-.table th:first-child {
-  position: sticky;
-  position: -webkit-sticky;
-  left: 0px;
-  z-index: 11;
-}
-
 .textarea {
   flex-shrink: 1;
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
@@ -2587,13 +2575,6 @@ body[dir="rtl"] .checkbox:checked,
   background-image: linear-gradient(45deg, transparent 65%, hsl(var(--chkbg)) 65.99%), linear-gradient(-45deg, transparent 75%, hsl(var(--chkbg)) 75.99%), linear-gradient(45deg, hsl(var(--chkbg)) 40%, transparent 40.99%), linear-gradient(-45deg, hsl(var(--chkbg)) 30%, hsl(var(--chkfg)) 30.99%, hsl(var(--chkfg)) 40%, transparent 40.99%), linear-gradient(45deg, hsl(var(--chkfg)) 50%, hsl(var(--chkbg)) 50.99%);
 }
 
-.label-text {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  --tw-text-opacity: 1;
-  color: hsl(var(--bc) / var(--tw-text-opacity));
-}
-
 .label a:hover {
   --tw-text-opacity: 1;
   color: hsl(var(--bc) / var(--tw-text-opacity));
@@ -2601,10 +2582,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .input[list]::-webkit-calendar-picker-indicator {
   line-height: 1em;
-}
-
-.input-bordered {
-  --tw-border-opacity: 0.2;
 }
 
 .input:focus {
@@ -2757,10 +2734,6 @@ body[dir="rtl"] .checkbox:checked,
   }
 }
 
-.select-bordered {
-  --tw-border-opacity: 0.2;
-}
-
 .select:focus {
   outline: 2px solid hsla(var(--bc) / 0.2);
   outline-offset: 2px;
@@ -2890,68 +2863,6 @@ body[dir="rtl"] .checkbox:checked,
   color: hsl(var(--pc) / var(--tw-text-opacity));
 }
 
-.table :where(th, td) {
-  white-space: nowrap;
-  padding: 1rem;
-  vertical-align: middle;
-}
-
-.table tr.active th, 
-    .table tr.active td, 
-    .table tr.active:nth-child(even) th, 
-    .table tr.active:nth-child(even) td {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b3, var(--b2)) / var(--tw-bg-opacity));
-}
-
-.table tr.hover:hover th, 
-    .table tr.hover:hover td, 
-    .table tr.hover:nth-child(even):hover th, 
-    .table tr.hover:nth-child(even):hover td {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b3, var(--b2)) / var(--tw-bg-opacity));
-}
-
-.table:where(:not(.table-zebra)) :where(thead, tbody, tfoot) :where(tr:not(:last-child) :where(th, td)) {
-  border-bottom-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: hsl(var(--b2, var(--b1)) / var(--tw-border-opacity));
-}
-
-.table :where(thead, tfoot) :where(th, td) {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b2, var(--b1)) / var(--tw-bg-opacity));
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.table :where(:first-child) :where(:first-child) :where(th, td):first-child {
-  border-top-left-radius: 0.5rem;
-}
-
-.table :where(:first-child) :where(:first-child) :where(th, td):last-child {
-  border-top-right-radius: 0.5rem;
-}
-
-.table :where(:last-child) :where(:last-child) :where(th, td):first-child {
-  border-bottom-left-radius: 0.5rem;
-}
-
-.table :where(:last-child) :where(:last-child) :where(th, td):last-child {
-  border-bottom-right-radius: 0.5rem;
-}
-
-.table :where(tbody th, tbody td) {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b1) / var(--tw-bg-opacity));
-}
-
-.textarea-bordered {
-  --tw-border-opacity: 0.2;
-}
-
 .textarea:focus {
   outline: 2px solid hsla(var(--bc) / 0.2);
   outline-offset: 2px;
@@ -2976,6 +2887,14 @@ body[dir="rtl"] .checkbox:checked,
   .textarea[disabled]::placeholder {
   color: hsl(var(--bc) / var(--tw-placeholder-opacity));
   --tw-placeholder-opacity: 0.2;
+}
+
+.rounded-box {
+  border-radius: var(--rounded-box, 1rem);
+}
+
+.rounded-btn {
+  border-radius: var(--rounded-btn, 0.5rem);
 }
 
 .avatar.online:before {
@@ -3051,18 +2970,6 @@ body[dir="rtl"] .checkbox:checked,
   line-height: 1.5rem;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
 .pointer-events-none {
   pointer-events: none;
 }
@@ -3079,10 +2986,6 @@ body[dir="rtl"] .checkbox:checked,
   top: 0.5rem;
 }
 
-.m-3 {
-  margin: 0.75rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -3091,8 +2994,32 @@ body[dir="rtl"] .checkbox:checked,
   margin-left: auto;
 }
 
-.ml-4 {
-  margin-left: 1rem;
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .mb-5 {
@@ -3107,72 +3034,12 @@ body[dir="rtl"] .checkbox:checked,
   margin-right: 0.25rem;
 }
 
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-
-.mr-4 {
-  margin-right: 1rem;
-}
-
-.ml-3 {
-  margin-left: 0.75rem;
-}
-
-.mr-3 {
-  margin-right: 0.75rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.ml-0 {
-  margin-left: 0px;
-}
-
-.ml-2 {
-  margin-left: 0.5rem;
-}
-
 .block {
   display: block;
 }
 
-.inline-block {
-  display: inline-block;
-}
-
 .flex {
   display: flex;
-}
-
-.table {
-  display: table;
 }
 
 .hidden {
@@ -3217,16 +3084,8 @@ body[dir="rtl"] .checkbox:checked,
   width: 1rem;
 }
 
-.w-96 {
-  width: 24rem;
-}
-
 .cursor-pointer {
   cursor: pointer;
-}
-
-.resize {
-  resize: both;
 }
 
 .flex-col {
@@ -3239,10 +3098,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .flex-wrap {
   flex-wrap: wrap;
-}
-
-.content-center {
-  align-content: center;
 }
 
 .items-center {
@@ -3289,6 +3144,15 @@ body[dir="rtl"] .checkbox:checked,
   border-radius: 1rem;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-b {
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -3320,10 +3184,6 @@ body[dir="rtl"] .checkbox:checked,
 
 .p-1 {
   padding: 0.25rem;
-}
-
-.p-14 {
-  padding: 3.5rem;
 }
 
 .p-0\.5 {
@@ -3366,10 +3226,6 @@ body[dir="rtl"] .checkbox:checked,
   padding-top: 0.5rem;
 }
 
-.pl-14 {
-  padding-left: 3.5rem;
-}
-
 .pl-24 {
   padding-left: 6rem;
 }
@@ -3406,26 +3262,14 @@ body[dir="rtl"] .checkbox:checked,
   line-height: 2rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.font-bold {
-  font-weight: 700;
-}
-
-.font-semibold {
-  font-weight: 600;
-}
-
-.font-medium {
-  font-weight: 500;
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .capitalize {
@@ -3441,6 +3285,32 @@ body[dir="rtl"] .checkbox:checked,
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.textarea {
+  --tw-border-opacity: 0.2;
+  resize: both;
+}
+
+.textarea:focus {
+  outline-offset: 0px;
+}
+
+.select {
+  --tw-border-opacity: 0.2;
+  font-weight: 500;
+}
+
+.select:focus {
+  outline-offset: 0px;
+}
+
+.input {
+  --tw-border-opacity: 0.2;
+}
+
+.input:focus {
+  outline-offset: 0px;
 }
 
 .hover\:underline:hover {
