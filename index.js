@@ -99,7 +99,6 @@ function getUserConfig(req) {
         if(key.startsWith("filters.")) x = x.split("\n").filter(q => !!q);
         setPath(userConfig, key, x);
     })
-    console.log(userConfig)
     return userConfig;
 }
 
