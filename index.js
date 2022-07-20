@@ -30,9 +30,12 @@ app.use((req, res, next) => {
 });
 
 app.all("/", (req, res) => res.redirect("/search"));
-app.all("/favicon.ico", (req, res) => res.redirect("/searchBtn.svg"))
-app.get("/proxy", async (req, res) => proxy(req, res))
-app.get("/settings", (req, res) => res.render("settings.ejs", { config: getUserConfig(req) } ))
+app.all("/favicon.ico", (req, res) => res.redirect("/searchBtn.svg"));
+app.get("/proxy", async (req, res) => proxy(req, res));
+app.get("/settings", (req, res) => res.render("settings.ejs", { config: getUserConfig(req) } ));
+app.get("/getVersion", (req, res) => {
+    res.send(JSON.parse(readFileSync("package.json")).version);
+})
 app.get("/clearCookies", (req, res) => {
     req.headers.cookie?.split("; ")?.forEach(cookie => { res.clearCookie(cookie.split("=")[0]) });
     res.redirect("/settings");
