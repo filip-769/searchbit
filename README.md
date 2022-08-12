@@ -23,6 +23,10 @@ Searchbit is a meta search engine inspired by Searx.
 - Strong CSP preventing IP leak
 - JSON config
 
+
+## Support and Warranty
+lmao
+
 ## Donations
 
 ### OpenAlias
@@ -36,6 +40,6 @@ Searchbit is a meta search engine inspired by Searx.
 - **BTC**: `bc1qva8ztzeulyuhtknw0pnfcg62t8xudjsx3tn90q`
 
 ## Contact me
-If you need help with Searchbit, please create an issue.
+**Not technical support! (create issue for that)**
 - Email: filip769@duck.com
 - Matrix: [@filip769:matrix.org](https://matrix.to/#/@filip769:matrix.org)
