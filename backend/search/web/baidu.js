@@ -8,6 +8,7 @@ async function asyncForEach(array, callback) {
 }
 
 export default async (q, p) => {
+    
     const response = await fetch(`http://www.baidu.com/s?wd=${encodeURIComponent(q)}&pn=${10*(p-1)}`, {
         headers: {
             "User-Agent": getUserAgent(),
@@ -19,6 +20,7 @@ export default async (q, p) => {
     let json = {
         results: []
     };
+    
 
     await asyncForEach(dom.window.document.querySelectorAll(".result.c-container.new-pmd"), async el => {
         const title = el.querySelector("h3")?.textContent;
@@ -32,5 +34,6 @@ export default async (q, p) => {
             desc: desc
         });
     });
+    
     return json;
 }

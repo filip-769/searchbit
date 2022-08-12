@@ -16,9 +16,9 @@ export default async (q, p) => {
     };
 
     dom.window.document.querySelectorAll(".result").forEach(el => {
-        const title = el.querySelector("a")?.textContent;
-        const url = el.querySelector("a")?.href;
-        el.querySelectorAll("p,h2").forEach(x => x.remove());
+        const title = el.querySelector("h2 a[rel=nofollow]")?.textContent;
+        const url = el.querySelector("h2 a[rel=nofollow]")?.href;
+        el.querySelectorAll("div,h2").forEach(x => x.remove());
         const desc = el?.textContent;
         json.results.push({
             title: title,
@@ -26,5 +26,6 @@ export default async (q, p) => {
             desc: desc
         });
     });
+
     return json;
 }

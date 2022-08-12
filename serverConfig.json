@@ -4,7 +4,7 @@
 	Breaking this file will throw errors and force you to restart Searchbit!
 */
 {
-    // Searchbit will listen on this port. Access it on http://localhost:PORT
+    // Searchbit will listen on this port. Access it on http://localhost:PORT. Changing this when using docker may cause problems.
     "port": 14734,
     // CORS origin header
     "cors": "*",
