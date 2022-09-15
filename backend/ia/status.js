@@ -11,8 +11,10 @@ export default async q => {
             domain = json[0].domain;
         }
 
-        const response2 = await fetch(`https://api-prod.downfor.cloud/httpcheck/${encodeURIComponent(domain)}`);
-        const json2 = await response2.json();
-
-    return { url: json2.returnedUrl, isDown: json2.isDown, statusCode: json2.statusCode }
+        try {
+            const response2 = await fetch(`https://${domain}`);
+            return { url: response2.url, isDown: response2.status.toString().startsWith("2") ? false : true, statusCode: response2.status }
+        } catch (e) {
+            return { url: `https://${domain}`, isDown: true, statusCode: 0 }
+        }
 }
