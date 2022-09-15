@@ -1,6 +1,6 @@
 {
   "name": "searchbit",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "description": "Searchbit is a meta search engine inspired by Searx.",
   "main": "index.js",
