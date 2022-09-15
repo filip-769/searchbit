@@ -3,7 +3,7 @@ const regexes = {
     randomPassword: /token|random password|password generator|generate password/i,
     randomNumber: /rng|random number/i,
     nameday: /nameday/i,
-    math: /. to .|^[0-9\+|-|\/|\*|.|,]+$/i,
+    math: /. to .|^[0-9+\-/*.,()]+$/i,
     weather: /weather/i,
     holidays: /holidays/i,
     nameday: /nameday/i,
