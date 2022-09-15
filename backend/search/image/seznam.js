@@ -16,10 +16,10 @@ export default async (q, p) => {
         results: []
     };
 
-    dom.window.document.querySelectorAll(".Images-grid-image").forEach(el => {
-        const desc = el.querySelector("._26741f")?.alt;
-        const url = el.querySelector("._445bc8")?.href;
-        const img = el.querySelector("._26741f")?.src;
+    dom.window.document.querySelectorAll(".b1d73d").forEach(el => {
+        const desc = el.querySelector("img")?.alt;
+        const url = el.querySelector(".b9f7f5")?.href;
+        const img = el.querySelector("img")?.src;
         json.results.push({
             url: url,
             desc: desc,
